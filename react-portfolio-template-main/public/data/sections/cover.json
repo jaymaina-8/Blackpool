@@ -1,0 +1,176 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Blackpool Industry",
+                "title_short_nav": "Home",
+                "title_long_prefix": "Hello,",
+                "title_long": "We help businesses grow with {{modern digital solutions}}"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleInlineList",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "display_as_list_if_width_is_lower_than": 380
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "Nairobi, Kenya",
+                    "link": { "href": "", "tooltipString": "" },
+                    "faIcon": "fa-solid fa-location-dot"
+                },
+                {
+                    "id": 2,
+                    "label": "hello@blackpoolindustry.co.ke",
+                    "link": {
+                        "href": "mailto:hello@blackpoolindustry.co.ke",
+                        "tooltipString": "Email us"
+                    },
+                    "faIcon": "fa-regular fa-envelope"
+                },
+                {
+                    "id": 3,
+                    "label": "Chat on WhatsApp",
+                    "link": {
+                        "href": "https://wa.me/2547XXXXXXXX",
+                        "tooltipString": "Start a WhatsApp chat"
+                    },
+                    "faIcon": "fa-brands fa-whatsapp"
+                }
+            ]
+        },
+
+        {
+            "id": 1,
+            "component": "ArticleText",
+            "locales": {
+                "en": {
+                    "title": "Helping businesses {{grow online}} — fast"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/content/m.png",
+                    "locales": {
+                        "en": {
+                            "text": "<p><strong>Blackpool {{Industry}}</strong> helps local and growing businesses build strong, modern digital foundations.</p><p>We design fast, responsive, and conversion-focused websites that make your brand look credible, professional, and ready to scale.</p><p>From simple business sites to scalable digital products, our focus is simple: <em>build solutions that move your business forward</em>.</p>"
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": 2,
+            "component": "ArticleFacts",
+            "locales": {
+                "en": {
+                    "title": "Why businesses choose {{Blackpool}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-rocket",
+                    "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+                    "locales": { "en": { "title": "48 hrs", "text": "Typical launch time" } }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-briefcase",
+                    "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+                    "locales": { "en": { "title": "20+", "text": "Projects delivered" } }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-users",
+                    "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+                    "locales": { "en": { "title": "100%", "text": "Client satisfaction" } }
+                },
+                {
+                    "id": 4,
+                    "faIcon": "fa-solid fa-headset",
+                    "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+                    "locales": { "en": { "title": "24/7", "text": "Clear communication" } }
+                }
+            ]
+        },
+
+        {
+            "id": 2,
+            "component": "ArticleCards",
+            "locales": {
+                "en": {
+                    "title": "How we {{work}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-bolt",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e"
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Fast execution",
+                            "text": "We move quickly without cutting corners, using modern tools and proven workflows."
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-layer-group",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e"
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Built to scale",
+                            "text": "Everything we build is designed to grow with your business, not limit it."
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-brain",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e"
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "AI-assisted workflow",
+                            "text": "We use AI where it adds real value — speed, accuracy, and smarter outcomes."
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

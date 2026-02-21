@@ -1,0 +1,188 @@
+{
+  "title": {
+    "locales": {
+      "en": {
+        "title_short": "Achievements",
+        "title_short_nav": "Achievements",
+        "title_long_prefix": "Our",
+        "title_long": "{{Milestones}}!"
+      }
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "component": "ArticleCards",
+      "locales": {
+        "en": {
+          "title": "What we’ve {{achieved}} so far!"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "img": "",
+          "faIcon": "fa-solid fa-rocket",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 8 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "Launched {{Multiple Projects}}!",
+              "text": "Shipped real-world websites, apps, and backend systems for startups and growing businesses — built for performance, reliability, and results."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "img": "",
+          "faIcon": "fa-solid fa-clock",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 8 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "Fast {{Delivery Model}}!",
+              "text": "Built a streamlined delivery system that takes ideas from concept to live product in as little as 48–72 hours for most projects."
+            }
+          }
+        },
+        {
+          "id": 3,
+          "img": "",
+          "faIcon": "fa-solid fa-robot",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "dateStart": { "year": 2026, "month": 1 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "AI-Integrated {{Workflow}}!",
+              "text": "Embedded AI into our development and content workflows to move faster, stay consistent, and ship higher-quality work."
+            }
+          }
+        },
+        {
+          "id": 4,
+          "img": "",
+          "faIcon": "fa-solid fa-handshake",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 8 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "Trusted {{Partnerships}}!",
+              "text": "Built long-term client partnerships through clear communication, fast execution, and dependable delivery."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "component": "ArticleTimeline",
+      "locales": {
+        "en": {
+          "title": "Our {{Journey}}!"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "img": "",
+          "faIcon": "fa-solid fa-lightbulb",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 8 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "Blackpool Industry {{Founded}}!",
+              "text": "Started with a simple mission: make modern, high-quality digital solutions accessible to growing businesses."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "img": "",
+          "faIcon": "fa-solid fa-code",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 8 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "First {{Client Projects}}!",
+              "text": "Delivered our first production-ready websites and applications solving real business problems."
+            }
+          }
+        },
+        {
+          "id": 3,
+          "img": "",
+          "faIcon": "fa-solid fa-brain",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "dateStart": { "year": 2026, "month": 1 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "AI {{Workflow Integration}}!",
+              "text": "Adopted AI-powered tools to accelerate development, testing, and content creation without compromising quality."
+            }
+          }
+        },
+        {
+          "id": 4,
+          "img": "",
+          "faIcon": "fa-solid fa-chart-line",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "dateStart": { "year": 2025, "month": 12 },
+          "dateEnd": { "now": true },
+          "locales": {
+            "en": {
+              "title": "Scaling {{Services}}!",
+              "text": "Expanded our services and refined our systems to support more clients without slowing down delivery."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

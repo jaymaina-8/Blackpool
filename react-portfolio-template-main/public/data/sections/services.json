@@ -1,0 +1,298 @@
+{
+  "title": {
+    "locales": {
+      "en": {
+        "title_short": "Services",
+        "title_short_nav": "Services",
+        "title_long_prefix": "What we do",
+        "title_long": "to help businesses grow {{online}}"
+      }
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "component": "ArticleInfoList",
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "locales": {
+        "en": {
+          "title": "What We {{Offer}}"
+        }
+      },
+      "items": [
+        {
+          "id": 1,
+          "faIcon": "fa-solid fa-globe",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "label": null,
+          "link": { "href": null, "tooltipString": null },
+          "copyToClipboardButton": false,
+          "locales": {
+            "en": {
+              "title": "Business {{Websites}}",
+              "text": "Modern, fast websites that build trust, attract customers, and turn visitors into real leads."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "faIcon": "fa-solid fa-store",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "label": null,
+          "link": { "href": null, "tooltipString": null },
+          "copyToClipboardButton": false,
+          "locales": {
+            "en": {
+              "title": "E-commerce {{Solutions}}",
+              "text": "Simple, mobile-friendly online stores designed to increase sales and customer confidence."
+            }
+          }
+        },
+        {
+          "id": 3,
+          "faIcon": "fa-solid fa-robot",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "label": null,
+          "link": { "href": null, "tooltipString": null },
+          "copyToClipboardButton": false,
+          "locales": {
+            "en": {
+              "title": "AI & {{Automation}}",
+              "text": "Automate repetitive tasks, reduce manual work, and improve efficiency using practical AI solutions."
+            }
+          }
+        },
+        {
+          "id": 4,
+          "faIcon": "fa-solid fa-chart-line",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "label": null,
+          "link": { "href": null, "tooltipString": null },
+          "copyToClipboardButton": false,
+          "locales": {
+            "en": {
+              "title": "Website {{Optimization}}",
+              "text": "Speed, performance, and user experience improvements to help your website convert better."
+            }
+          }
+        },
+        {
+          "id": 5,
+          "faIcon": "fa-solid fa-headset",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "label": null,
+          "link": { "href": null, "tooltipString": null },
+          "copyToClipboardButton": false,
+          "locales": {
+            "en": {
+              "title": "Ongoing {{Support}}",
+              "text": "We stay with you after launch — updates, improvements, and support as your business grows."
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "component": "ArticleTestimonials",
+      "locales": {
+        "en": {
+          "title": "What {{Clients Say}}"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "label": "Local Business Owner",
+          "link": { "href": "", "tooltipString": "" },
+          "img": "",
+          "faIcon": "fa-solid fa-user",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "Small Business {{Owner}}",
+              "text": "They helped me get online fast. My business looks professional now and customers find me easily."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "label": "Startup Founder",
+          "link": { "href": "", "tooltipString": "" },
+          "img": "",
+          "faIcon": "fa-solid fa-user",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "Early-stage {{Founder}}",
+              "text": "Clear communication, fast delivery, and no unnecessary complexity. Exactly what I needed."
+            }
+          }
+        },
+        {
+          "id": 3,
+          "label": "Project Collaborator",
+          "link": { "href": "", "tooltipString": "" },
+          "img": "",
+          "faIcon": "fa-solid fa-user",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e",
+            "fillLight": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "Project {{Collaborator}}",
+              "text": "Working together was smooth, efficient, and professional from start to finish."
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "component": "ArticleThread",
+      "locales": {
+        "en": {
+          "title": "Frequently {{Asked}} Questions"
+        }
+      },
+      "settings": {
+        "max_rows_collapse_threshold": 4,
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "How fast can you {{deliver}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "Most small business websites are delivered within <strong>48 hours</strong>. Larger projects take longer, with clear timelines agreed upfront."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "How much does a website {{cost}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "Pricing depends on your goals and features. We offer affordable packages and transparent custom pricing — no surprises."
+            }
+          }
+        },
+        {
+          "id": 3,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "Do I need to understand {{technology}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "No. You focus on your business. We handle the tech and guide you through everything in simple terms."
+            }
+          }
+        },
+        {
+          "id": 4,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "Can you redesign my {{existing}} website?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "Yes. We can refresh, optimize, or fully rebuild your website to make it faster, modern, and more effective."
+            }
+          }
+        },
+        {
+          "id": 5,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "Do you use {{AI}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "Yes. We use AI to work smarter — reducing costs, improving quality, and delivering faster without cutting corners."
+            }
+          }
+        },
+        {
+          "id": 6,
+          "date": { "year": 2026, "month": 1 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "What happens after {{launch}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "We continue supporting, improving, and scaling your website as your business grows."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Updates",
+                "title_short_nav": "Updates",
+                "title_long_prefix": "Latest news and",
+                "title_long": "updates from Blackpool {{Industry}}!"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleCards",
+            "locales": {
+                "en": {
+                    "title": "Latest {{highlights}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-rocket",
+                    "faIconColors": { "bg": "", "fill": "" },
+                    "locales": {
+                        "en": {
+                            "title": "New client projects launched",
+                            "text": "We’ve shipped multiple business websites built for speed, SEO, and real-world conversions — not just good looks."
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-brain",
+                    "faIconColors": { "bg": "", "fill": "" },
+                    "locales": {
+                        "en": {
+                            "title": "AI-powered workflows improved",
+                            "text": "Our internal automation now helps us move faster, reduce friction, and deliver more consistent results across projects."
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-chart-line",
+                    "faIconColors": { "bg": "", "fill": "" },
+                    "locales": {
+                        "en": {
+                            "title": "Performance-first builds",
+                            "text": "Every build is optimized for speed, accessibility, and real-world performance from day one — no afterthoughts."
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "faIcon": "fa-solid fa-shield-halved",
+                    "faIconColors": { "bg": "", "fill": "" },
+                    "locales": {
+                        "en": {
+                            "title": "Security & reliability upgrades",
+                            "text": "We strengthened hosting, backups, and monitoring to ensure every deployment is stable, secure, and dependable."
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "faIcon": "fa-solid fa-comments",
+                    "faIconColors": { "bg": "", "fill": "" },
+                    "locales": {
+                        "en": {
+                            "title": "Client feedback loop refined",
+                            "text": "We tightened feedback cycles with clearer communication, faster revisions, and smoother collaboration."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "component": "ArticleThread",
+            "locales": {
+                "en": {
+                    "title": "Inside the {{Journey}}"
+                }
+            },
+            "settings": {
+                "max_rows_collapse_threshold": 4,
+                "order_items_by": "dateStart",
+                "order_items_sort": "desc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": { "year": 2026, "month": 1 },
+                    "locales": {
+                        "en": {
+                            "title": "Focused on what matters most",
+                            "institution": "Blackpool Industry",
+                            "text": "Today, we focus on building fast, secure, and scalable digital products. Every decision is guided by performance, clarity, and real business impact."
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "dateStart": { "year": 2026, "month": 1 },
+                    "locales": {
+                        "en": {
+                            "title": "Raising the standard",
+                            "institution": "Blackpool Industry",
+                            "text": "As client needs evolved, so did our approach. Performance, accessibility, SEO, and long-term maintainability became non-negotiables in every project."
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "dateStart": { "year": 2026, "month": 1 },
+                    "locales": {
+                        "en": {
+                            "title": "From ideas to systems",
+                            "institution": "Blackpool Industry",
+                            "text": "We refined our internal workflows and tooling to move faster without sacrificing quality — laying the foundation for scalable, repeatable success."
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "dateStart": { "year": 2025, "month": 8 },
+                    "locales": {
+                        "en": {
+                            "title": "The beginning of Blackpool Industry",
+                            "institution": "Blackpool Industry",
+                            "text": "Blackpool Industry was founded with a simple mission: help businesses grow through thoughtful design, reliable technology, and honest partnerships."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "component": "ArticleCards",
+            "locales": {
+                "en": {
+                    "title": "What’s {{next}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-robot",
+                    "locales": {
+                        "en": {
+                            "title": "Smarter AI solutions",
+                            "text": "Rolling out smarter AI-driven tools that automate workflows and remove operational friction."
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-store",
+                    "locales": {
+                        "en": {
+                            "title": "E-commerce growth",
+                            "text": "Helping online businesses scale with fast, conversion-focused storefronts built for growth."
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-people-group",
+                    "locales": {
+                        "en": {
+                            "title": "Long-term partnerships",
+                            "text": "Partnering with businesses long-term as a technical ally — not just a one-off vendor."
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

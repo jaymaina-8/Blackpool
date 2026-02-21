@@ -1,0 +1,148 @@
+{
+  "title": {
+    "locales": {
+      "en": {
+        "title_short": "About Us",
+        "title_short_nav": "About",
+        "title_long_prefix": "Get to know",
+        "title_long": "{{Blackpool Industry}}"
+      }
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "component": "ArticleText",
+      "locales": {
+        "en": {
+          "title": "Who we {{are}}"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "faIcon": "fa-solid fa-rocket",
+          "locales": {
+            "en": {
+              "text": "<p><strong>Blackpool {{Industry}}</strong> is a Nairobi-based digital company helping small and growing businesses build a strong, reliable online presence.</p><p>We design and develop websites, applications, and AI-powered solutions that solve real business problems — not just look impressive.</p><p>By combining modern technology with <em>AI-assisted workflows</em>, we deliver high-quality digital products faster, smarter, and at a cost that makes sense for growing businesses.</p>"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "component": "ArticleCards",
+      "locales": {
+        "en": {
+          "title": "What we {{believe}} in"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "faIcon": "fa-solid fa-bolt",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "Speed with purpose",
+              "text": "Going digital shouldn’t take months. We work fast, but never at the expense of quality, stability, or long-term value."
+            }
+          }
+        },
+        {
+          "id": 2,
+          "faIcon": "fa-solid fa-briefcase",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "Business-first thinking",
+              "text": "Every solution we build is guided by one question: how does this help the business grow, operate better, or earn trust?"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "faIcon": "fa-solid fa-brain",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "bgLight": "#1e293b",
+            "fill": "#22c55e"
+          },
+          "locales": {
+            "en": {
+              "title": "AI-driven efficiency",
+              "text": "We use AI where it adds real value — automating repetitive work, improving accuracy, and delivering results faster."
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "component": "ArticleFacts",
+      "locales": {
+        "en": {
+          "title": "Quick {{facts}}"
+        }
+      },
+      "settings": {
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "faIcon": "fa-solid fa-location-dot",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "locales": {
+            "en": {
+              "title": "Nairobi",
+              "text": "Proudly based in Kenya"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "faIcon": "fa-solid fa-clock",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "locales": {
+            "en": {
+              "title": "48 hours",
+              "text": "Typical project turnaround"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "faIcon": "fa-solid fa-robot",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "locales": {
+            "en": {
+              "title": "AI-powered",
+              "text": "Built into our workflow"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

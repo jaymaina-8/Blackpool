@@ -1,0 +1,151 @@
+{
+  "title": {
+    "locales": {
+      "en": {
+        "title_short": "Portfolio",
+        "title_short_nav": "Portfolio",
+        "title_long_prefix": "Some of the",
+        "title_long": "{{Results}} we help businesses achieve"
+      }
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "component": "ArticlePortfolio",
+      "locales": {
+        "en": {
+          "category_all": "All",
+          "category_web": "Websites",
+          "category_apps": "Apps",
+          "category_utilities": "AI & Automation"
+        }
+      },
+      "settings": {
+        "categorize_by": [
+          "category_web",
+          "category_apps",
+          "category_utilities"
+        ],
+        "order_items_by": "id",
+        "order_items_sort": "asc"
+      },
+      "items": [
+        {
+          "id": 1,
+          "categoryId": "category_web",
+          "img": "",
+          "faIcon": "fa-solid fa-store",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Local Business {{Website}}",
+              "text": "A fast, mobile-first website built to increase visibility, build trust, and turn visitors into real customers.",
+              "tags": ["Website", "Local Business", "SEO", "Conversion"]
+            }
+          }
+        },
+        {
+          "id": 2,
+          "categoryId": "category_web",
+          "img": "",
+          "faIcon": "fa-solid fa-chart-line",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "High-Converting {{Landing Page}}",
+              "text": "A focused landing page designed to clearly communicate value, capture leads, and support marketing campaigns.",
+              "tags": ["Landing Page", "Conversion", "Marketing", "Leads"]
+            }
+          }
+        },
+        {
+          "id": 3,
+          "categoryId": "category_apps",
+          "img": "",
+          "faIcon": "fa-solid fa-calendar-check",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "9:16"
+          },
+          "locales": {
+            "en": {
+              "title": "Booking & {{Operations App}}",
+              "text": "A simple, reliable app that streamlines bookings, scheduling, and daily operations for busy teams.",
+              "tags": ["App", "Booking", "Operations", "Productivity"]
+            }
+          }
+        },
+        {
+          "id": 4,
+          "categoryId": "category_apps",
+          "img": "",
+          "faIcon": "fa-solid fa-users",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "9:16"
+          },
+          "locales": {
+            "en": {
+              "title": "Secure {{Customer Portal}}",
+              "text": "A private portal that gives customers easy access to services, updates, and account management.",
+              "tags": ["Customer Portal", "App", "Automation", "Security"]
+            }
+          }
+        },
+        {
+          "id": 5,
+          "categoryId": "category_utilities",
+          "img": "",
+          "faIcon": "fa-solid fa-robot",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "AI {{Customer Assistant}}",
+              "text": "An AI-powered assistant that responds instantly on WhatsApp or web, reducing support load and improving response time.",
+              "tags": ["AI", "Customer Support", "WhatsApp", "Automation"]
+            }
+          }
+        },
+        {
+          "id": 6,
+          "categoryId": "category_utilities",
+          "img": "",
+          "faIcon": "fa-solid fa-gears",
+          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Business {{Process Automation}}",
+              "text": "Custom automation that removes repetitive work, reduces errors, and frees teams to focus on growth.",
+              "tags": ["Automation", "AI", "Efficiency", "Workflows"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

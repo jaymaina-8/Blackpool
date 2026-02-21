@@ -1,0 +1,52 @@
+{
+    "sections": [
+        {
+            "id": "Home",
+            "categoryId": "home",
+            "jsonPath": "/data/sections/cover.json",
+            "faIcon": "fa-solid fa-address-card"
+        },
+        {
+            "id": "About",
+            "categoryId": "background",
+            "jsonPath": "/data/sections/about.json",
+            "faIcon": "fa-solid fa-building"
+        },
+        {
+            "id": "services",
+            "categoryId": "showcase",
+            "jsonPath": "/data/sections/services.json",
+            "faIcon": "fa-solid fa-code"
+        },
+        {
+            "id": "process",
+            "categoryId": "background",
+            "jsonPath": "/data/sections/process.json",
+            "faIcon": "fa-solid fa-list-check"
+        },
+        {
+            "id": "portfolio",
+            "categoryId": "showcase",
+            "jsonPath": "/data/sections/portfolio.json",
+            "faIcon": "fa-solid fa-folder-open"
+        },
+        {
+            "id": "achievements",
+            "categoryId": "showcase",
+            "jsonPath": "/data/sections/achievements.json",
+            "faIcon": "fa-solid fa-star"
+        },
+        {
+            "id": "updates",
+            "categoryId": "more",
+            "jsonPath": "/data/sections/updates.json",
+            "faIcon": "fa-solid fa-bullhorn"
+        },
+        {
+            "id": "contact",
+            "categoryId": "more",
+            "jsonPath": "/data/sections/contact.json",
+            "faIcon": "fa-solid fa-pen-to-square"
+        }
+    ]
+}
