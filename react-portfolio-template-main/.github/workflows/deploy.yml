@@ -23,10 +23,12 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
+        working-directory: react-portfolio-template-main
         run: npm install
 
       # Build the project
       - name: Build project
+        working-directory: react-portfolio-template-main
         run: npm run build
 
       # Deploy to GitHub pages
@@ -34,4 +36,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: react-portfolio-template-main/dist
