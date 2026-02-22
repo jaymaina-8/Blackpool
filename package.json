@@ -1,0 +1,7 @@
+{
+  "name": "blackpool",
+  "private": true,
+  "scripts": {
+    "build": "cd react-portfolio-template-main && npm ci && npm run build"
+  }
+}

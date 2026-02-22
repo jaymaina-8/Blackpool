@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd react-portfolio-template-main && npm install && npm run build",
+  "outputDirectory": "react-portfolio-template-main/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "VITE_APP_BASE": "/"
+  }
+}
