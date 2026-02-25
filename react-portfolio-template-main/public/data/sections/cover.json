@@ -28,9 +28,9 @@
                 },
                 {
                     "id": 2,
-                    "label": "hello@blackpoolindustry.co.ke",
+                    "label": "hello@blackpoolindustry.com",
                     "link": {
-                        "href": "mailto:hello@blackpoolindustry.co.ke",
+                        "href": "mailto:hello@blackpoolindustry.com",
                         "tooltipString": "Email us"
                     },
                     "faIcon": "fa-regular fa-envelope"
@@ -39,10 +39,19 @@
                     "id": 3,
                     "label": "Chat on WhatsApp",
                     "link": {
-                        "href": "https://wa.me/2547XXXXXXXX",
+                        "href": "https://wa.me/254116583458?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20growing%20my%20business%20online.",
                         "tooltipString": "Start a WhatsApp chat"
                     },
                     "faIcon": "fa-brands fa-whatsapp"
+                },
+                {
+                    "id": 4,
+                    "label": "+254 116 583 458",
+                    "link": {
+                        "href": "tel:+254116583458",
+                        "tooltipString": "Call us"
+                    },
+                    "faIcon": "fa-solid fa-phone"
                 }
             ]
         },
