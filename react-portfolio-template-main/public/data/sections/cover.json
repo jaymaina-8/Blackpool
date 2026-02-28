@@ -46,9 +46,9 @@
                 },
                 {
                     "id": 4,
-                    "label": "+254 116 583 458",
+                    "label": "+254 140603483",
                     "link": {
-                        "href": "tel:+254116583458",
+                        "href": "tel:+254140603483",
                         "tooltipString": "Call us"
                     },
                     "faIcon": "fa-solid fa-phone"
