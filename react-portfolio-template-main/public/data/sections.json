@@ -31,10 +31,10 @@
             "faIcon": "fa-solid fa-folder-open"
         },
         {
-            "id": "achievements",
+            "id": "pricing",
             "categoryId": "showcase",
-            "jsonPath": "/data/sections/achievements.json",
-            "faIcon": "fa-solid fa-star"
+            "jsonPath": "/data/sections/pricing.json",
+            "faIcon": "fa-solid fa-tag"
         },
         {
             "id": "updates",

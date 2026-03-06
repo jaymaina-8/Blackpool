@@ -1,0 +1,141 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Pricing",
+                "title_short_nav": "Pricing",
+                "title_long_prefix": "Simple,",
+                "title_long": "transparent {{pricing}}"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticlePricing",
+            "locales": {
+                "en": {
+                    "title": "Choose the plan that fits your {{business}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-seedling",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e",
+                        "fillLight": "#22c55e"
+                    },
+                    "label": null,
+                    "percentage": 0,
+                    "locales": {
+                        "en": {
+                            "title": "{{Starter}}",
+                            "institution": "KSh 14,999",
+                            "province": "one-time",
+                            "text": "Everything you need to get your business online fast.",
+                            "list": [
+                                "5 page website",
+                                "Mobile optimized",
+                                "Contact form",
+                                "WhatsApp button",
+                                "Basic SEO",
+                                "Delivered in 48 hours"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-chart-bar",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e",
+                        "fillLight": "#22c55e"
+                    },
+                    "label": "Most Popular",
+                    "percentage": 1,
+                    "locales": {
+                        "en": {
+                            "title": "{{Standard}}",
+                            "institution": "KSh 24,999",
+                            "province": "one-time",
+                            "text": "More features to attract and retain customers.",
+                            "list": [
+                                "Everything in Starter",
+                                "Online menu or product catalogue",
+                                "Booking or reservation system",
+                                "Google Maps integration",
+                                "Social media links",
+                                "1 round of revisions",
+                                "Delivered in 48 hours"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-rocket",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e",
+                        "fillLight": "#22c55e"
+                    },
+                    "label": null,
+                    "percentage": 0,
+                    "locales": {
+                        "en": {
+                            "title": "{{Growth}}",
+                            "institution": "KSh 45,999",
+                            "province": "one-time",
+                            "text": "Full-featured site built to scale and sell.",
+                            "list": [
+                                "Everything in Standard",
+                                "E-commerce functionality",
+                                "Payment integration (Mpesa/Stripe)",
+                                "Blog or news section",
+                                "Advanced SEO setup",
+                                "2 rounds of revisions",
+                                "Delivered in 3 days"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "faIcon": "fa-solid fa-shield-halved",
+                    "faIconColors": {
+                        "bg": "#0f172a",
+                        "bgLight": "#1e293b",
+                        "fill": "#22c55e",
+                        "fillLight": "#22c55e"
+                    },
+                    "label": null,
+                    "percentage": 0,
+                    "locales": {
+                        "en": {
+                            "title": "Monthly {{Retainer}}",
+                            "institution": "KSh 3,999",
+                            "province": "/month",
+                            "text": "Keep your site fresh, secure, and running smoothly.",
+                            "list": [
+                                "Site updates and maintenance",
+                                "Monthly content updates",
+                                "Security monitoring",
+                                "Priority support"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

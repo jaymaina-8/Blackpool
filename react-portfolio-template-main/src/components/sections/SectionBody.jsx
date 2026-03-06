@@ -1,6 +1,6 @@
 import "./SectionBody.scss"
-import React, {useEffect, useState} from 'react'
-import {useParser} from "/src/hooks/parser.js"
+import React, { useEffect, useState } from 'react'
+import { useParser } from "/src/hooks/parser.js"
 import ArticleCards from "/src/components/articles/ArticleCards.jsx"
 import ArticleContactForm from "/src/components/articles/ArticleContactForm.jsx"
 import ArticleFacts from "/src/components/articles/ArticleFacts.jsx"
@@ -14,6 +14,7 @@ import ArticleTestimonials from "/src/components/articles/ArticleTestimonials.js
 import ArticleText from "/src/components/articles/ArticleText.jsx"
 import ArticleThread from "/src/components/articles/ArticleThread.jsx"
 import ArticleTimeline from "/src/components/articles/ArticleTimeline.jsx"
+import ArticlePricing from "/src/components/articles/ArticlePricing.jsx"
 
 function SectionBody({ section }) {
     const parser = useParser()
@@ -24,8 +25,8 @@ function SectionBody({ section }) {
             {articleDataWrappers && articleDataWrappers.map((dataWrapper, key) => {
                 const Component = SectionBody.ARTICLES[dataWrapper.component] || ArticleNotFound
                 return <Component dataWrapper={dataWrapper}
-                                  id={key}
-                                  key={key}/>
+                    id={key}
+                    key={key} />
             })}
         </div>
     )
@@ -44,7 +45,8 @@ SectionBody.ARTICLES = {
     ArticleTestimonials,
     ArticleText,
     ArticleThread,
-    ArticleTimeline
+    ArticleTimeline,
+    ArticlePricing
 }
 
 export default SectionBody
