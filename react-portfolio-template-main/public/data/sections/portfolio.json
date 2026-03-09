@@ -196,7 +196,7 @@
         {
           "id": 7,
           "categoryId": "category_web",
-          "img": "/images/content/mangrove.jpg",
+          "img": "/images/content/m.png",
           "faIcon": "fa-solid fa-utensils",
           "faIconColors": {
             "bg": "#0f172a",
