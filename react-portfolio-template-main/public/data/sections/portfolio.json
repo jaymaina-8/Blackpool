@@ -36,7 +36,10 @@
           "categoryId": "category_web",
           "img": "",
           "faIcon": "fa-solid fa-store",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -46,7 +49,12 @@
             "en": {
               "title": "Local Business {{Website}}",
               "text": "A fast, mobile-first website built to increase visibility, build trust, and turn visitors into real customers.",
-              "tags": ["Website", "Local Business", "SEO", "Conversion"]
+              "tags": [
+                "Website",
+                "Local Business",
+                "SEO",
+                "Conversion"
+              ]
             }
           }
         },
@@ -55,7 +63,10 @@
           "categoryId": "category_web",
           "img": "",
           "faIcon": "fa-solid fa-chart-line",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -65,7 +76,12 @@
             "en": {
               "title": "High-Converting {{Landing Page}}",
               "text": "A focused landing page designed to clearly communicate value, capture leads, and support marketing campaigns.",
-              "tags": ["Landing Page", "Conversion", "Marketing", "Leads"]
+              "tags": [
+                "Landing Page",
+                "Conversion",
+                "Marketing",
+                "Leads"
+              ]
             }
           }
         },
@@ -74,7 +90,10 @@
           "categoryId": "category_apps",
           "img": "",
           "faIcon": "fa-solid fa-calendar-check",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -84,7 +103,12 @@
             "en": {
               "title": "Booking & {{Operations App}}",
               "text": "A simple, reliable app that streamlines bookings, scheduling, and daily operations for busy teams.",
-              "tags": ["App", "Booking", "Operations", "Productivity"]
+              "tags": [
+                "App",
+                "Booking",
+                "Operations",
+                "Productivity"
+              ]
             }
           }
         },
@@ -93,7 +117,10 @@
           "categoryId": "category_apps",
           "img": "",
           "faIcon": "fa-solid fa-users",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -103,7 +130,12 @@
             "en": {
               "title": "Secure {{Customer Portal}}",
               "text": "A private portal that gives customers easy access to services, updates, and account management.",
-              "tags": ["Customer Portal", "App", "Automation", "Security"]
+              "tags": [
+                "Customer Portal",
+                "App",
+                "Automation",
+                "Security"
+              ]
             }
           }
         },
@@ -112,7 +144,10 @@
           "categoryId": "category_utilities",
           "img": "",
           "faIcon": "fa-solid fa-robot",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -122,7 +157,12 @@
             "en": {
               "title": "AI {{Customer Assistant}}",
               "text": "An AI-powered assistant that responds instantly on WhatsApp or web, reducing support load and improving response time.",
-              "tags": ["AI", "Customer Support", "WhatsApp", "Automation"]
+              "tags": [
+                "AI",
+                "Customer Support",
+                "WhatsApp",
+                "Automation"
+              ]
             }
           }
         },
@@ -131,7 +171,10 @@
           "categoryId": "category_utilities",
           "img": "",
           "faIcon": "fa-solid fa-gears",
-          "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
           "preview": {
             "links": [],
             "screenshots": [],
@@ -141,7 +184,44 @@
             "en": {
               "title": "Business {{Process Automation}}",
               "text": "Custom automation that removes repetitive work, reduces errors, and frees teams to focus on growth.",
-              "tags": ["Automation", "AI", "Efficiency", "Workflows"]
+              "tags": [
+                "Automation",
+                "AI",
+                "Efficiency",
+                "Workflows"
+              ]
+            }
+          }
+        },
+        {
+          "id": 7,
+          "categoryId": "category_web",
+          "img": "/images/content/mangrove.jpg",
+          "faIcon": "fa-solid fa-utensils",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://mangrovehotel.framer.ai/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              }
+            ],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Mangrove {{Hotel}}",
+              "text": "A beautiful restaurant website featuring a modern design and elegant presentation.",
+              "tags": [
+                "Website",
+                "Restaurant",
+                "Hospitality"
+              ]
             }
           }
         }
