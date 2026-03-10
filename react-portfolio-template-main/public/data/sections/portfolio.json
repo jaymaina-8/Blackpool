@@ -62,6 +62,38 @@
               ]
             }
           }
+        },
+        {
+          "id": 8,
+          "categoryId": "category_web",
+          "img": "/images/content/2sif-mushroom-burger-7323675_1920.jpg",
+          "faIcon": "fa-solid fa-utensils",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://metro-bites-restaurant.vercel.app/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              }
+            ],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Metro {{Bites}}",
+              "text": "A premium restaurant website for Metro Bites, featuring a vibrant menu and seamless user experience.",
+              "tags": [
+                "Website",
+                "Restaurant",
+                "Food Industry"
+              ]
+            }
+          }
         }
       ]
     }
