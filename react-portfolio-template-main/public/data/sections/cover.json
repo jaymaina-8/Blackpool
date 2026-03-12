@@ -5,10 +5,11 @@
                 "title_short": "Blackpool Industry",
                 "title_short_nav": "Home",
                 "title_long_prefix": "Hello,",
-                "title_long": "We help businesses grow with {{modern digital solutions}}"
+                "title_long": "We build {{modern websites}} that help businesses attract more customers"
             }
         }
     },
+
     "articles": [
         {
             "id": 1,
@@ -39,7 +40,7 @@
                     "id": 3,
                     "label": "Chat on WhatsApp",
                     "link": {
-                        "href": "https://wa.me/254140603483?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20growing%20my%20business%20online.",
+                        "href": "https://wa.me/254140603483?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20a%20website%20for%20my%20business.",
                         "tooltipString": "Start a WhatsApp chat"
                     },
                     "faIcon": "fa-brands fa-whatsapp"
@@ -61,7 +62,7 @@
             "component": "ArticleText",
             "locales": {
                 "en": {
-                    "title": "Helping businesses {{grow online}} — fast"
+                    "title": "Helping businesses {{build a strong online presence}}"
                 }
             },
             "settings": {
@@ -74,7 +75,7 @@
                     "img": "images/content/m.png",
                     "locales": {
                         "en": {
-                            "text": "<p><strong>Blackpool {{Industry}}</strong> helps local and growing businesses build strong, modern digital foundations.</p><p>We design fast, responsive, and conversion-focused websites that make your brand look credible, professional, and ready to scale.</p><p>From simple business sites to scalable digital products, our focus is simple: <em>build solutions that move your business forward</em>.</p>"
+                            "text": "<p><strong>Blackpool {{Industry}}</strong> helps businesses build modern websites that make them easier to discover, trust, and contact online.</p><p>Many local businesses rely only on social media, which makes it difficult for customers to quickly find information like menus, services, pricing, or location.</p><p>We solve that by creating fast, mobile-friendly websites designed to present your business professionally and help customers take action.</p><p>Our mission is simple: <em>build digital foundations that help businesses grow.</em></p>"
                         }
                     }
                 }
@@ -86,7 +87,7 @@
             "component": "ArticleFacts",
             "locales": {
                 "en": {
-                    "title": "Why businesses choose {{Blackpool}}"
+                    "title": "What you get with a {{Blackpool}} website"
                 }
             },
             "settings": {
@@ -96,37 +97,57 @@
             "items": [
                 {
                     "id": 1,
-                    "faIcon": "fa-solid fa-rocket",
+                    "faIcon": "fa-solid fa-mobile-screen",
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
-                    "locales": { "en": { "title": "48 hrs", "text": "Typical launch time" } }
+                    "locales": {
+                        "en": {
+                            "title": "Mobile-first design",
+                            "text": "Optimized for phones so customers can browse and contact you easily."
+                        }
+                    }
                 },
                 {
                     "id": 2,
-                    "faIcon": "fa-solid fa-briefcase",
+                    "faIcon": "fa-solid fa-bolt",
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
-                    "locales": { "en": { "title": "20+", "text": "Projects delivered" } }
+                    "locales": {
+                        "en": {
+                            "title": "Fast performance",
+                            "text": "Built using modern tools for speed, reliability, and smooth user experience."
+                        }
+                    }
                 },
                 {
                     "id": 3,
-                    "faIcon": "fa-solid fa-users",
+                    "faIcon": "fa-brands fa-whatsapp",
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
-                    "locales": { "en": { "title": "100%", "text": "Client satisfaction" } }
+                    "locales": {
+                        "en": {
+                            "title": "Direct communication",
+                            "text": "Customers can instantly contact your business through WhatsApp or phone."
+                        }
+                    }
                 },
                 {
                     "id": 4,
-                    "faIcon": "fa-solid fa-headset",
+                    "faIcon": "fa-solid fa-location-dot",
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
-                    "locales": { "en": { "title": "24/7", "text": "Clear communication" } }
+                    "locales": {
+                        "en": {
+                            "title": "Location visibility",
+                            "text": "Integrated Google Maps and clear contact details so customers can find you easily."
+                        }
+                    }
                 }
             ]
         },
 
         {
-            "id": 2,
+            "id": 3,
             "component": "ArticleCards",
             "locales": {
                 "en": {
-                    "title": "How we {{work}}"
+                    "title": "Our {{approach}}"
                 }
             },
             "settings": {
@@ -136,7 +157,7 @@
             "items": [
                 {
                     "id": 1,
-                    "faIcon": "fa-solid fa-bolt",
+                    "faIcon": "fa-solid fa-comments",
                     "faIconColors": {
                         "bg": "#0f172a",
                         "bgLight": "#1e293b",
@@ -144,14 +165,14 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "Fast execution",
-                            "text": "We move quickly without cutting corners, using modern tools and proven workflows."
+                            "title": "Understand the business",
+                            "text": "We start by understanding your customers, services, and goals."
                         }
                     }
                 },
                 {
                     "id": 2,
-                    "faIcon": "fa-solid fa-layer-group",
+                    "faIcon": "fa-solid fa-laptop-code",
                     "faIconColors": {
                         "bg": "#0f172a",
                         "bgLight": "#1e293b",
@@ -159,14 +180,14 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "Built to scale",
-                            "text": "Everything we build is designed to grow with your business, not limit it."
+                            "title": "Design & build",
+                            "text": "We create a clean, fast website tailored to your brand."
                         }
                     }
                 },
                 {
                     "id": 3,
-                    "faIcon": "fa-solid fa-brain",
+                    "faIcon": "fa-solid fa-rocket",
                     "faIconColors": {
                         "bg": "#0f172a",
                         "bgLight": "#1e293b",
@@ -174,8 +195,8 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "AI-assisted workflow",
-                            "text": "We use AI where it adds real value — speed, accuracy, and smarter outcomes."
+                            "title": "Launch & support",
+                            "text": "Your website goes live and starts helping customers discover your business."
                         }
                     }
                 }

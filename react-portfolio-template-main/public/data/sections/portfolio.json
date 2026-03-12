@@ -54,7 +54,7 @@
           "locales": {
             "en": {
               "title": "Mangrove {{Hotel}}",
-              "text": "A beautiful restaurant website featuring a modern design and elegant presentation.",
+              "text": "A modern hospitality website designed to showcase menus, atmosphere, and essential restaurant information.",
               "tags": [
                 "Website",
                 "Restaurant",
@@ -63,6 +63,7 @@
             }
           }
         },
+
         {
           "id": 8,
           "categoryId": "category_web",
@@ -86,11 +87,44 @@
           "locales": {
             "en": {
               "title": "Metro {{Bites}}",
-              "text": "A premium restaurant website for Metro Bites, featuring a vibrant menu and seamless user experience.",
+              "text": "A vibrant restaurant website built to highlight menu items and provide a smooth browsing experience for customers.",
               "tags": [
                 "Website",
                 "Restaurant",
                 "Food Industry"
+              ]
+            }
+          }
+        },
+
+        {
+          "id": 9,
+          "categoryId": "category_web",
+          "img": "/images/content/digitaldday-coffee-4908764_1920.jpg",
+          "faIcon": "fa-solid fa-fire",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://urban-grill-eight.vercel.app/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              }
+            ],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Urban {{Grill}}",
+              "text": "A modern grill restaurant website focused on strong visuals, clear menu presentation, and easy customer contact.",
+              "tags": [
+                "Website",
+                "Restaurant",
+                "Grill House"
               ]
             }
           }
