@@ -128,6 +128,39 @@
               ]
             }
           }
+        },
+
+        {
+          "id": 10,
+          "categoryId": "category_web",
+          "img": "/images/content/milestone-solutions.png",
+          "faIcon": "fa-solid fa-briefcase",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://milestone-solutions.vercel.app",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              }
+            ],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Milestone {{Creative Solutions}}",
+              "text": "A business portfolio website built to present services, branding, and company highlights with a clean, professional layout.",
+              "tags": [
+                "Website",
+                "Business",
+                "Portfolio"
+              ]
+            }
+          }
         }
       ]
     }
