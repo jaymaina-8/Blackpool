@@ -46,6 +46,11 @@
                 "href": "https://mangrovehotel.framer.ai/",
                 "tooltip": "Visit Website",
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/mangrove-hotel",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
               }
             ],
             "screenshots": [],
@@ -79,6 +84,11 @@
                 "href": "https://metro-bites-restaurant.vercel.app/",
                 "tooltip": "Visit Website",
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/metro-bites",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
               }
             ],
             "screenshots": [],
@@ -112,6 +122,11 @@
                 "href": "https://urban-grill-eight.vercel.app/",
                 "tooltip": "Visit Website",
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/urban-grill",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
               }
             ],
             "screenshots": [],
@@ -145,6 +160,11 @@
                 "href": "https://milestone-solutions.vercel.app",
                 "tooltip": "Visit Website",
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/milestone-creative-solutions",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
               }
             ],
             "screenshots": [],

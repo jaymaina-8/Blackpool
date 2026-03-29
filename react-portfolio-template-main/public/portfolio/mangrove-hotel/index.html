@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mangrove Hotel Website – Case Study | Blackpool Industry</title>
+    <link rel="canonical" href="https://www.blackpoolindustry.com/portfolio/mangrove-hotel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="How Blackpool Industry designed the Mangrove Hotel website — a hospitality site built to showcase the menu, atmosphere, and make it easy for guests to get in touch." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Blackpool Industry" />
+    <meta name="geo.region" content="KE-110" />
+    <meta name="geo.placename" content="Nairobi, Kenya" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.blackpoolindustry.com/portfolio/mangrove-hotel" />
+    <meta property="og:site_name" content="Blackpool Industry" />
+    <meta property="og:title" content="Mangrove Hotel Website – Case Study | Blackpool Industry" />
+    <meta property="og:description" content="A hospitality website for Mangrove Hotel — designed to present menus, atmosphere, and key information clearly to guests." />
+    <meta property="og:image" content="https://www.blackpoolindustry.com/images/content/ricardorv30-cup-4585479.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.blackpoolindustry.com/portfolio/mangrove-hotel" />
+    <meta name="twitter:title" content="Mangrove Hotel Website – Case Study | Blackpool Industry" />
+    <meta name="twitter:description" content="A hospitality website for Mangrove Hotel — designed to present menus, atmosphere, and key information clearly to guests." />
+    <meta name="twitter:image" content="https://www.blackpoolindustry.com/images/content/ricardorv30-cup-4585479.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Mangrove Hotel Website",
+        "description": "A modern hospitality website designed to showcase the Mangrove Hotel's menu, atmosphere, and essential information — built to help guests find what they need and get in touch easily.",
+        "creator": {
+            "@type": "Organization",
+            "name": "Blackpool Industry",
+            "url": "https://www.blackpoolindustry.com/",
+            "telephone": "+254140603483",
+            "email": "hello@blackpoolindustry.com"
+        },
+        "about": {
+            "@type": "Hotel",
+            "name": "Mangrove Hotel"
+        },
+        "url": "https://mangrovehotel.framer.ai/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Blackpool Industry Portfolio",
+            "url": "https://www.blackpoolindustry.com/#portfolio"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --green: #22c55e;
+            --dark: #111111;
+            --card-bg: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+        }
+        body { background: var(--dark); color: var(--text); font-family: 'Lato', sans-serif; line-height: 1.7; }
+        a { color: var(--green); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav { background: #0d0d0d; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+        .nav-brand { font-family: 'Saira', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+        .nav-brand span { color: var(--green); }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--green); text-decoration: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 64px 0; }
+        section + section { border-top: 1px solid var(--border); }
+        .hero { padding: 80px 0 64px; }
+        .hero-tag { display: inline-block; background: rgba(34,197,94,0.12); color: var(--green); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; }
+        h1 { font-family: 'Saira', sans-serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 20px; }
+        h1 .accent { color: var(--green); }
+        .hero-lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 32px; }
+        .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; cursor: pointer; }
+        .btn-primary { background: var(--green); color: #000; }
+        .btn-primary:hover { background: #16a34a; text-decoration: none; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+        h2 { font-family: 'Saira', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; margin-bottom: 16px; }
+        h2 .accent { color: var(--green); }
+        h3 { font-family: 'Saira', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        p { color: var(--muted); margin-bottom: 16px; }
+        p:last-child { margin-bottom: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+        .card-icon { width: 44px; height: 44px; background: rgba(34,197,94,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .card-icon svg { width: 22px; height: 22px; fill: var(--green); }
+        .contact-strip { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; }
+        .contact-strip h2 { margin-bottom: 12px; }
+        .contact-strip p { max-width: 500px; margin: 0 auto 28px; }
+        .contact-info { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 24px; font-size: 0.9rem; color: var(--muted); }
+        .contact-info a { color: var(--muted); }
+        .contact-info a:hover { color: var(--green); }
+        footer { padding: 32px 24px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+        footer a { color: var(--muted); }
+        footer a:hover { color: var(--green); }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+        .breadcrumb a { color: var(--muted); }
+        .breadcrumb a:hover { color: var(--green); }
+        .breadcrumb span { margin: 0 6px; }
+        .project-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
+        .meta-item { }
+        .meta-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+        .meta-value { font-size: 0.95rem; color: var(--text); }
+        .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
+        .screenshots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+        @media (max-width: 700px) { .screenshots-grid { grid-template-columns: 1fr; } }
+        .screenshot-placeholder { background: var(--card-bg); border: 1px dashed var(--border); border-radius: 8px; aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 0.85rem; text-align: center; padding: 16px; }
+        .screenshot-placeholder svg { width: 28px; height: 28px; fill: var(--border); }
+        .divider { height: 1px; background: var(--border); margin: 0; }
+        .live-link-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .live-link-box p { margin: 0; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+        .tag { background: rgba(34,197,94,0.1); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+        blockquote { border-left: 3px solid var(--green); padding-left: 20px; margin: 24px 0; }
+        blockquote p { font-style: italic; font-size: 1.05rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://www.blackpoolindustry.com/" class="nav-brand">Blackpool <span>Industry</span></a>
+    <ul class="nav-links">
+        <li><a href="https://www.blackpoolindustry.com/#services">Services</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#portfolio">Work</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="container">
+
+        <section class="hero">
+            <div class="breadcrumb">
+                <a href="https://www.blackpoolindustry.com/">Home</a>
+                <span>›</span>
+                <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+                <span>›</span>
+                <span>Mangrove Hotel</span>
+            </div>
+            <div class="hero-tag">Case Study · Hospitality · Website</div>
+            <h1><span class="accent">Mangrove Hotel</span> – Website Design Case Study</h1>
+            <p class="hero-lead">A clean, modern hospitality website built to help guests find essential information quickly — menu, atmosphere, location, and contact — without friction.</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client Type</div>
+                    <div class="meta-value">Hotel &amp; Restaurant</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Service</div>
+                    <div class="meta-value">Website Design</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Platform</div>
+                    <div class="meta-value">Framer</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Built by</div>
+                    <div class="meta-value">Blackpool Industry</div>
+                </div>
+            </div>
+            <div class="cta-group">
+                <a href="https://mangrovehotel.framer.ai/" target="_blank" rel="noopener" class="btn btn-primary">View Live Website ↗</a>
+                <a href="https://www.blackpoolindustry.com/#portfolio" class="btn btn-secondary">See all projects</a>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Project</span>
+            <h2>What Mangrove Hotel needed</h2>
+            <div class="tags">
+                <span class="tag">Hotel</span>
+                <span class="tag">Restaurant</span>
+                <span class="tag">Hospitality</span>
+                <span class="tag">Menu Display</span>
+            </div>
+            <p>Mangrove Hotel is a hospitality business offering both accommodation and restaurant services. Like many hotels in this category, their online presence didn't match the quality of the experience they were offering in person.</p>
+            <p>Guests looking them up online couldn't find clear menu information, get a sense of the atmosphere, or easily reach the property to make a booking. The absence of a proper website meant potential guests were making decisions based on incomplete information — or not making a decision at all.</p>
+        </section>
+
+        <section>
+            <span class="section-label">The Problem</span>
+            <h2>What was <span class="accent">missing</span></h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+                    </div>
+                    <h3>No dedicated website</h3>
+                    <p>Without a website, Mangrove Hotel had no stable place to send potential guests. Social media profiles alone aren't enough for a hospitality business where trust matters.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.08 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/></svg>
+                    </div>
+                    <h3>Menu hard to find</h3>
+                    <p>Guests couldn't browse the menu before visiting. This creates friction — people want to know what's on offer before they decide to show up.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <h3>Contact process unclear</h3>
+                    <p>No clear path to reach the hotel — for reservations, bookings, or simple enquiries. Every unanswered question is a lost guest.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5S10.67 19 11.5 19s1.5.67 1.5 1.5S12.33 22 11.5 22zm4.5-4H7V4h9v14z"/></svg>
+                    </div>
+                    <h3>Poor mobile experience</h3>
+                    <p>Most people searching for hotels are on their phones. A poor or nonexistent mobile site means losing guests at the first impression.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Solution</span>
+            <h2>What we <span class="accent">built</span></h2>
+            <p>We designed a clean, modern hospitality website for Mangrove Hotel using Framer — focused on communicating the property's personality while giving guests every piece of information they need to make a decision.</p>
+            <p>The design prioritized atmosphere: high-quality visuals, generous spacing, and a layout that lets the property speak for itself. Function followed closely behind — menu sections, location details, and direct contact options are all clearly accessible.</p>
+            <p>The site is fully responsive and loads quickly on mobile, which is where the majority of guests will encounter it.</p>
+
+            <div class="grid-2" style="margin-top: 28px;">
+                <div class="card">
+                    <h3>Menu &amp; dining presentation</h3>
+                    <p>Menu organized and presented in a way that's easy to browse — by category, without clutter, readable on any screen size.</p>
+                </div>
+                <div class="card">
+                    <h3>Atmosphere through visuals</h3>
+                    <p>The layout and imagery choices give visitors a real sense of the property before they arrive — building confidence and anticipation.</p>
+                </div>
+                <div class="card">
+                    <h3>Clear contact &amp; booking path</h3>
+                    <p>Phone, WhatsApp, and location all visible without searching. Guests can reach the hotel in two taps from anywhere on the site.</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile-first responsive design</h3>
+                    <p>Designed to work well on smartphones from the start — not adapted from a desktop version as an afterthought.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Result</span>
+            <h2>What changed after launch</h2>
+            <p>With the website live, Mangrove Hotel now has a permanent, professional online presence that guests can find and trust. Key improvements include:</p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Guests can browse the menu before visiting, reducing friction and unanswered enquiries
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Contact and booking options are immediately accessible on every device
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    The property's atmosphere is communicated visually before a guest sets foot inside
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative;">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    A shareable URL that works across WhatsApp, Instagram, and Google Business Profile
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="section-label">Preview</span>
+            <h2>Website screenshots</h2>
+            <div class="screenshots-grid">
+                <figure>
+                    <a href="https://mangrovehotel.framer.ai/" target="_blank" rel="noopener">
+                        <img src="/images/mangrove-1.png"
+                             alt="Mangrove Hotel website homepage showing the hero section with food photography and navigation to Menu, About, and Book a Table"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Homepage — hero &amp; navigation</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://mangrovehotel.framer.ai/" target="_blank" rel="noopener">
+                        <img src="/images/mangrove-2.png"
+                             alt="Mangrove Hotel menu page showing categorised breakfast dishes with prices in Kenyan shillings including Plain Omelette, Spanish Omelette, and Mahamri"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Menu — categorised dishes with prices</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://mangrovehotel.framer.ai/" target="_blank" rel="noopener">
+                        <img src="/images/mangrove-3.png"
+                             alt="Mangrove Hotel contact page showing opening hours, Google Maps location in Ongata Rongai, and contact details including phone and email"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Contact — location, hours &amp; contact details</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <div class="live-link-box">
+                <div>
+                    <h3 style="margin-bottom: 4px;">View the live website</h3>
+                    <p style="margin: 0;">See the Mangrove Hotel website as guests experience it.</p>
+                </div>
+                <a href="https://mangrovehotel.framer.ai/" target="_blank" rel="noopener" class="btn btn-primary">Visit Website ↗</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-strip">
+                <h2>Need a website like this for your hospitality business?</h2>
+                <p>We build hotel and restaurant websites that give guests everything they need to choose you — and make it easy to get in touch. Tell us about your business.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://wa.me/254140603483?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20a%20hotel%20or%20restaurant%20website." class="btn btn-primary">Chat on WhatsApp</a>
+                    <a href="mailto:hello@blackpoolindustry.com" class="btn btn-secondary">Email us</a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+254140603483">+254 140603483</a>
+                    <a href="mailto:hello@blackpoolindustry.com">hello@blackpoolindustry.com</a>
+                    <span>Nairobi, Kenya</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <p>
+        <a href="https://www.blackpoolindustry.com/">Blackpool Industry</a> — Website Design &amp; Development in Nairobi, Kenya
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/restaurant-website-design-nairobi">Restaurant Websites</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/website-design-nairobi">Website Design Nairobi</a>
+    </p>
+</footer>
+
+</body>
+</html>

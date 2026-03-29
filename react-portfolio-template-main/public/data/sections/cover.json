@@ -4,8 +4,8 @@
             "en": {
                 "title_short": "Blackpool Industry",
                 "title_short_nav": "Home",
-                "title_long_prefix": "Hello,",
-                "title_long": "We build {{modern websites}} that help businesses attract more customers"
+                "title_long_prefix": "Website Design for",
+                "title_long": "Businesses in {{Nairobi, Kenya}}"
             }
         }
     },
@@ -62,7 +62,7 @@
             "component": "ArticleText",
             "locales": {
                 "en": {
-                    "title": "Helping businesses {{build a strong online presence}}"
+                    "title": "Helping Nairobi businesses {{grow online}}"
                 }
             },
             "settings": {
@@ -75,7 +75,7 @@
                     "img": "images/content/m.png",
                     "locales": {
                         "en": {
-                            "text": "<p><strong>Blackpool {{Industry}}</strong> helps businesses build modern websites that make them easier to discover, trust, and contact online.</p><p>Many local businesses rely only on social media, which makes it difficult for customers to quickly find information like menus, services, pricing, or location.</p><p>We solve that by creating fast, mobile-friendly websites designed to present your business professionally and help customers take action.</p><p>Our mission is simple: <em>build digital foundations that help businesses grow.</em></p>"
+                            "text": "<p><strong>Blackpool {{Industry}}</strong> is a web design and development company based in Nairobi, Kenya. We build professional, mobile-friendly websites that help local businesses attract more customers and grow their online presence.</p><p>Most businesses in Nairobi rely solely on social media — which means customers struggle to find key information like services, pricing, menus, or contact details. We change that by building dedicated websites that present your business clearly and make it easy for customers to reach you.</p><p>Whether you run a restaurant, a retail shop, a service business, or a startup, we design websites that work for you — fast to load, easy to navigate, and built to drive real results.</p>"
                         }
                     }
                 }
@@ -102,7 +102,7 @@
                     "locales": {
                         "en": {
                             "title": "Mobile-first design",
-                            "text": "Optimized for phones so customers can browse and contact you easily."
+                            "text": "Built for smartphones — so customers browsing on their phones can find and contact you instantly."
                         }
                     }
                 },
@@ -113,7 +113,7 @@
                     "locales": {
                         "en": {
                             "title": "Fast performance",
-                            "text": "Built using modern tools for speed, reliability, and smooth user experience."
+                            "text": "Optimized for speed and reliability, so your site loads quickly even on slower connections."
                         }
                     }
                 },
@@ -123,19 +123,19 @@
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
                     "locales": {
                         "en": {
-                            "title": "Direct communication",
-                            "text": "Customers can instantly contact your business through WhatsApp or phone."
+                            "title": "Direct customer contact",
+                            "text": "Customers can reach you instantly via WhatsApp, phone, or email — directly from your site."
                         }
                     }
                 },
                 {
                     "id": 4,
-                    "faIcon": "fa-solid fa-location-dot",
+                    "faIcon": "fa-solid fa-magnifying-glass",
                     "faIconColors": { "bg": "#0f172a", "fill": "#22c55e" },
                     "locales": {
                         "en": {
-                            "title": "Location visibility",
-                            "text": "Integrated Google Maps and clear contact details so customers can find you easily."
+                            "title": "Search visibility",
+                            "text": "Built with SEO best practices so customers searching in Nairobi can find your business on Google."
                         }
                     }
                 }
@@ -147,7 +147,7 @@
             "component": "ArticleCards",
             "locales": {
                 "en": {
-                    "title": "Our {{approach}}"
+                    "title": "Our {{process}}"
                 }
             },
             "settings": {
@@ -165,8 +165,8 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "Understand the business",
-                            "text": "We start by understanding your customers, services, and goals."
+                            "title": "Understand your business",
+                            "text": "We learn about your customers, services, and goals — so the website works for your specific context."
                         }
                     }
                 },
@@ -181,7 +181,7 @@
                     "locales": {
                         "en": {
                             "title": "Design & build",
-                            "text": "We create a clean, fast website tailored to your brand."
+                            "text": "We create a clean, fast website tailored to your brand — built for performance and clarity."
                         }
                     }
                 },
@@ -196,7 +196,7 @@
                     "locales": {
                         "en": {
                             "title": "Launch & support",
-                            "text": "Your website goes live and starts helping customers discover your business."
+                            "text": "Your site goes live — and we stay available to update, improve, and grow it with your business."
                         }
                     }
                 }

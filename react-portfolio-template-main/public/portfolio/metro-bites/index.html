@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Metro Bites Restaurant Website – Case Study | Blackpool Industry</title>
+    <link rel="canonical" href="https://www.blackpoolindustry.com/portfolio/metro-bites" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="How Blackpool Industry designed the Metro Bites restaurant website — built to highlight the menu and make it easy for customers to browse and get in touch." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Blackpool Industry" />
+    <meta name="geo.region" content="KE-110" />
+    <meta name="geo.placename" content="Nairobi, Kenya" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.blackpoolindustry.com/portfolio/metro-bites" />
+    <meta property="og:site_name" content="Blackpool Industry" />
+    <meta property="og:title" content="Metro Bites Restaurant Website – Case Study | Blackpool Industry" />
+    <meta property="og:description" content="A vibrant restaurant website built for Metro Bites — designed to highlight the menu and drive customer engagement." />
+    <meta property="og:image" content="https://www.blackpoolindustry.com/images/content/2sif-mushroom-burger-7323675_1920.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.blackpoolindustry.com/portfolio/metro-bites" />
+    <meta name="twitter:title" content="Metro Bites Restaurant Website – Case Study | Blackpool Industry" />
+    <meta name="twitter:description" content="A vibrant restaurant website built for Metro Bites — designed to highlight the menu and drive customer engagement." />
+    <meta name="twitter:image" content="https://www.blackpoolindustry.com/images/content/2sif-mushroom-burger-7323675_1920.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Metro Bites Restaurant Website",
+        "description": "A vibrant restaurant website built to highlight Metro Bites' menu items and provide a smooth browsing experience for customers looking to eat in or order.",
+        "creator": {
+            "@type": "Organization",
+            "name": "Blackpool Industry",
+            "url": "https://www.blackpoolindustry.com/",
+            "telephone": "+254140603483",
+            "email": "hello@blackpoolindustry.com"
+        },
+        "about": {
+            "@type": "Restaurant",
+            "name": "Metro Bites"
+        },
+        "url": "https://metro-bites-restaurant.vercel.app/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Blackpool Industry Portfolio",
+            "url": "https://www.blackpoolindustry.com/#portfolio"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --green: #22c55e;
+            --dark: #111111;
+            --card-bg: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+        }
+        body { background: var(--dark); color: var(--text); font-family: 'Lato', sans-serif; line-height: 1.7; }
+        a { color: var(--green); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav { background: #0d0d0d; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+        .nav-brand { font-family: 'Saira', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+        .nav-brand span { color: var(--green); }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--green); text-decoration: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 64px 0; }
+        section + section { border-top: 1px solid var(--border); }
+        .hero { padding: 80px 0 64px; }
+        .hero-tag { display: inline-block; background: rgba(34,197,94,0.12); color: var(--green); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; }
+        h1 { font-family: 'Saira', sans-serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 20px; }
+        h1 .accent { color: var(--green); }
+        .hero-lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 32px; }
+        .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; cursor: pointer; }
+        .btn-primary { background: var(--green); color: #000; }
+        .btn-primary:hover { background: #16a34a; text-decoration: none; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+        h2 { font-family: 'Saira', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; margin-bottom: 16px; }
+        h2 .accent { color: var(--green); }
+        h3 { font-family: 'Saira', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        p { color: var(--muted); margin-bottom: 16px; }
+        p:last-child { margin-bottom: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+        .card-icon { width: 44px; height: 44px; background: rgba(34,197,94,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .card-icon svg { width: 22px; height: 22px; fill: var(--green); }
+        .contact-strip { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; }
+        .contact-strip h2 { margin-bottom: 12px; }
+        .contact-strip p { max-width: 500px; margin: 0 auto 28px; }
+        .contact-info { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 24px; font-size: 0.9rem; color: var(--muted); }
+        .contact-info a { color: var(--muted); }
+        .contact-info a:hover { color: var(--green); }
+        footer { padding: 32px 24px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+        footer a { color: var(--muted); }
+        footer a:hover { color: var(--green); }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+        .breadcrumb a { color: var(--muted); }
+        .breadcrumb a:hover { color: var(--green); }
+        .breadcrumb span { margin: 0 6px; }
+        .project-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
+        .meta-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+        .meta-value { font-size: 0.95rem; color: var(--text); }
+        .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
+        .screenshots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+        @media (max-width: 700px) { .screenshots-grid { grid-template-columns: 1fr; } }
+        .screenshot-placeholder { background: var(--card-bg); border: 1px dashed var(--border); border-radius: 8px; aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 0.85rem; text-align: center; padding: 16px; }
+        .screenshot-placeholder svg { width: 28px; height: 28px; fill: var(--border); }
+        .live-link-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .live-link-box p { margin: 0; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+        .tag { background: rgba(34,197,94,0.1); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://www.blackpoolindustry.com/" class="nav-brand">Blackpool <span>Industry</span></a>
+    <ul class="nav-links">
+        <li><a href="https://www.blackpoolindustry.com/#services">Services</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#portfolio">Work</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="container">
+
+        <section class="hero">
+            <div class="breadcrumb">
+                <a href="https://www.blackpoolindustry.com/">Home</a>
+                <span>›</span>
+                <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+                <span>›</span>
+                <span>Metro Bites</span>
+            </div>
+            <div class="hero-tag">Case Study · Restaurant · Website</div>
+            <h1><span class="accent">Metro Bites</span> – Restaurant Website Case Study</h1>
+            <p class="hero-lead">A restaurant website built to put Metro Bites' menu front and center — giving customers an easy, enjoyable way to browse the food before they visit or order.</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client Type</div>
+                    <div class="meta-value">Restaurant</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Service</div>
+                    <div class="meta-value">Website Design</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Platform</div>
+                    <div class="meta-value">Vercel</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Built by</div>
+                    <div class="meta-value">Blackpool Industry</div>
+                </div>
+            </div>
+            <div class="cta-group">
+                <a href="https://metro-bites-restaurant.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">View Live Website ↗</a>
+                <a href="https://www.blackpoolindustry.com/#portfolio" class="btn btn-secondary">See all projects</a>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Project</span>
+            <h2>About Metro Bites</h2>
+            <div class="tags">
+                <span class="tag">Restaurant</span>
+                <span class="tag">Food Industry</span>
+                <span class="tag">Menu Display</span>
+                <span class="tag">WhatsApp Ordering</span>
+            </div>
+            <p>Metro Bites is a food business serving a varied menu to a city crowd. The business had a strong product — quality food at competitive prices — but their online presence wasn't representing that clearly to new customers.</p>
+            <p>In a market where people decide where to eat based on a quick online search or a WhatsApp recommendation, a professional website isn't a luxury. It's the first thing a potential customer judges you on before they ever try your food.</p>
+        </section>
+
+        <section>
+            <span class="section-label">The Problem</span>
+            <h2>What was holding them <span class="accent">back</span></h2>
+            <p>Metro Bites was relying on social media and word of mouth — both useful, but limited. Social profiles don't rank well in Google search, don't load fast on slow connections, and can't be easily shared as a "menu link" that looks professional.</p>
+            <p>The key gaps:</p>
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.08 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/></svg>
+                    </div>
+                    <h3>No menu online</h3>
+                    <p>Customers had to DM on Instagram or call to find out what was on offer — an unnecessary barrier that loses sales.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+                    </div>
+                    <h3>Not findable on Google</h3>
+                    <p>Social media profiles have limited Google visibility. Customers searching "restaurant near me" couldn't find Metro Bites.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5S10.67 19 11.5 19s1.5.67 1.5 1.5S12.33 22 11.5 22zm4.5-4H7V4h9v14z"/></svg>
+                    </div>
+                    <h3>Poor mobile experience</h3>
+                    <p>No dedicated mobile site meant customers got an inconsistent or poor experience depending on how they found the business.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.261 2 2 6.261 2 11.5S6.261 21 11.5 21 21 16.739 21 11.5 16.739 2 11.5 2zm0 17C7.364 19 4 15.636 4 11.5S7.364 4 11.5 4 19 7.364 19 11.5 15.636 19 11.5 19z"/></svg>
+                    </div>
+                    <h3>No direct ordering path</h3>
+                    <p>No simple mechanism for customers to place orders or enquire about the menu quickly and directly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Solution</span>
+            <h2>What we <span class="accent">built</span></h2>
+            <p>We built the Metro Bites website to do one thing exceptionally well: show the food. The menu is the heart of the site — organized by category, with clear descriptions and easy navigation on any screen size.</p>
+            <p>Beyond the menu, the site gives customers an immediate way to reach the restaurant. A direct WhatsApp ordering button means anyone browsing the menu on their phone can place an order or ask a question in one tap — no app download, no signup required.</p>
+            <p>The design uses strong food photography, high contrast, and a layout that guides visitors naturally from "what can I eat?" to "how do I order?"</p>
+
+            <div class="grid-2" style="margin-top: 28px;">
+                <div class="card">
+                    <h3>Menu as the hero</h3>
+                    <p>The menu is the first thing visitors see — organized by category, readable on mobile, and built to sell the food visually before a customer commits.</p>
+                </div>
+                <div class="card">
+                    <h3>WhatsApp ordering button</h3>
+                    <p>One tap from menu to WhatsApp order. Customers can send their order directly without leaving the page or making a call.</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile-optimized layout</h3>
+                    <p>Designed for how food customers browse — on a phone, quickly, often while deciding where to eat right now.</p>
+                </div>
+                <div class="card">
+                    <h3>Fast load speed</h3>
+                    <p>Hosted on Vercel with optimized assets — fast loading even on slower mobile connections, which is standard in Nairobi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Result</span>
+            <h2>What improved after launch</h2>
+            <p>With a live website, Metro Bites now has a professional, shareable presence that works across every channel — Instagram bio, WhatsApp broadcasts, and Google search.</p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Customers can browse the full menu online before visiting or ordering — no more "what do you sell?" messages
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    A direct WhatsApp link makes ordering immediate — customers go from browsing to ordering in seconds
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    A professional web presence that builds trust — especially for new customers who've been referred and want to verify the business
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative;">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    A URL that can be shared anywhere — Instagram bio, Google Business Profile, printed on packaging or receipts
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="section-label">Preview</span>
+            <h2>Website screenshots</h2>
+            <div class="screenshots-grid">
+                <figure>
+                    <a href="https://metro-bites-restaurant.vercel.app/" target="_blank" rel="noopener">
+                        <img src="/images/metro-1.png"
+                             alt="Metro Bites homepage with the headline 'Big Burgers. Bigger Flavor.' and a hero image of a burger and fries, with a View Menu call to action"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Homepage — hero section</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://metro-bites-restaurant.vercel.app/" target="_blank" rel="noopener">
+                        <img src="/images/metro-3.png"
+                             alt="Metro Bites menu page showing burger categories — Signature Burgers, Chicken Burgers, Fries, Combo Meals, Drinks — with item cards showing names and prices in KES"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Menu — items categorised with prices</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://metro-bites-restaurant.vercel.app/" target="_blank" rel="noopener">
+                        <img src="/images/metro-2.png"
+                             alt="Metro Bites online ordering page showing delivery areas across Nairobi including CBD, Westlands, and Kilimani, with an order form, running total, and WhatsApp order button"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Order online — delivery areas &amp; WhatsApp ordering</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <div class="live-link-box">
+                <div>
+                    <h3 style="margin-bottom: 4px;">View the live website</h3>
+                    <p style="margin: 0;">See the Metro Bites website as customers experience it.</p>
+                </div>
+                <a href="https://metro-bites-restaurant.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Visit Website ↗</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-strip">
+                <h2>Need a website like this for your restaurant?</h2>
+                <p>We build restaurant websites that show your menu clearly and make it easy for customers to order or get in touch. Tell us about your business.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://wa.me/254140603483?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20a%20restaurant%20website." class="btn btn-primary">Chat on WhatsApp</a>
+                    <a href="mailto:hello@blackpoolindustry.com" class="btn btn-secondary">Email us</a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+254140603483">+254 140603483</a>
+                    <a href="mailto:hello@blackpoolindustry.com">hello@blackpoolindustry.com</a>
+                    <span>Nairobi, Kenya</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <p>
+        <a href="https://www.blackpoolindustry.com/">Blackpool Industry</a> — Website Design &amp; Development in Nairobi, Kenya
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/restaurant-website-design-nairobi">Restaurant Websites Nairobi</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/website-design-nairobi">Website Design Nairobi</a>
+    </p>
+</footer>
+
+</body>
+</html>

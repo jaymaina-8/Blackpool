@@ -1,5 +1,39 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    {
+      "src": "/website-design-nairobi",
+      "dest": "/website-design-nairobi/index.html"
+    },
+    {
+      "src": "/small-business-websites-nairobi",
+      "dest": "/small-business-websites-nairobi/index.html"
+    },
+    {
+      "src": "/restaurant-website-design-nairobi",
+      "dest": "/restaurant-website-design-nairobi/index.html"
+    },
+    {
+      "src": "/portfolio/mangrove-hotel",
+      "dest": "/portfolio/mangrove-hotel/index.html"
+    },
+    {
+      "src": "/portfolio/metro-bites",
+      "dest": "/portfolio/metro-bites/index.html"
+    },
+    {
+      "src": "/portfolio/urban-grill",
+      "dest": "/portfolio/urban-grill/index.html"
+    },
+    {
+      "src": "/portfolio/milestone-creative-solutions",
+      "dest": "/portfolio/milestone-creative-solutions/index.html"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }

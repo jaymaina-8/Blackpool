@@ -14,6 +14,7 @@ import FeedbacksProvider from "/src/providers/FeedbacksProvider.jsx"
 import InputProvider from "/src/providers/InputProvider.jsx"
 import NavigationProvider from "/src/providers/NavigationProvider.jsx"
 import Portfolio from "/src/components/Portfolio.jsx"
+import SeoManager from "/src/seo/SeoManager.jsx"
 
 /** Initialization Script... **/
 let container = null
@@ -151,6 +152,7 @@ const AppCapabilitiesWrapper = ({ children }) => {
                                               categories={appCategories}>
                                 <NavigationProvider sections={appSections}
                                                     categories={appCategories}>
+                                    <SeoManager/>
                                     {children}
                                 </NavigationProvider>
                             </LocationProvider>

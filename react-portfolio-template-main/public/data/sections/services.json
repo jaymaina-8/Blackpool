@@ -203,92 +203,120 @@
         }
       },
       "settings": {
-        "max_rows_collapse_threshold": 4,
+        "max_rows_collapse_threshold": 5,
         "order_items_by": "id",
         "order_items_sort": "asc"
       },
       "items": [
         {
           "id": 1,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "How fast can you {{deliver}}?",
+              "title": "Why does a business in Nairobi need a {{website}}?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "Most small business websites are delivered within <strong>48 hours</strong>. Larger projects take longer, with clear timelines agreed upfront."
+              "text": "Most customers in Nairobi search online before visiting or calling a business. Without a website, you're invisible to anyone looking on Google. A professional website makes it easier for customers to find you, understand what you offer, and get in touch — even outside business hours."
             }
           }
         },
         {
           "id": 2,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "How much does a website {{cost}}?",
+              "title": "How long does it take to build a {{website}}?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "Pricing depends on your goals and features. We offer affordable packages and transparent custom pricing — no surprises."
+              "text": "Most small business websites are delivered within <strong>48 hours</strong>. Larger or more complex projects take longer, but timelines are always agreed clearly upfront — no surprises."
             }
           }
         },
         {
           "id": 3,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "Do I need to understand {{technology}}?",
+              "title": "Can you build a website for a restaurant or {{small business}}?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "No. You focus on your business. We handle the tech and guide you through everything in simple terms."
+              "text": "Yes. We build websites for restaurants, shops, salons, service providers, and professionals across Nairobi. Every site is designed to match your brand and help customers take action — whether that means calling you, placing an order, or visiting your location."
             }
           }
         },
         {
           "id": 4,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "Can you redesign my {{existing}} website?",
+              "title": "Do you build {{mobile-friendly}} websites?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "Yes. We can refresh, optimize, or fully rebuild your website to make it faster, modern, and more effective."
+              "text": "Yes — all our websites are mobile-first. Most customers in Kenya browse on their phones, so every site we build is designed to load fast and look great on any screen size."
             }
           }
         },
         {
           "id": 5,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "Do you use {{AI}}?",
+              "title": "How much does a website cost in {{Nairobi}}?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "Yes. We use AI to work smarter — reducing costs, improving quality, and delivering faster without cutting corners."
+              "text": "Pricing depends on the scope, features, and goals of your project. We offer transparent, affordable packages for small and growing businesses in Nairobi — with no hidden fees. <a href='#contact'>Contact us</a> and we'll give you a clear quote."
             }
           }
         },
         {
           "id": 6,
-          "date": { "year": 2026, "month": 1 },
+          "date": { "year": 2026, "month": 3 },
           "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
           "locales": {
             "en": {
-              "title": "What happens after {{launch}}?",
+              "title": "Do I need technical knowledge to manage my {{website}}?",
               "province": "",
               "country": "Kenya",
               "institution": "Blackpool Industry",
-              "text": "We continue supporting, improving, and scaling your website as your business grows."
+              "text": "Not at all. You focus on running your business — we handle the technical side and explain everything in plain terms. We also provide ongoing support so you're never left figuring things out alone."
+            }
+          }
+        },
+        {
+          "id": 7,
+          "date": { "year": 2026, "month": 3 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "Can you redesign or improve my {{existing}} website?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "Yes. If your current site is slow, outdated, or not generating results, we can refresh, optimize, or fully rebuild it. We focus on making it faster, clearer, and more effective for your customers."
+            }
+          }
+        },
+        {
+          "id": 8,
+          "date": { "year": 2026, "month": 3 },
+          "preview": { "links": [], "screenshots": [], "screenshotsAspectRatio": "1:1", "youtubeVideo": "" },
+          "locales": {
+            "en": {
+              "title": "What happens after my website {{launches}}?",
+              "province": "",
+              "country": "Kenya",
+              "institution": "Blackpool Industry",
+              "text": "We stay available after launch. As your business grows, we can update content, add new features, improve performance, or scale the website to match your needs."
             }
           }
         }

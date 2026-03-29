@@ -9,10 +9,13 @@ function SectionHeader({ section }) {
 
     const isMobileLayout = viewport.isMobileLayout()
     const parsedTitle = parser.parseSectionTitle(section)
+    const isHomeSection = section?.id === "Home"
 
     const titleClass = !isMobileLayout ?
         `lead-4` :
         ``
+
+    const TitleTag = isHomeSection ? 'h1' : 'h2'
 
     return (
         <header className={`section-header`}>
@@ -23,8 +26,8 @@ function SectionHeader({ section }) {
                 </div>
             )}
 
-            <h2 className={`section-header-title ${titleClass} h3`}
-                dangerouslySetInnerHTML={{__html: parsedTitle.title}}/>
+            <TitleTag className={`section-header-title ${titleClass} h3`}
+                      dangerouslySetInnerHTML={{__html: parsedTitle.title}}/>
         </header>
     )
 }

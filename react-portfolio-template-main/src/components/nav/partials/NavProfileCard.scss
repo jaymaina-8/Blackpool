@@ -42,7 +42,7 @@ div.nav-profile-card {
         }
     }
 
-    h1.nav-profile-card-name {
+    .nav-profile-card-name {
         text-align: center;
 
         margin-left: 10px;
@@ -57,7 +57,7 @@ div.nav-profile-card {
         }
     }
 
-    h1.nav-profile-card-name-with-audio-button {
+    .nav-profile-card-name-with-audio-button {
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
             margin-left: 65px;
             margin-right: 65px;
