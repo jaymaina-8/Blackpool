@@ -186,7 +186,7 @@
         {
           "id": 11,
           "categoryId": "category_web",
-          "img": "/images/content/karo-homepage.png",
+          "img": "/images/content/karo-profile.png",
           "faIcon": "fa-solid fa-mug-hot",
           "faIconColors": {
             "bg": "#0f172a",
@@ -208,7 +208,6 @@
             "screenshots": [
               "/images/content/karo-homepage.png",
               "/images/content/karo-our-story.png",
-              "/images/content/karo-menu.png",
               "/images/content/karo-contact.png"
             ],
             "screenshotsAspectRatio": "16:9"
