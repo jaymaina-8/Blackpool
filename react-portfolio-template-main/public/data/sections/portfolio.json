@@ -53,7 +53,11 @@
                 "faIcon": "fa-solid fa-book-open"
               }
             ],
-            "screenshots": [],
+            "screenshots": [
+              "/images/mangrove-1.png",
+              "/images/mangrove-2.png",
+              "/images/mangrove-3.png"
+            ],
             "screenshotsAspectRatio": "16:9"
           },
           "locales": {
@@ -91,7 +95,11 @@
                 "faIcon": "fa-solid fa-book-open"
               }
             ],
-            "screenshots": [],
+            "screenshots": [
+              "/images/metro-1.png",
+              "/images/metro-2.png",
+              "/images/metro-3.png"
+            ],
             "screenshotsAspectRatio": "16:9"
           },
           "locales": {
@@ -129,7 +137,11 @@
                 "faIcon": "fa-solid fa-book-open"
               }
             ],
-            "screenshots": [],
+            "screenshots": [
+              "/images/urban-1.png",
+              "/images/urban-2.png",
+              "/images/urban-3.png"
+            ],
             "screenshotsAspectRatio": "16:9"
           },
           "locales": {
@@ -167,7 +179,11 @@
                 "faIcon": "fa-solid fa-book-open"
               }
             ],
-            "screenshots": [],
+            "screenshots": [
+              "/images/milestone-1.png",
+              "/images/milestone-2.png",
+              "/images/milestone-3.png"
+            ],
             "screenshotsAspectRatio": "16:9"
           },
           "locales": {
