@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Karo Coffee Website – Case Study | Blackpool Industry</title>
+    <link rel="canonical" href="https://www.blackpoolindustry.com/portfolio/karo-coffee" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="How Blackpool Industry designed and built the Karo Coffee website — a premium specialty coffee brand site for Westlands, Nairobi, with storytelling, menu, and contact experiences." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Blackpool Industry" />
+    <meta name="geo.region" content="KE-110" />
+    <meta name="geo.placename" content="Nairobi, Kenya" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.blackpoolindustry.com/portfolio/karo-coffee" />
+    <meta property="og:site_name" content="Blackpool Industry" />
+    <meta property="og:title" content="Karo Coffee Website – Case Study | Blackpool Industry" />
+    <meta property="og:description" content="A sophisticated specialty coffee website for Karo — single-origin storytelling, full menu, experience, and visit sections for Westlands, Nairobi." />
+    <meta property="og:image" content="https://www.blackpoolindustry.com/images/content/karo-homepage.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.blackpoolindustry.com/portfolio/karo-coffee" />
+    <meta name="twitter:title" content="Karo Coffee Website – Case Study | Blackpool Industry" />
+    <meta name="twitter:description" content="A sophisticated specialty coffee website for Karo — single-origin storytelling, full menu, experience, and visit sections for Westlands, Nairobi." />
+    <meta name="twitter:image" content="https://www.blackpoolindustry.com/images/content/karo-homepage.png" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Karo Coffee Website",
+        "description": "Specialty coffee brand website celebrating Kenyan arabica with origin stories, menu, experience offerings, and contact for Westlands, Nairobi.",
+        "creator": {
+            "@type": "Organization",
+            "name": "Blackpool Industry",
+            "url": "https://www.blackpoolindustry.com/",
+            "telephone": "+254140603483",
+            "email": "hello@blackpoolindustry.com"
+        },
+        "about": {
+            "@type": "CafeOrCoffeeShop",
+            "name": "Karo Coffee"
+        },
+        "url": "https://karo.blackpoolindustry.com/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Blackpool Industry Portfolio",
+            "url": "https://www.blackpoolindustry.com/#portfolio"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --green: #22c55e;
+            --dark: #111111;
+            --card-bg: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+        }
+        body { background: var(--dark); color: var(--text); font-family: 'Lato', sans-serif; line-height: 1.7; }
+        a { color: var(--green); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav { background: #0d0d0d; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+        .nav-brand { font-family: 'Saira', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+        .nav-brand span { color: var(--green); }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--green); text-decoration: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 64px 0; }
+        section + section { border-top: 1px solid var(--border); }
+        .hero { padding: 80px 0 64px; }
+        .hero-tag { display: inline-block; background: rgba(34,197,94,0.12); color: var(--green); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; }
+        h1 { font-family: 'Saira', sans-serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 20px; }
+        h1 .accent { color: var(--green); }
+        .hero-lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 32px; }
+        .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; cursor: pointer; }
+        .btn-primary { background: var(--green); color: #000; }
+        .btn-primary:hover { background: #16a34a; text-decoration: none; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+        h2 { font-family: 'Saira', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; margin-bottom: 16px; }
+        h2 .accent { color: var(--green); }
+        h3 { font-family: 'Saira', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        p { color: var(--muted); margin-bottom: 16px; }
+        p:last-child { margin-bottom: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+        .card-icon { width: 44px; height: 44px; background: rgba(34,197,94,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .card-icon svg { width: 22px; height: 22px; fill: var(--green); }
+        .contact-strip { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; }
+        .contact-strip h2 { margin-bottom: 12px; }
+        .contact-strip p { max-width: 500px; margin: 0 auto 28px; }
+        .contact-info { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 24px; font-size: 0.9rem; color: var(--muted); }
+        .contact-info a { color: var(--muted); }
+        .contact-info a:hover { color: var(--green); }
+        footer { padding: 32px 24px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+        footer a { color: var(--muted); }
+        footer a:hover { color: var(--green); }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+        .breadcrumb a { color: var(--muted); }
+        .breadcrumb a:hover { color: var(--green); }
+        .breadcrumb span { margin: 0 6px; }
+        .project-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
+        .meta-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+        .meta-value { font-size: 0.95rem; color: var(--text); }
+        .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
+        .screenshots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+        @media (max-width: 700px) { .screenshots-grid { grid-template-columns: 1fr; } }
+        .live-link-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .live-link-box p { margin: 0; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+        .tag { background: rgba(34,197,94,0.1); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://www.blackpoolindustry.com/" class="nav-brand">Blackpool <span>Industry</span></a>
+    <ul class="nav-links">
+        <li><a href="https://www.blackpoolindustry.com/#services">Services</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#portfolio">Work</a></li>
+        <li><a href="https://www.blackpoolindustry.com/#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="container">
+
+        <section class="hero">
+            <div class="breadcrumb">
+                <a href="https://www.blackpoolindustry.com/">Home</a>
+                <span>›</span>
+                <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+                <span>›</span>
+                <span>Karo Coffee</span>
+            </div>
+            <div class="hero-tag">Case Study · Specialty Coffee · Website</div>
+            <h1><span class="accent">Karo Coffee</span> – Brand Website Case Study</h1>
+            <p class="hero-lead">A premium specialty coffee site for Karo in Westlands, Nairobi — built to showcase Kenyan arabica, origin stories, the full menu, and the in-café experience with a dark, editorial visual language.</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client Type</div>
+                    <div class="meta-value">Specialty Coffee · Café</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Service</div>
+                    <div class="meta-value">Website Design &amp; Build</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Live URL</div>
+                    <div class="meta-value"><a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener">karo.blackpoolindustry.com</a></div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Built by</div>
+                    <div class="meta-value">Blackpool Industry</div>
+                </div>
+            </div>
+            <div class="cta-group">
+                <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener" class="btn btn-primary">View Live Website ↗</a>
+                <a href="https://www.blackpoolindustry.com/#portfolio" class="btn btn-secondary">See all projects</a>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Project</span>
+            <h2>About <span class="accent">Karo Coffee</span></h2>
+            <div class="tags">
+                <span class="tag">Specialty Coffee</span>
+                <span class="tag">Westlands · Nairobi</span>
+                <span class="tag">Single Origin</span>
+                <span class="tag">Hospitality</span>
+            </div>
+            <p>Karo positions Kenyan coffee as it deserves to be shown at home: direct trade with smallholders, transparent origins, and a café experience that competes with the best specialty shops globally. The website had to feel as intentional as the coffee — moody photography, clear hierarchy, and content that educates without overwhelming.</p>
+            <p>We structured the experience around discovery: hero positioning, deep “our story” and origin content, a full menu with espresso, pairings, and drinks, an experience section for cupping and events, and a contact path for reservations and enquiries.</p>
+        </section>
+
+        <section>
+            <span class="section-label">The Challenge</span>
+            <h2>What the site needed to <span class="accent">solve</span></h2>
+            <p>Specialty coffee brands win on trust and taste — but online, that starts with clarity. Karo needed a digital presence that communicates premium positioning, explains why Kenyan arabica matters, and converts interest into visits and bookings.</p>
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    </div>
+                    <h3>Brand &amp; atmosphere</h3>
+                    <p>Convey a high-end café identity — typography, color, and imagery aligned with an artisanal, Nairobi-rooted story.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h3>Education &amp; menu depth</h3>
+                    <p>Room for origins (Nyeri AA, Kirinyaga, and more), tasting notes, and a menu that spans coffee, food pairings, and evening drinks.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <h3>Visit &amp; contact</h3>
+                    <p>Westlands location, hours, and a “get in touch” flow that matches how guests and partners reach a premium venue.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h3>Performance &amp; polish</h3>
+                    <p>Fast, responsive layouts so the experience holds up on mobile — how most guests discover cafés in Nairobi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-label">The Solution</span>
+            <h2>What we <span class="accent">delivered</span></h2>
+            <p>We built a full marketing site with a cinematic hero, editorial sections for story and origins, structured menu content, experience and testimonials, and a dedicated contact block — all tuned to Karo’s voice: confident, Kenyan, and world-class.</p>
+            <p>Visual rhythm alternates dark panels with cream surfaces (as in the live design), strong serif headlines, and gold-accented labels so scanning feels effortless. Calls to action — explore the menu, reserve a table, send a message — sit where guests naturally decide what to do next.</p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Homepage with specialty positioning and primary CTAs
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Our story &amp; origins — farmer narrative, stats, and single-origin cards with tasting notes
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--border);">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Full menu — espresso, drinks, pairings, and more with clear pricing in KSh
+                </li>
+                <li style="color: var(--muted); padding: 10px 0; padding-left: 28px; position: relative;">
+                    <span style="color: var(--green); font-weight: 700; position: absolute; left: 0;">✓</span>
+                    Experience, testimonials, visit details, and get-in-touch form section
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="section-label">Preview</span>
+            <h2>Website screenshots</h2>
+            <p>Key sections of the live site — hero and positioning, origin storytelling, menu breadth, and the Westlands contact experience.</p>
+            <div class="screenshots-grid">
+                <figure>
+                    <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener">
+                        <img src="/images/content/karo-homepage.png"
+                             alt="Karo Coffee homepage with hero headline Where the highlands speak, specialty coffee tagline, and barista pouring latte art"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Homepage — hero &amp; positioning</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener">
+                        <img src="/images/content/karo-our-story.png"
+                             alt="Karo Our Story section with Kenya grows the finest arabica headline and Nyeri AA origin card"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Our story &amp; origins</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener">
+                        <img src="/images/content/karo-menu.png"
+                             alt="Karo menu section showing espresso drinks and prices in Kenyan shillings"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Menu — espresso &amp; offerings</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener">
+                        <img src="/images/content/karo-contact.png"
+                             alt="Karo Get in Touch section with contact form and café interior photo"
+                             style="width:100%; border-radius:8px; border:1px solid var(--border); display:block;" />
+                    </a>
+                    <figcaption style="font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center;">Get in touch — Westlands</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <div class="live-link-box">
+                <div>
+                    <h3 style="margin-bottom: 4px;">View the live website</h3>
+                    <p style="margin: 0;">Explore the full Karo Coffee experience as published.</p>
+                </div>
+                <a href="https://karo.blackpoolindustry.com/" target="_blank" rel="noopener" class="btn btn-primary">Visit Website ↗</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-strip">
+                <h2>Want a brand site like Karo?</h2>
+                <p>We design and build hospitality and lifestyle websites that match your positioning — from specialty coffee to full-service dining. Tell us about your venue.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://wa.me/254140603483?text=Hi%20Blackpool%20Industry%2C%20I%27m%20interested%20in%20a%20website%20like%20Karo%20Coffee." class="btn btn-primary">Chat on WhatsApp</a>
+                    <a href="mailto:hello@blackpoolindustry.com" class="btn btn-secondary">Email us</a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+254140603483">+254 140603483</a>
+                    <a href="mailto:hello@blackpoolindustry.com">hello@blackpoolindustry.com</a>
+                    <span>Nairobi, Kenya</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <p>
+        <a href="https://www.blackpoolindustry.com/">Blackpool Industry</a> — Website Design &amp; Development in Nairobi, Kenya
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/restaurant-website-design-nairobi">Restaurant Websites Nairobi</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.blackpoolindustry.com/website-design-nairobi">Website Design Nairobi</a>
+    </p>
+</footer>
+
+</body>
+</html>

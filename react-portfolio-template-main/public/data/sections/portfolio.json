@@ -181,6 +181,49 @@
               ]
             }
           }
+        },
+
+        {
+          "id": 11,
+          "categoryId": "category_web",
+          "img": "/images/content/karo-homepage.png",
+          "faIcon": "fa-solid fa-mug-hot",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://karo.blackpoolindustry.com/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/karo-coffee",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
+              }
+            ],
+            "screenshots": [
+              "/images/content/karo-homepage.png",
+              "/images/content/karo-our-story.png",
+              "/images/content/karo-menu.png",
+              "/images/content/karo-contact.png"
+            ],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Karo {{Coffee}}",
+              "text": "A premium specialty coffee website for Westlands, Nairobi — Kenyan arabica, origin stories, full menu, and an immersive café brand experience.",
+              "tags": [
+                "Website",
+                "Specialty Coffee",
+                "Hospitality"
+              ]
+            }
+          }
         }
       ]
     }

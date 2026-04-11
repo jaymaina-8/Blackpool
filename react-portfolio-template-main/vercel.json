@@ -29,6 +29,10 @@
       "dest": "/portfolio/milestone-creative-solutions/index.html"
     },
     {
+      "src": "/portfolio/karo-coffee",
+      "dest": "/portfolio/karo-coffee/index.html"
+    },
+    {
       "handle": "filesystem"
     },
     {
