@@ -2,6 +2,7 @@ import "./ArticleText.scss"
 import React, {useEffect, useState} from 'react'
 import Article from "/src/components/articles/base/Article.jsx"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
+import {useUtils} from "/src/hooks/utils.js"
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -32,15 +33,26 @@ function ArticleText({ dataWrapper, id }) {
  * @constructor
  */
 function ArticleTextItems({ dataWrapper, selectedItemCategoryId }) {
+    const utils = useUtils()
     const filteredItems = dataWrapper.getOrderedItemsFilteredBy(selectedItemCategoryId)
+    const heroImage = dataWrapper.settings?.heroImage
+    const heroImageAlt = dataWrapper.settings?.heroImageAlt || ""
 
     return (
-        <div className={`article-text-items`}>
-            {filteredItems.map((itemWrapper, key) => (
-                <ArticleTextItem itemWrapper={itemWrapper} 
-                                      key={key}/>
-            ))}
-        </div>
+        <>
+            {heroImage && (
+                <div className={`article-text-hero`}>
+                    <img src={utils.file.resolvePath(heroImage)}
+                         alt={heroImageAlt}/>
+                </div>
+            )}
+            <div className={`article-text-items`}>
+                {filteredItems.map((itemWrapper, key) => (
+                    <ArticleTextItem itemWrapper={itemWrapper}
+                                       key={key}/>
+                ))}
+            </div>
+        </>
     )
 }
 
@@ -54,15 +66,21 @@ function ArticleTextItem({ itemWrapper }) {
         `article-text-item-reverse` :
         ``
 
+    const noAvatarClass = itemWrapper.hideAvatar ?
+        `article-text-item-no-avatar` :
+        ``
+
     return (
-        <div className={`article-text-item ${positioningClass}`}>
-            <div className={`article-text-avatar-view-wrapper`}>
-                <AvatarView className={`article-text-avatar-view`}
-                            src={itemWrapper.img}
-                            faIcon={itemWrapper.faIconWithFallback}
-                            style={itemWrapper.faIconStyle}
-                            alt={itemWrapper.imageAlt}/>
-            </div>
+        <div className={`article-text-item ${positioningClass} ${noAvatarClass}`}>
+            {!itemWrapper.hideAvatar && (
+                <div className={`article-text-avatar-view-wrapper`}>
+                    <AvatarView className={`article-text-avatar-view`}
+                                src={itemWrapper.img}
+                                faIcon={itemWrapper.faIconWithFallback}
+                                style={itemWrapper.faIconStyle}
+                                alt={itemWrapper.imageAlt}/>
+                </div>
+            )}
 
             <div className={`article-text-excerpt last-p-no-margin text-3`}
                  dangerouslySetInnerHTML={{__html: itemWrapper.locales.text || itemWrapper.placeholder}}/>

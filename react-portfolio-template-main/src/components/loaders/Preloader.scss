@@ -50,6 +50,24 @@ div.preloader-window-info-title {
     align-items: center;
     justify-content: center;
 }
+/* Splash screen: circular crop — zoom center so the round mark fills the circle (square PNG with circle art) */
+div.preloader-window-logo.logo-wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transform: scale(1.42);
+        padding: 0;
+    }
+}
 
 div.preloader-window-info-developer {
     opacity: 0.5;

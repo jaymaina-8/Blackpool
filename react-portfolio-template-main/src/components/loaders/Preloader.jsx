@@ -262,6 +262,7 @@ function PreloaderWindowInfo({ title, subtitle, logoOffset, hidden, setDidLoadLo
             <div className={`preloader-window-info-title`}>
                 <Logo size={3}
                       className={`preloader-window-logo`}
+                      imageSrc="images/preloader-logo.png"
                       setDidLoad={setDidLoadLogo}
                       style={logoStyle}/>
 

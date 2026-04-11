@@ -40,6 +40,7 @@ export default class ArticleItemDataWrapper {
         this.faIconColors = this._parseColor(rawData.faIconColors, theme)
 
         this.img = language.parseJsonText(rawData.img)
+        this.hideAvatar = rawData.hide_avatar === true
         this.label = rawData.label
         this.link = this._parseLink(rawData.link, language)
         this.locales = this._parseLocales(rawData.locales, language)

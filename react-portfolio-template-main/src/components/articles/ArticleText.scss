@@ -2,6 +2,20 @@
 
 $column-breakpoint: xl;
 
+div.article-text-hero {
+    width: 100%;
+    margin-bottom: calc(var(--row-gap, 20px) + 4px);
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: $standard-border-radius;
+        object-fit: cover;
+        max-height: min(52vh, 420px);
+    }
+}
+
 div.article-text-items {
     --row-gap: 20px;
     --avatar-size: 285px;
@@ -76,6 +90,15 @@ div.article-text-excerpt {
     }
     @include media-breakpoint-down($column-breakpoint) {
         margin: 10px 0 0;
+    }
+}
+
+div.article-text-item-no-avatar {
+    justify-content: flex-start;
+
+    div.article-text-excerpt {
+        width: 100%;
+        max-width: 100%;
     }
 }
 

@@ -2,7 +2,7 @@ import "./Logo.scss"
 import React, {useEffect, useState} from 'react'
 import {useUtils} from "/src/hooks/utils.js"
 
-function Logo({ className = "", style = {}, size, setDidLoad }) {
+function Logo({ className = "", style = {}, size, setDidLoad, imageSrc = "images/logo.png" }) {
     const utils = useUtils()
 
     className = className || ``
@@ -13,9 +13,9 @@ function Logo({ className = "", style = {}, size, setDidLoad }) {
     return (
         <div className={`logo-wrapper ${sizeClass} ${className}`}
              style={style}>
-            <img src={utils.file.resolvePath(`/images/svg/logo.svg`)}
+            <img src={utils.file.resolvePath(imageSrc)}
                  onLoad={() => { setDidLoad && setDidLoad(true) }}
-                 alt={`logo`}/>
+                 alt="Blackpool Industry"/>
         </div>
     )
 }

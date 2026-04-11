@@ -73,6 +73,10 @@ export default class ArticleDataWrapper {
             emailJsPublicKey: rawSettings["email_js_public_key"] || undefined,
             emailJsServiceId: rawSettings["email_js_service_id"] || undefined,
             emailJsTemplateId: rawSettings["email_js_template_id"] || undefined,
+
+            // - ArticleText (optional full-width image below article title)
+            heroImage: rawSettings["hero_image"] || undefined,
+            heroImageAlt: rawSettings["hero_image_alt"] || undefined,
         }
     }
 

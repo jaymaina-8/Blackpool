@@ -9,13 +9,18 @@ header.section-header {
 }
 
 div.section-header-prefix {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
     font-family: $headings-font-family;
     font-weight: bold;
     color: var(--theme-muted);
 
     i {
+        flex-shrink: 0;
         opacity: 0.75;
-        margin-right: 8px;
     }
 }
 

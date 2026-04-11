@@ -67,12 +67,14 @@
             },
             "settings": {
                 "order_items_by": "id",
-                "order_items_sort": "asc"
+                "order_items_sort": "asc",
+                "hero_image": "images/eww.jpg",
+                "hero_image_alt": "Nairobi skyline and central business district"
             },
             "items": [
                 {
                     "id": 1,
-                    "img": "images/content/m.png",
+                    "hide_avatar": true,
                     "locales": {
                         "en": {
                             "text": "<p><strong>Blackpool {{Industry}}</strong> is a web design and development company based in Nairobi, Kenya. We build professional, mobile-friendly websites that help local businesses attract more customers and grow their online presence.</p><p>Most businesses in Nairobi rely solely on social media — which means customers struggle to find key information like services, pricing, menus, or contact details. We change that by building dedicated websites that present your business clearly and make it easy for customers to reach you.</p><p>Whether you run a restaurant, a retail shop, a service business, or a startup, we design websites that work for you — fast to load, easy to navigate, and built to drive real results.</p>"

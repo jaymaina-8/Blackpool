@@ -24,6 +24,13 @@ div.nav-profile-card {
         border: var(--border-size) solid var(--theme-card-background-accent);
         border-radius: calc($standard-border-radius * 2);
         border-top-right-radius: 0;
+        background-color: var(--theme-card-background);
+
+        img.image-view-img {
+            object-fit: contain;
+            padding: 14%;
+            box-sizing: border-box;
+        }
     }
 
     &-status-circle {
