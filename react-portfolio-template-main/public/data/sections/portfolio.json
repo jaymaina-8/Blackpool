@@ -48,7 +48,7 @@
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
               },
               {
-                "href": "/portfolio/mangrove-hotel",
+                "href": "/portfolio/mangrove-hotel/",
                 "tooltip": "Read Case Study",
                 "faIcon": "fa-solid fa-book-open"
               }
@@ -90,7 +90,7 @@
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
               },
               {
-                "href": "/portfolio/metro-bites",
+                "href": "/portfolio/metro-bites/",
                 "tooltip": "Read Case Study",
                 "faIcon": "fa-solid fa-book-open"
               }
@@ -132,7 +132,7 @@
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
               },
               {
-                "href": "/portfolio/urban-grill",
+                "href": "/portfolio/urban-grill/",
                 "tooltip": "Read Case Study",
                 "faIcon": "fa-solid fa-book-open"
               }
@@ -174,7 +174,7 @@
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
               },
               {
-                "href": "/portfolio/milestone-creative-solutions",
+                "href": "/portfolio/milestone-creative-solutions/",
                 "tooltip": "Read Case Study",
                 "faIcon": "fa-solid fa-book-open"
               }
@@ -216,7 +216,7 @@
                 "faIcon": "fa-solid fa-arrow-up-right-from-square"
               },
               {
-                "href": "/portfolio/karo-coffee",
+                "href": "/portfolio/karo-coffee/",
                 "tooltip": "Read Case Study",
                 "faIcon": "fa-solid fa-book-open"
               }

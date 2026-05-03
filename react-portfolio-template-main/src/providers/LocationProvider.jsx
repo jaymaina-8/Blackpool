@@ -89,7 +89,24 @@ function LocationProvider({ children, sections, categories }) {
 
     const _onHashEvent = () => {
         const hash = window.location.hash.replace("#", "")
-        const targetSection = sections.find(section => section.id === hash)
+        let targetSection = sections.find(section => section.id === hash)
+
+        // Path looks like a case study (/portfolio/...) but hash is empty — often because the SPA
+        // shell loaded instead of static HTML. Snap to the Portfolio section instead of Home.
+        if (!targetSection && !hash) {
+            const path = window.location.pathname
+            // Only snap to the portfolio section when the path is exactly the portfolio listing,
+            // not when it is a deep case study route like /portfolio/mangrove-hotel.
+            if (path === "/portfolio" || path === "/portfolio/") {
+                targetSection = sections.find(section => section.id === "portfolio")
+                if (targetSection) {
+                    window.history.replaceState(null, "", `${path}${window.location.search}#portfolio`)
+                    setNextSectionId(targetSection.id)
+                    return
+                }
+            }
+        }
+
         if(targetSection) {
             setNextSectionId(targetSection.id)
         }

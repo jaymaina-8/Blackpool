@@ -56,8 +56,18 @@ const AppEssentialsWrapper = ({children}) => {
     const [settings, setSettings] = useState()
 
     useEffect(() => {
-        if (window.location.pathname !== utils.file.BASE_URL)
-            window.history.pushState({}, '', utils.file.BASE_URL)
+        const path = window.location.pathname
+        const base = utils.file.BASE_URL
+        // Standalone HTML (case studies, SEO pages) lives outside the React shell. Do not rewrite
+        // these URLs to BASE_URL or the path is lost and LocationProvider falls back to Home.
+        const isStandaloneHtmlRoute =
+            path.includes("/portfolio/") ||
+            path.includes("website-design-nairobi") ||
+            path.includes("small-business-websites-nairobi") ||
+            path.includes("restaurant-website-design-nairobi")
+
+        if (!isStandaloneHtmlRoute && path !== base)
+            window.history.pushState({}, "", base)
 
         utils.file.loadJSON("/data/settings.json").then(response => {
             _applyDeveloperSettings(response)

@@ -2,7 +2,7 @@
 
 .article-pricing-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: stretch;
 
@@ -12,6 +12,13 @@
 
     @include media-breakpoint-down(sm) {
         grid-template-columns: 1fr;
+    }
+
+    &--single {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin-inline: auto;
+        width: 100%;
     }
 }
 
@@ -40,8 +47,15 @@
         &:hover {
             transform: translateY(-6px);
         }
+
+        .article-pricing-card-badge {
+            font-size: 0.76rem;
+            padding: 6px 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+        }
     }
 }
+
 
 .article-pricing-card-badge {
     position: absolute;
@@ -56,7 +70,17 @@
     text-transform: uppercase;
     padding: 4px 16px;
     border-radius: 999px;
-    white-space: nowrap;
+    max-width: calc(100% - 24px);
+    text-align: center;
+    line-height: 1.25;
+    white-space: normal;
+    z-index: 2;
+}
+
+// Add extra top padding to highlighted card when badge is present
+.article-pricing-card--highlight {
+    padding-top: 38px;
+    position: relative;
 }
 
 .article-pricing-card-icon-wrapper {

@@ -10,6 +10,7 @@ import Article from "/src/components/articles/base/Article.jsx"
  *   locales.province     → period string (e.g. "one-time", "/month")
  *   locales.text         → short description
  *   locales.list         → array of feature strings
+ *   locales.cta          → optional button label (defaults to "Get Started")
  *   label                → badge text (e.g. "Most Popular"), null if none
  *   percentage           → highlight flag: 1 = highlighted card, 0 = default
  *
@@ -24,7 +25,7 @@ function ArticlePricing({ dataWrapper }) {
             type={Article.Types.SPACING_DEFAULT}
             dataWrapper={dataWrapper}
             className={`article-pricing`}>
-            <div className="article-pricing-grid">
+            <div className={`article-pricing-grid${items.length === 1 ? " article-pricing-grid--single" : ""}`}>
                 {items.map((itemWrapper, key) => (
                     <ArticlePricingCard itemWrapper={itemWrapper} key={key} />
                 ))}
@@ -42,7 +43,12 @@ function ArticlePricingCard({ itemWrapper }) {
     const price = locales.institution || ""
     const period = locales.province || ""
     const desc = locales.text || ""
-    const badge = itemWrapper.label || null        // root-level label field
+    const ctaText = locales.cta || "Get Started"
+    let badge = itemWrapper.label || null        // root-level label field
+    // Shorten badge if too long
+    if (badge && badge.length > 18) {
+        badge = badge.replace('Most Popular · Best Value', 'Most Popular');
+    }
     const highlight = (itemWrapper.percentage || 0) >= 1  // percentage=1 → highlight
 
     // locales.list comes back as an HTML string via array.toHtmlList —
@@ -93,7 +99,7 @@ function ArticlePricingCard({ itemWrapper }) {
             )}
 
             <a href="#contact" className="article-pricing-card-cta">
-                Get Started
+                {ctaText}
             </a>
         </div>
     )

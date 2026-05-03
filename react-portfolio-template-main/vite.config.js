@@ -2,9 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-// Use VITE_APP_BASE=/ when deploying to Vercel (root). Default /Blackpool/ for GitHub Pages.
+// Default `/` matches root domains (e.g. Vercel). For GitHub Pages under a subpath, build with:
+//   VITE_APP_BASE=/YourRepoName/ npm run build
 export default defineConfig({
-    base: process.env.VITE_APP_BASE || '/Blackpool/',
+    base: process.env.VITE_APP_BASE || '/',
     plugins: [react()],
     build: {
         rollupOptions: {

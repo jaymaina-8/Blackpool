@@ -23,6 +23,21 @@ function ArticleItemPreviewMenu({ itemWrapper, className = "", spaceBetween }) {
         hasScreenshotsOrVideo && spaceBetween,
         `justify-content-end`)
 
+    // Always show the 'Read Case Study' link first if present
+    let orderedLinks = links || [];
+    if (hasLinks && spaceBetween) {
+        // Find the 'Read Case Study' link (by tooltip or faIcon)
+        const caseStudyLinkIndex = orderedLinks.findIndex(l =>
+            (l.tooltip && l.tooltip.toLowerCase().includes('case study')) ||
+            (l.faIcon && l.faIcon.includes('fa-book-open'))
+        );
+        if (caseStudyLinkIndex > 0) {
+            // Move it to the front
+            const [caseStudyLink] = orderedLinks.splice(caseStudyLinkIndex, 1);
+            orderedLinks.unshift(caseStudyLink);
+        }
+    }
+
     return (
         <div className={`article-item-preview-menu ${className}`}>
             {(hasScreenshotsOrVideo || !spaceBetween) && (
@@ -31,7 +46,7 @@ function ArticleItemPreviewMenu({ itemWrapper, className = "", spaceBetween }) {
                     <ItemPreviewMenuGalleryButton itemWrapper={itemWrapper}/>
                     {hasLinks && !spaceBetween && (
                         <>
-                            {links.map((link, key) => (
+                            {orderedLinks.map((link, key) => (
                                 <ItemPreviewMenuCustomLinkButton link={link}
                                                                  key={key}/>
                             ))}
@@ -42,7 +57,7 @@ function ArticleItemPreviewMenu({ itemWrapper, className = "", spaceBetween }) {
 
             {hasLinks && spaceBetween && (
                 <div className={`article-item-preview-menu-button-list ${linksListClass}`}>
-                    {links.map((link, key) => (
+                    {orderedLinks.map((link, key) => (
                         <ItemPreviewMenuCustomLinkButton link={link}
                                                          key={key}/>
                     ))}

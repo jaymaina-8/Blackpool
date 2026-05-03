@@ -78,6 +78,23 @@ function Link({ id = null, className = "", href, children, tooltip = null, metad
     }
 
     const _openExternalLink = () => {
+        try {
+            const pathForBase = href.startsWith("/") ? href.slice(1) : href
+            const resolvedHref = utils.file.resolvePath(pathForBase)
+            const targetUrl = new URL(resolvedHref, window.location.origin)
+            if (targetUrl.origin === window.location.origin) {
+            let redirectPath = targetUrl.pathname + targetUrl.search + targetUrl.hash
+            if (redirectPath.startsWith("/portfolio/") && !redirectPath.endsWith("/") && !redirectPath.includes(".")) {
+                redirectPath += "/"
+            }
+            window.location.assign(redirectPath)
+            return
+        }
+        }
+        catch (_e) {
+            /* fall through to confirmation dialog */
+        }
+
         const shortenedHref = utils.string.limitTextSize(href, 45)
         const formattedUrl = `<br><span class="text-secondary">« <b>${shortenedHref}</b> »</span><br><br>`
         const text = language.getString("leaving_site").replace("{url}", formattedUrl) +

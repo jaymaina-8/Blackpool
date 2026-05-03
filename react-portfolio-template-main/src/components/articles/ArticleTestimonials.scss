@@ -29,9 +29,25 @@ div.article-testimonials-item-avatar {
     font-size: calc(var(--size)/2.4);
     margin-bottom: calc(var(--size)/10);
     overflow: hidden;
+
+    img.image-view-img {
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 div.article-testimonials-item-role {
     margin-top: 2px;
     color: var(--theme-muted);
+}
+
+a.article-testimonials-item-case-study {
+    margin-top: 6px;
+    font-weight: 600;
+    color: var(--bs-primary);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

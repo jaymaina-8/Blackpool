@@ -203,6 +203,67 @@
                     }
                 }
             ]
+        },
+
+        {
+            "id": 4,
+            "component": "ArticleTestimonials",
+            "locales": {
+                "en": {
+                    "title": "Trusted by {{Nairobi businesses}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "Urban Grill",
+                    "link": {
+                        "href": "/portfolio/urban-grill/",
+                        "tooltipString": "read_case_study"
+                    },
+                    "img": "/images/urban-1.png",
+                    "locales": {
+                        "en": {
+                            "title": "Restaurant — {{Nairobi}}",
+                            "text": "Our new site makes it easy for guests to see the menu, book a table, and find us on maps. Bookings and enquiries went up within weeks of launch."
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "label": "Milestone Creative Solutions",
+                    "link": {
+                        "href": "/portfolio/milestone-creative-solutions/",
+                        "tooltipString": "read_case_study"
+                    },
+                    "img": "/images/content/milestone-solutions.png",
+                    "locales": {
+                        "en": {
+                            "title": "Creative {{agency}}",
+                            "text": "Blackpool delivered a polished site that reflects our brand and loads fast on mobile. Communication was clear, timelines were realistic, and the result speaks for itself."
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "label": "Karo Coffee",
+                    "link": {
+                        "href": "/portfolio/karo-coffee/",
+                        "tooltipString": "read_case_study"
+                    },
+                    "img": "/images/content/karo-profile.png",
+                    "locales": {
+                        "en": {
+                            "title": "Coffee {{brand}}",
+                            "text": "Customers can explore our story, menu, and locations in one place. The site feels premium and makes it simple for people to visit or order — exactly what we needed."
+                        }
+                    }
+                }
+            ]
         }
     ]
 }

@@ -7,6 +7,7 @@ import {useViewport} from "/src/providers/ViewportProvider.jsx"
 import Link from "/src/components/generic/Link.jsx"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
 import {useConstants} from "/src/hooks/constants.js"
+import {useLanguage} from "/src/providers/LanguageProvider.jsx"
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -59,10 +60,13 @@ function ArticleTestimonialsItems({ dataWrapper, selectedItemCategoryId }) {
  */
 function ArticleTestimonialsItem({ itemWrapper }) {
     const viewport = useViewport()
+    const language = useLanguage()
 
     const textClass = viewport.isMobileLayout() ?
         `text-3` :
         `text-2`
+
+    const caseStudyHref = itemWrapper.link?.href
 
     return (
         <div className={`article-testimonials-item`}>
@@ -78,7 +82,7 @@ function ArticleTestimonialsItem({ itemWrapper }) {
                             alt={itemWrapper.imageAlt}
                             className={`article-testimonials-item-avatar`}/>
 
-                <Link href={itemWrapper.link?.href}
+                <Link href={caseStudyHref}
                       tooltip={itemWrapper.link?.tooltip}
                       className={`article-testimonials-item-name text-5`}>
                     <span dangerouslySetInnerHTML={{__html: itemWrapper.locales.label || itemWrapper.label || "---"}}/>
@@ -86,6 +90,14 @@ function ArticleTestimonialsItem({ itemWrapper }) {
 
                 <div className={`article-testimonials-item-role text-2`}
                      dangerouslySetInnerHTML={{__html: itemWrapper.locales.title || "---"}}/>
+
+                {caseStudyHref && (
+                    <Link href={caseStudyHref}
+                          tooltip={itemWrapper.link?.tooltip}
+                          className={`article-testimonials-item-case-study text-2 mt-1`}>
+                        {language.getString("read_case_study")}
+                    </Link>
+                )}
             </div>
         </div>
     )
