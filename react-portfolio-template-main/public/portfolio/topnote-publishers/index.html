@@ -59,6 +59,9 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
             --green: #22c55e;
+            --brand: #e1112a;
+            --brand-deep: #9f0718;
+            --brand-soft: rgba(225,17,42,0.14);
             --dark: #111111;
             --card-bg: #1a1a1a;
             --border: #2a2a2a;
@@ -66,49 +69,62 @@
             --muted: #9ca3af;
         }
         body { background: var(--dark); color: var(--text); font-family: 'Lato', sans-serif; line-height: 1.7; }
-        a { color: var(--green); text-decoration: none; }
+        a { color: var(--brand); text-decoration: none; }
         a:hover { text-decoration: underline; }
         nav { background: #0d0d0d; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
         .nav-brand { font-family: 'Saira', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
         .nav-brand span { color: var(--green); }
         .nav-links { display: flex; gap: 24px; list-style: none; }
         .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--green); text-decoration: none; }
-        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        .nav-links a:hover { color: var(--brand); text-decoration: none; }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
         section { padding: 64px 0; }
         section + section { border-top: 1px solid var(--border); }
         .hero { padding: 80px 0 64px; }
-        .hero-tag { display: inline-block; background: rgba(34,197,94,0.12); color: var(--green); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; }
+        .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: center; }
+        .hero-tag { display: inline-block; background: var(--brand-soft); color: #ff5b6d; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; }
         h1 { font-family: 'Saira', sans-serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 20px; }
-        h1 .accent, h2 .accent { color: var(--green); }
+        h1 .accent, h2 .accent { color: #ff5b6d; }
         .hero-lead { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin-bottom: 32px; }
+        .hero-preview { background: linear-gradient(145deg, rgba(225,17,42,0.22), rgba(26,26,26,0.98)); border: 1px solid rgba(225,17,42,0.4); border-radius: 14px; padding: 18px; box-shadow: 0 24px 70px rgba(0,0,0,0.28); }
+        .brand-mark { width: 92px; height: 92px; border-radius: 18px; object-fit: cover; border: 1px solid rgba(255,255,255,0.18); margin-bottom: 16px; }
+        .hero-preview img.preview-shot { width: 100%; display: block; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); }
+        .hero-preview p { font-size: 0.9rem; margin: 14px 0 0; color: #d1d5db; }
         .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; cursor: pointer; }
-        .btn-primary { background: var(--green); color: #000; }
-        .btn-primary:hover { background: #16a34a; text-decoration: none; }
+        .btn-primary { background: var(--brand); color: #fff; }
+        .btn-primary:hover { background: var(--brand-deep); text-decoration: none; }
         .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+        .btn-secondary:hover { border-color: var(--brand); color: #ff5b6d; text-decoration: none; }
         h2 { font-family: 'Saira', sans-serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: #fff; margin-bottom: 16px; }
         h3 { font-family: 'Saira', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
         p { color: var(--muted); margin-bottom: 16px; }
         p:last-child { margin-bottom: 0; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { gap: 12px; } }
+        @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-preview { max-width: 520px; } }
+        @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { gap: 12px; } nav { padding: 0 16px; } }
         .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+        .card strong { color: #fff; }
         .contact-strip { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; }
         .contact-strip p { max-width: 520px; margin: 0 auto 28px; }
         footer { padding: 32px 24px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
         footer a { color: var(--muted); }
-        footer a:hover { color: var(--green); }
+        footer a:hover { color: var(--brand); }
         .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
         .breadcrumb a { color: var(--muted); }
-        .breadcrumb a:hover { color: var(--green); }
+        .breadcrumb a:hover { color: var(--brand); }
         .breadcrumb span { margin: 0 6px; }
         .project-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
-        .meta-label, .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+        .meta-label, .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ff5b6d; }
         .meta-label { margin-bottom: 4px; }
         .meta-value { font-size: 0.95rem; color: var(--text); }
         .section-label { margin-bottom: 12px; display: block; }
+        .outcome-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+        .outcome { background: rgba(225,17,42,0.08); border: 1px solid rgba(225,17,42,0.26); border-radius: 10px; padding: 18px; }
+        .outcome strong { display: block; color: #fff; font-family: 'Saira', sans-serif; font-size: 1.35rem; line-height: 1.1; margin-bottom: 4px; }
+        .outcome span { color: var(--muted); font-size: 0.9rem; }
+        @media (max-width: 800px) { .outcome-strip { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .outcome-strip { grid-template-columns: 1fr; } }
         .screenshots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
         @media (max-width: 760px) { .screenshots-grid { grid-template-columns: 1fr; } }
         .screenshots-grid figure:first-child { grid-column: 1 / -1; }
@@ -116,11 +132,14 @@
         figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 8px; text-align: center; }
         .live-link-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
         .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-        .tag { background: rgba(34,197,94,0.1); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+        .tag { background: var(--brand-soft); color: #ff9aa5; font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
         .check-list { list-style: none; padding: 0; margin: 16px 0; }
         .check-list li { color: var(--muted); padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--border); }
         .check-list li:last-child { border-bottom: 0; }
-        .check-list li::before { content: "\\2713"; color: var(--green); font-weight: 700; position: absolute; left: 0; }
+        .check-list li::before { content: "\\2713"; color: #ff5b6d; font-weight: 700; position: absolute; left: 0; }
+        .quote { border-left: 3px solid var(--brand); padding-left: 20px; margin-top: 24px; }
+        .quote p { color: #f3f4f6; font-size: 1.05rem; }
+        .quote cite { color: var(--muted); font-style: normal; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -138,37 +157,46 @@
     <div class="container">
 
         <section class="hero">
-            <div class="breadcrumb">
-                <a href="https://www.blackpoolindustry.com/">Home</a>
-                <span>&gt;</span>
-                <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
-                <span>&gt;</span>
-                <span>Topnote Publishers</span>
-            </div>
-            <div class="hero-tag">Case Study - Education - Ecommerce Website</div>
-            <h1><span class="accent">Topnote Publishers</span> Website Case Study</h1>
-            <p class="hero-lead">A practical education commerce website for Topnote Publishers, built to help Kenyan parents and schools browse CBC revision books, compare catalog pricing, request school supply quotes, and order quickly through WhatsApp.</p>
-            <div class="project-meta">
-                <div class="meta-item">
-                    <div class="meta-label">Client Type</div>
-                    <div class="meta-value">Education Publisher</div>
+            <div class="hero-inner">
+                <div>
+                    <div class="breadcrumb">
+                        <a href="https://www.blackpoolindustry.com/">Home</a>
+                        <span>&gt;</span>
+                        <a href="https://www.blackpoolindustry.com/#portfolio">Portfolio</a>
+                        <span>&gt;</span>
+                        <span>Topnote Publishers</span>
+                    </div>
+                    <div class="hero-tag">Case Study - Education - Commerce Website</div>
+                    <h1><span class="accent">Topnote Publishers</span> Website Case Study</h1>
+                    <p class="hero-lead">A fast catalog and WhatsApp ordering experience for a Kenyan education publisher, designed to help parents find CBC revision materials quickly and help schools request bulk supply support with confidence.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Client Type</div>
+                            <div class="meta-value">Education Publisher</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Service</div>
+                            <div class="meta-value">Website Design &amp; Build</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Live URL</div>
+                            <div class="meta-value"><a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">topnote.blackpoolindustry.com</a></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Built by</div>
+                            <div class="meta-value">Blackpool Industry</div>
+                        </div>
+                    </div>
+                    <div class="cta-group">
+                        <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener" class="btn btn-primary">View Live Website</a>
+                        <a href="https://www.blackpoolindustry.com/#portfolio" class="btn btn-secondary">See all projects</a>
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <div class="meta-label">Service</div>
-                    <div class="meta-value">Website Design &amp; Build</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Live URL</div>
-                    <div class="meta-value"><a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">topnote.blackpoolindustry.com</a></div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Built by</div>
-                    <div class="meta-value">Blackpool Industry</div>
-                </div>
-            </div>
-            <div class="cta-group">
-                <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener" class="btn btn-primary">View Live Website</a>
-                <a href="https://www.blackpoolindustry.com/#portfolio" class="btn btn-secondary">See all projects</a>
+                <aside class="hero-preview" aria-label="Topnote project preview">
+                    <img src="/images/topnote-logo.png" alt="Topnote Publishers logo" class="brand-mark" />
+                    <img src="/images/topnote-home.png" alt="Topnote Publishers homepage preview" class="preview-shot" />
+                    <p>Built around direct product discovery, school supply trust signals, and persistent WhatsApp ordering.</p>
+                </aside>
             </div>
         </section>
 
@@ -183,6 +211,24 @@
             </div>
             <p>Topnote Publishers provides revision books, exams, stationery, and lab supplies to families and schools across Kenya. The website needed to feel trustworthy and direct: parents should find the right workbook fast, while schools should quickly understand bulk supply options and start a quote conversation.</p>
             <p>We shaped the site around the real buying behavior of the audience. Instead of forcing users through a heavy checkout flow, the experience keeps catalog browsing simple and routes final orders to WhatsApp, where Topnote can confirm availability, delivery, and pricing details.</p>
+            <div class="outcome-strip" aria-label="Project highlights">
+                <div class="outcome">
+                    <strong>2</strong>
+                    <span>clear pathways for parents and schools</span>
+                </div>
+                <div class="outcome">
+                    <strong>5</strong>
+                    <span>core pages covering discovery to contact</span>
+                </div>
+                <div class="outcome">
+                    <strong>24/7</strong>
+                    <span>WhatsApp-first ordering access</span>
+                </div>
+                <div class="outcome">
+                    <strong>Mobile</strong>
+                    <span>layouts tuned for quick browsing</span>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -223,37 +269,48 @@
         </section>
 
         <section>
+            <span class="section-label">The Result</span>
+            <h2>A site designed for <span class="accent">real ordering behavior</span></h2>
+            <p>The final experience gives Topnote a digital storefront that feels practical, credible, and easy to act on. Parents can move from homepage promise to product cards without friction, while schools get a dedicated page that speaks directly to institutional supply needs.</p>
+            <p>The strongest conversion path is intentionally simple: browse the catalog, review the cart, and continue the conversation on WhatsApp. That keeps the business flexible for stock checks, school discounts, delivery details, and custom quote requests.</p>
+            <div class="quote">
+                <p>"Blackpool helped us turn school supply ordering into a simple online experience. Parents and schools can browse books, understand pricing, and reach us on WhatsApp without friction."</p>
+                <cite>Topnote Publishers</cite>
+            </div>
+        </section>
+
+        <section>
             <span class="section-label">Preview</span>
             <h2>Website screenshots</h2>
             <p>The case study includes the full provided screenshot set: homepage, catalog, school supply page, contact page, and about page.</p>
             <div class="screenshots-grid">
                 <figure>
                     <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">
-                        <img src="/images/topnote-home.png" alt="Topnote Publishers homepage with Learn ready, Term ready headline and WhatsApp order button" class="screenshot" />
+                        <img src="/images/topnote-home.png" alt="Topnote Publishers homepage with Learn ready, Term ready headline and WhatsApp order button" class="screenshot" loading="lazy" />
                     </a>
                     <figcaption>Homepage - clear education supply positioning</figcaption>
                 </figure>
                 <figure>
                     <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">
-                        <img src="/images/topnote-products.png" alt="Topnote product catalog showing workbook cards, prices, and add to cart buttons" class="screenshot" />
+                        <img src="/images/topnote-products.png" alt="Topnote product catalog showing workbook cards, prices, and add to cart buttons" class="screenshot" loading="lazy" />
                     </a>
                     <figcaption>Products - workbook catalog and cart actions</figcaption>
                 </figure>
                 <figure>
                     <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">
-                        <img src="/images/topnote-schools.png" alt="Topnote schools page explaining bulk supply for institutions" class="screenshot" />
+                        <img src="/images/topnote-schools.png" alt="Topnote schools page explaining bulk supply for institutions" class="screenshot" loading="lazy" />
                     </a>
                     <figcaption>Schools - bulk supply and delivery messaging</figcaption>
                 </figure>
                 <figure>
                     <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">
-                        <img src="/images/topnote-contact.png" alt="Topnote contact page with WhatsApp and inquiry options" class="screenshot" />
+                        <img src="/images/topnote-contact.png" alt="Topnote contact page with WhatsApp and inquiry options" class="screenshot" loading="lazy" />
                     </a>
                     <figcaption>Contact - fast WhatsApp response path</figcaption>
                 </figure>
                 <figure>
                     <a href="https://topnote.blackpoolindustry.com/" target="_blank" rel="noopener">
-                        <img src="/images/topnote-about.png" alt="Topnote about page with story, workbook visual, and business metrics" class="screenshot" />
+                        <img src="/images/topnote-about.png" alt="Topnote about page with story, workbook visual, and business metrics" class="screenshot" loading="lazy" />
                     </a>
                     <figcaption>About - story, trust signals, and scale</figcaption>
                 </figure>
