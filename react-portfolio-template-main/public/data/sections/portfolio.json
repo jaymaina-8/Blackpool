@@ -239,6 +239,48 @@
               ]
             }
           }
+        },
+
+        {
+          "id": 12,
+          "categoryId": "category_web",
+          "img": "/images/topnote-logo.png",
+          "faIcon": "fa-solid fa-book-open-reader",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://topnote.blackpoolindustry.com/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/topnote-publishers/",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
+              }
+            ],
+            "screenshots": [
+              "/images/topnote-home.png",
+              "/images/topnote-products.png",
+              "/images/topnote-about.png"
+            ],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Topnote {{Publishers}}",
+              "text": "A fast education commerce website for Kenyan parents and schools, with workbook catalog pages, bulk supply messaging, WhatsApp ordering, and clear delivery support.",
+              "tags": [
+                "Website",
+                "Education",
+                "Ecommerce"
+              ]
+            }
+          }
         }
       ]
     }
