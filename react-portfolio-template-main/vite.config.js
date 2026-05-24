@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 // Default `/` matches root domains (e.g. Vercel). For GitHub Pages under a subpath, build with:
 //   VITE_APP_BASE=/YourRepoName/ npm run build
 export default defineConfig({
+    envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     base: process.env.VITE_APP_BASE || '/',
     plugins: [react()],
     build: {
