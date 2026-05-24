@@ -3,16 +3,11 @@
         <head>
                 <!-- Google Tag Manager -->
                 <script>
-                    (function() {
-                        var gtmId = window?.VITE_GTM_ID || window?.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX';
-                        if (gtmId && gtmId !== 'GTM-XXXXXXX') {
-                            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                            })(window,document,'script','dataLayer',gtmId);
-                        }
-                    })();
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','%VITE_GTM_ID%');
                 </script>
                 <!-- End Google Tag Manager -->
         <meta charset="UTF-8" />
@@ -141,22 +136,9 @@
     </head>
         <body style="background-color: #111111">
                 <!-- Google Tag Manager (noscript) -->
-                <script>
-                    (function() {
-                        var gtmId = window?.VITE_GTM_ID || window?.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX';
-                        if (gtmId && gtmId !== 'GTM-XXXXXXX') {
-                            var ns = document.createElement('noscript');
-                            var iframe = document.createElement('iframe');
-                            iframe.src = 'https://www.googletagmanager.com/ns.html?id=' + gtmId;
-                            iframe.height = '0';
-                            iframe.width = '0';
-                            iframe.style.display = 'none';
-                            iframe.style.visibility = 'hidden';
-                            ns.appendChild(iframe);
-                            document.body.insertBefore(ns, document.body.firstChild);
-                        }
-                    })();
-                </script>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_GTM_ID%" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
                 <!-- End Google Tag Manager (noscript) -->
         <noscript>
             <div style="max-width: 900px; margin: 40px auto; padding: 0 20px; color: #e5e7eb; font-family: Arial, sans-serif; line-height: 1.6;">
