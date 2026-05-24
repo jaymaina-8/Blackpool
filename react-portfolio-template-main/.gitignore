@@ -23,3 +23,8 @@ dist/
 *.sln
 *.sw?
 *.sublime-workspace
+
+# Local environment files (never commit secrets)
+.env
+.env.*
+!.env.example
