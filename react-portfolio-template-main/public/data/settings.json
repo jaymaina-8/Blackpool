@@ -8,7 +8,7 @@
     "preloaderSettings": {
         "enabled": true,
         "title": "Blackpool Industry",
-        "subtitle": "Built for confidence.",
+        "subtitle": "Your online solution partner",
         "logoOffset": {
             "right": 14,
             "top": 2,
@@ -59,18 +59,18 @@
         }
     ],
     "consoleMessageForDevelopers": {
-        "title": "🖥️ Hey there, fellow developer!",
+        "title": "🖥️ Hey there, Welcome to Blackpool Industry console",
         "items": [
             {
-                "description": "This is an open-source template based on the React framework.",
+                "description": "This is a space for developers to share important information, tips, or warnings. Feel free to customize this message to provide helpful insights or guidance to anyone who might be inspecting the console.",
                 "list": [],
                 "listStyle": "none"
             },
             {
                 "description": "Like what you see? Let's connect!",
                 "list": [
-                    "GitHub: https://github.com/username",
-                    "Website: https://website.com"
+                    
+                      "Website: https://blackpoolindustry.com"
                 ],
                 "listStyle": "bulleted"
             }
