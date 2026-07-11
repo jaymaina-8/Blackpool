@@ -12,9 +12,20 @@ function LocationProvider({ children, sections, categories }) {
     const [nextSectionId, setNextSectionId] = useState(null)
     const [visitHistoryByCategory, setVisitHistoryByCategory] = useState({})
     const [visitedSectionsCount, setVisitedSectionsCount] = useState(0)
+    
+    // Admin routing
+    const [isAdminRoute, setIsAdminRoute] = useState(false)
+    const [adminPath, setAdminPath] = useState("/")
 
     /** @constructs **/
     useEffect(() => {
+        const path = window.location.pathname;
+        if (path.startsWith("/admin")) {
+            setIsAdminRoute(true)
+            const subpath = path.replace("/admin", "") || "/"
+            setAdminPath(subpath)
+        }
+
         setDidMount(true)
         window.addEventListener('popstate', _onHashEvent)
         window.addEventListener('hashchange', _onHashEvent)
@@ -87,7 +98,13 @@ function LocationProvider({ children, sections, categories }) {
         }
     }
 
+    const goToAdminRoute = (subpath) => {
+        setAdminPath(subpath)
+        window.history.pushState({}, "", `/admin${subpath === "/" ? "" : subpath}`)
+    }
+
     const _onHashEvent = () => {
+        if (window.location.pathname.startsWith("/admin")) return;
         const hash = window.location.hash.replace("#", "")
         let targetSection = sections.find(section => section.id === hash)
 
@@ -147,6 +164,9 @@ function LocationProvider({ children, sections, categories }) {
             goToSectionWithId,
             goToCategory,
             goToCategoryWithId,
+            goToAdminRoute,
+            isAdminRoute,
+            adminPath,
             visitedSectionsCount,
             visitHistoryByCategory
         }}>
@@ -166,6 +186,9 @@ const LocationContext = createContext(null)
  *    goToSectionWithId: Function,
  *    goToCategory: Function,
  *    goToCategoryWithId: Function,
+ *    goToAdminRoute: Function,
+ *    isAdminRoute: Boolean,
+ *    adminPath: String,
  *    visitedSectionsCount: Number,
  *    visitHistoryByCategory: Object
  * }}

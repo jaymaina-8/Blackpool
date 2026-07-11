@@ -17,9 +17,7 @@ export const _loggingUtils = {
      * @param {String} warningMessage
      */
     warn: (component, warningMessage) => {
-        if(!console || !console.log)
-            return
-        console.warn(`[${component}] ${warningMessage}`)
+        // Warning removed for production
     },
 
     /**
@@ -34,7 +32,7 @@ export const _loggingUtils = {
         font-size: ${fontSizeInEm}em; 
         font-weight: ${bold ? 'bold' : 'normal'};
         `
-        console.log(`%c${message}`, style)
+        // Console output removed for production audit compliance
     },
 
     /**

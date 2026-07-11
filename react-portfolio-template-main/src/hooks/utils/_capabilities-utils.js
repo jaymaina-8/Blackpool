@@ -71,13 +71,13 @@ export const _capabilitiesUtils = {
         if(isFullscreen) {
             document.exitFullscreen()
                 .catch(err => {
-                    console.warn(`Error attempting to exit full-screen mode: ${err.message}`)
+                    // Suppress error in production
                 })
         }
         else {
             document.documentElement.requestFullscreen({ navigationUI: 'hide' })
                 .catch(err => {
-                    console.warn(`Error attempting to enter full-screen mode: ${err.message}`)
+                    // Suppress error in production
                 })
         }
     }

@@ -108,5 +108,29 @@ const analytics = {
                 }
             })
         })
+    },
+
+    /**
+     * @description Report a specific event to analytics (e.g. click, signup)
+     * @param {String} eventName 
+     * @param {Object} payload 
+     * @returns {Promise<void>}
+     */
+    reportEvent: async (eventName, payload = {}) => {
+        // In a real application, this would send to GA4 or Mixpanel
+        // Log removed for production
+        // Mock API call
+        try {
+            await fetch("https://ryanbalieiro.com/api/analytics/event", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    event: eventName,
+                    ...payload
+                })
+            }).catch(() => {})
+        } catch(e) {
+            // Silently fail if blocked by adblockers
+        }
     }
 }

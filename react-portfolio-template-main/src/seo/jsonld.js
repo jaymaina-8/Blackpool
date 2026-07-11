@@ -33,3 +33,34 @@ export const buildFaqPageJsonLd = ({ canonicalUrl, faqs }) => {
   };
 };
 
+export const buildOrganizationJsonLd = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blackpool Industry",
+    "url": "https://blackpoolindustry.com",
+    "logo": "https://blackpoolindustry.com/images/logos/logo.svg",
+    "sameAs": [
+      "https://twitter.com/blackpoolindustry",
+      "https://linkedin.com/company/blackpoolindustry"
+    ]
+  };
+};
+
+export const buildWebSiteJsonLd = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Blackpool Industry",
+    "url": "https://blackpoolindustry.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://blackpoolindustry.com/blog?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+};
+

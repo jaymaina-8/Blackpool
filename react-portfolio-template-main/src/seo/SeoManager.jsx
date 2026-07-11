@@ -7,7 +7,7 @@ import {
   DEFAULT_OG_IMAGE_URL,
   SECTION_META,
 } from "/src/seo/seoConfig.js";
-import { buildFaqPageJsonLd } from "/src/seo/jsonld.js";
+import { buildFaqPageJsonLd, buildOrganizationJsonLd, buildWebSiteJsonLd } from "/src/seo/jsonld.js";
 import {
   removeJsonLd,
   setDocumentTitle,
@@ -76,6 +76,10 @@ export default function SeoManager() {
     upsertMeta({ name: "twitter:title", content: title });
     upsertMeta({ name: "twitter:description", content: description });
     upsertMeta({ name: "twitter:image", content: DEFAULT_OG_IMAGE_URL });
+
+    // Inject Base Schema Markup
+    upsertJsonLd({ id: "seo-jsonld-organization", json: buildOrganizationJsonLd() });
+    upsertJsonLd({ id: "seo-jsonld-website", json: buildWebSiteJsonLd() });
 
     // FAQPage JSON-LD should only exist when FAQ content is present (Services section).
     if (sectionId === "services") {

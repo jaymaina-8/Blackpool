@@ -289,6 +289,62 @@
                     }
                 }
             ]
+        },
+        {
+            "id": 5,
+            "component": "ArticleLatestInsights",
+            "locales": {
+                "en": {
+                    "title": "Learn How to {{Grow Your Business Online}} <br/><span class='lead text-muted fs-5 mt-2 d-block fw-normal'>Practical guides on websites, SEO, AI and digital marketing.</span>"
+                }
+            },
+            "items": []
+        },
+        {
+            "id": 5.5,
+            "component": "ArticleInlineList",
+            "locales": {
+                "en": {
+                    "title": "{{Trusted}} by businesses across Kenya"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "display_as_list_if_width_is_lower_than": 380
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "Websites",
+                    "faIcon": "fa-solid fa-circle-check text-success"
+                },
+                {
+                    "id": 2,
+                    "label": "SEO",
+                    "faIcon": "fa-solid fa-circle-check text-success"
+                },
+                {
+                    "id": 3,
+                    "label": "Branding",
+                    "faIcon": "fa-solid fa-circle-check text-success"
+                },
+                {
+                    "id": 4,
+                    "label": "AI Solutions",
+                    "faIcon": "fa-solid fa-circle-check text-success"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "component": "ArticleNewsletterSignup",
+            "locales": {
+                "en": {
+                    "title": "Join our {{Newsletter}}"
+                }
+            },
+            "items": []
         }
     ]
 }
