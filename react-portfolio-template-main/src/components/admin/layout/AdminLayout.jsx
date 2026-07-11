@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from '/src/providers/LocationProvider.jsx'
+import { useTheme } from '/src/providers/ThemeProvider.jsx'
 import ProtectedRoute from '/src/components/admin/layout/ProtectedRoute.jsx'
 import Dashboard from '/src/components/admin/Dashboard.jsx'
 import ArticlesList from '/src/components/admin/articles/ArticlesList.jsx'
@@ -19,40 +20,69 @@ import '/src/styles/admin.scss'
 
 export default function AdminLayout() {
     const { adminPath, goToAdminRoute } = useLocation()
+    const { toggle } = useTheme()
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const navItems = [
-        { path: '/', label: 'Dashboard' },
-        { path: '/articles', label: 'Articles' },
-        { path: '/topics', label: 'Knowledge Hub' },
-        { path: '/categories', label: 'Categories' },
-        { path: '/tags', label: 'Tags' },
-        { path: '/media', label: 'Media' },
-        { path: '/authors', label: 'Authors' },
-        { path: '/publishing', label: 'Publishing' },
-        { path: '/publishing/calendar', label: 'Calendar' },
-        { path: '/marketing', label: 'Marketing' },
-        { path: '/marketing/ctas', label: 'CTAs' },
-        { path: '/marketing/campaigns', label: 'Campaigns' },
-        { path: '/marketing/magnets', label: 'Lead Magnets' },
-        { path: '/settings', label: 'Settings' }
+        { path: '/', label: 'Dashboard', icon: 'pi pi-home' },
+        { path: '/articles', label: 'Articles', icon: 'pi pi-file' },
+        { path: '/topics', label: 'Knowledge Hub', icon: 'pi pi-sitemap' },
+        { path: '/categories', label: 'Categories', icon: 'pi pi-tags' },
+        { path: '/tags', label: 'Tags', icon: 'pi pi-hashtag' },
+        { path: '/media', label: 'Media', icon: 'pi pi-image' },
+        { path: '/authors', label: 'Authors', icon: 'pi pi-users' },
+        { path: '/publishing', label: 'Publishing', icon: 'pi pi-send' },
+        { path: '/publishing/calendar', label: 'Calendar', icon: 'pi pi-calendar' },
+        { path: '/marketing', label: 'Marketing', icon: 'pi pi-chart-line' },
+        { path: '/marketing/ctas', label: 'CTAs', icon: 'pi pi-bullseye' },
+        { path: '/marketing/campaigns', label: 'Campaigns', icon: 'pi pi-megaphone' },
+        { path: '/marketing/magnets', label: 'Lead Magnets', icon: 'pi pi-download' },
+        { path: '/settings', label: 'Settings', icon: 'pi pi-cog' }
     ]
+
+    const handleNavigation = (path) => {
+        goToAdminRoute(path)
+        setIsMobileMenuOpen(false)
+    }
 
     return (
         <ProtectedRoute>
-            <div className="admin-layout d-flex vh-100 bg-light">
-                {/* Sidebar */}
-                <aside className="admin-sidebar bg-white border-end d-flex flex-column" style={{ width: '250px' }}>
-                    <div className="p-4 border-bottom">
-                        <h5 className="fw-bold m-0 text-primary">Project Atlas</h5>
+            <div className="admin-layout d-flex flex-column flex-md-row vh-100">
+                {/* Mobile Topbar */}
+                <div className="admin-mobile-header d-md-none d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 className="fw-bold m-0 text-primary">Project Atlas</h5>
+                    <div className="d-flex gap-3 align-items-center">
+                        <button className="btn btn-sm btn-icon" onClick={toggle} title="Toggle Theme">
+                            <i className="pi pi-moon"></i>
+                        </button>
+                        <button className="btn btn-sm btn-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                            <i className="pi pi-bars fs-4"></i>
+                        </button>
                     </div>
-                    <nav className="p-3 d-flex flex-column gap-2 flex-grow-1">
+                </div>
+
+                {/* Sidebar Overlay (Mobile) */}
+                {isMobileMenuOpen && (
+                    <div className="admin-sidebar-overlay d-md-none" onClick={() => setIsMobileMenuOpen(false)}></div>
+                )}
+
+                {/* Sidebar */}
+                <aside className={`admin-sidebar border-end d-flex flex-column ${isMobileMenuOpen ? 'open' : ''}`}>
+                    <div className="p-4 border-bottom d-none d-md-flex justify-content-between align-items-center">
+                        <h5 className="fw-bold m-0 text-primary">Project Atlas</h5>
+                        <button className="btn btn-sm btn-icon admin-theme-toggle" onClick={toggle} title="Toggle Theme">
+                            <i className="pi pi-moon"></i>
+                        </button>
+                    </div>
+                    <nav className="p-3 d-flex flex-column gap-2 flex-grow-1 overflow-auto">
                         {navItems.map(item => (
                             <button 
                                 key={item.path}
-                                onClick={() => goToAdminRoute(item.path)}
-                                className={`btn text-start fw-medium ${adminPath === item.path ? 'btn-light active text-primary' : 'btn-transparent text-muted'}`}
+                                onClick={() => handleNavigation(item.path)}
+                                className={`btn text-start fw-medium d-flex align-items-center gap-2 ${adminPath === item.path ? 'active text-primary' : 'admin-text-muted'}`}
                                 style={item.path === '/settings' ? { marginTop: 'auto' } : {}}
                             >
+                                <i className={item.icon}></i>
                                 {item.label}
                             </button>
                         ))}
@@ -60,22 +90,24 @@ export default function AdminLayout() {
                 </aside>
 
                 {/* Main Content Area */}
-                <main className="admin-content flex-grow-1 overflow-auto bg-light">
-                    {adminPath === '/' && <Dashboard />}
-                    {adminPath === '/articles' && <ArticlesList />}
-                    {adminPath.startsWith('/articles/') && <ArticleEditor articleId={adminPath.replace('/articles/', '')} />}
-                    {adminPath === '/topics' && <TopicDashboard />}
-                    {adminPath === '/categories' && <CategoriesManager />}
-                    {adminPath === '/tags' && <TagsManager />}
-                    {adminPath === '/media' && <MediaLibrary />}
-                    {adminPath === '/authors' && <AuthorDashboard />}
-                    {adminPath === '/publishing' && <PublishingDashboard />}
-                    {adminPath === '/publishing/calendar' && <EditorialCalendar />}
-                    {adminPath === '/marketing' && <MarketingDashboard />}
-                    {adminPath === '/marketing/ctas' && <CTAsManager />}
-                    {adminPath === '/marketing/campaigns' && <CampaignsManager />}
-                    {adminPath === '/marketing/magnets' && <LeadMagnetsManager />}
-                    {adminPath === '/settings' && <div className="p-4"><h4>Settings</h4></div>}
+                <main className="admin-content flex-grow-1 overflow-auto">
+                    <div className="admin-content-inner p-3 p-md-4">
+                        {adminPath === '/' && <Dashboard />}
+                        {adminPath === '/articles' && <ArticlesList />}
+                        {adminPath.startsWith('/articles/') && <ArticleEditor articleId={adminPath.replace('/articles/', '')} />}
+                        {adminPath === '/topics' && <TopicDashboard />}
+                        {adminPath === '/categories' && <CategoriesManager />}
+                        {adminPath === '/tags' && <TagsManager />}
+                        {adminPath === '/media' && <MediaLibrary />}
+                        {adminPath === '/authors' && <AuthorDashboard />}
+                        {adminPath === '/publishing' && <PublishingDashboard />}
+                        {adminPath === '/publishing/calendar' && <EditorialCalendar />}
+                        {adminPath === '/marketing' && <MarketingDashboard />}
+                        {adminPath === '/marketing/ctas' && <CTAsManager />}
+                        {adminPath === '/marketing/campaigns' && <CampaignsManager />}
+                        {adminPath === '/marketing/magnets' && <LeadMagnetsManager />}
+                        {adminPath === '/settings' && <div><h4>Settings</h4></div>}
+                    </div>
                 </main>
             </div>
         </ProtectedRoute>

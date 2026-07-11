@@ -37,7 +37,7 @@ export default function Dashboard() {
                 </div>
             </div>
             
-            <div className="mt-5 p-5 text-center bg-white rounded shadow-sm border-0">
+            <div className="mt-5 p-5 text-center admin-card rounded shadow-sm border-0">
                 <h4 className="text-muted mb-3">Welcome to Project Atlas</h4>
                 <p className="text-muted mb-0">The Phase 2 CMS layout has been successfully initialized.</p>
             </div>
