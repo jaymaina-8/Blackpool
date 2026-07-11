@@ -1,6 +1,6 @@
 .admin-layout {
     font-family: var(--bs-font-sans-serif, system-ui, -apple-system, sans-serif);
-    background-color: var(--theme-background-main, #f8f9fa);
+    background-color: var(--theme-background, #f8f9fa);
     color: var(--theme-texts, #212529);
 }
 
@@ -49,7 +49,7 @@
 }
 
 .admin-content {
-    background-color: var(--theme-background-main, #f8f9fa);
+    background-color: var(--theme-background, #f8f9fa);
 }
 
 /* Mobile Sidebar / Offcanvas Styles */
@@ -89,7 +89,7 @@
 /* Global Overrides to force bootstrap to respect theme variables inside admin */
 .admin-layout, .admin-content {
     .bg-white { background-color: var(--theme-boards-background, #ffffff) !important; }
-    .bg-light { background-color: var(--theme-background-main, #f8f9fa) !important; }
+    .bg-light { background-color: var(--theme-background, #f8f9fa) !important; }
     .text-dark { color: var(--theme-texts, #212529) !important; }
     .text-muted { color: var(--theme-texts-light, #6c757d) !important; }
     .border { border-color: var(--theme-standard-borders, #dee2e6) !important; }
