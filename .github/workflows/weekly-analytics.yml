@@ -20,6 +20,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        working-directory: ./react-portfolio-template-main
         run: npm ci
 
       - name: Generate and Send Weekly Report
@@ -30,4 +31,5 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
+        working-directory: ./react-portfolio-template-main
         run: node scripts/weekly-report.js

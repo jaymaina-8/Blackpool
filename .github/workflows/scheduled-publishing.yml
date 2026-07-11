@@ -19,10 +19,12 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        working-directory: ./react-portfolio-template-main
         run: npm ci
 
       - name: Run Publish Scheduled Script
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.VITE_SUPABASE_SERVICE_ROLE_KEY }}
+        working-directory: ./react-portfolio-template-main
         run: node scripts/publish-scheduled.js
