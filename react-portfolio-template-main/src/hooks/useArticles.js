@@ -38,7 +38,7 @@ export function useArticles() {
                 .from('articles')
                 .select(`
                     id, title, slug, status, published_at, updated_at,
-                    author:profiles!articles_author_id_fkey(full_name),
+                    author:authors!articles_author_id_fkey(name),
                     category:categories!articles_category_id_fkey(name)
                 `)
                 .is('deleted_at', null)

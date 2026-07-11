@@ -34,8 +34,6 @@ export default function TopicDashboard() {
         fetchKnowledgeGraph()
     }, [])
 
-    if (loading) return <div className="p-4 d-flex justify-content-center"><div className="spinner-border text-primary"></div></div>
-
     const { totalTopics, emptyTopics, strongTopics, totalPillars, sortedTopics } = useMemo(() => {
         return {
             totalTopics: topics.length,
@@ -45,6 +43,8 @@ export default function TopicDashboard() {
             sortedTopics: [...topics].sort((a,b) => b.published_articles - a.published_articles)
         }
     }, [topics])
+
+    if (loading) return <div className="p-4 d-flex justify-content-center"><div className="spinner-border text-primary"></div></div>
 
     return (
         <div className="p-4 p-md-5">

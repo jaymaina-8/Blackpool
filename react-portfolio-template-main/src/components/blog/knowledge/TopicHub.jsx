@@ -21,7 +21,7 @@ export default function TopicHub({ slug, navigate }) {
                 // Fetch Articles for this Topic
                 const { data: articlesData } = await supabase
                     .from('articles')
-                    .select('*, author:profiles(name, avatar_url)')
+                    .select('*, author:authors(name, avatar_url)')
                     .eq('category_id', topicData.id)
                     .eq('status', 'published')
                     .order('published_at', { ascending: false })

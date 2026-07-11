@@ -29,7 +29,7 @@ export function useBlogSearch() {
                 .rpc('search_published_articles', { search_query: queryStr }, { count: 'exact' })
                 .select(`
                     id, title, slug, excerpt, published_at, updated_at, is_featured, view_count,
-                    author:profiles!articles_author_id_fkey(full_name, avatar_url),
+                    author:authors!articles_author_id_fkey(name, avatar_url),
                     category:categories!articles_category_id_fkey(name, slug),
                     cover:media!articles_cover_image_id_fkey(storage_path, alt_text, width, height)
                 `)
