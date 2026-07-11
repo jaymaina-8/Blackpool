@@ -11,8 +11,8 @@ const SUPABASE_URL = process.env.VITE_SUPABASE_URL
 const SUPABASE_ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY
 const SITE_URL = 'https://blackpoolindustry.com'
 
-if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    console.error('Missing Supabase credentials. Sitemap generation skipped.')
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY || !SUPABASE_URL.startsWith('http')) {
+    console.error('Missing or invalid Supabase credentials. Sitemap generation skipped.')
     process.exit(0)
 }
 
