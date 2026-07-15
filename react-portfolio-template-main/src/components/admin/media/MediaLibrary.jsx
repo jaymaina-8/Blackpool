@@ -9,6 +9,7 @@ export default function MediaLibrary() {
     const [mediaItems, setMediaItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [selectedItem, setSelectedItem] = useState(null)
+    const [selectedIds, setSelectedIds] = useState([])
     
     // Filters and sorting
     const [searchQuery, setSearchQuery] = useState('')
@@ -51,9 +52,25 @@ export default function MediaLibrary() {
         try {
             await deleteMedia(item)
             setSelectedItem(null)
+            setSelectedIds(prev => prev.filter(id => id !== item.id))
             loadMedia()
         } catch (err) {
             alert('Failed to delete media: ' + err.message)
+        }
+    }
+
+    const handleBulkDelete = async () => {
+        if (!window.confirm(`Are you sure you want to delete ${selectedIds.length} items?`)) return
+        
+        try {
+            for (const id of selectedIds) {
+                const item = mediaItems.find(m => m.id === id)
+                if (item) await deleteMedia(item)
+            }
+            setSelectedIds([])
+            loadMedia()
+        } catch (err) {
+            alert('Failed to delete some media items: ' + err.message)
         }
     }
 
@@ -64,11 +81,11 @@ export default function MediaLibrary() {
     }
 
     return (
-        <div className="container-fluid p-4">
-            <div className="d-flex justify-content-between align-items-end mb-4">
+        <div className="d-flex flex-column h-100" style={{ gap: 'var(--admin-gap-md)' }}>
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-2" style={{ gap: 'var(--admin-gap-component)' }}>
                 <div>
-                    <h3 className="fw-bold m-0">Media Library</h3>
-                    <p className="text-muted mb-0">Upload and manage images for your articles.</p>
+                    <h1 className="admin-page-title mb-2">Media Library</h1>
+                    <p className="admin-body-text mb-0">Upload and manage images for your articles.</p>
                 </div>
             </div>
 
@@ -79,44 +96,69 @@ export default function MediaLibrary() {
                 error={error}
             />
             
-            {/* Toolbar */}
-            <div className="bg-white p-3 rounded border mb-4 d-flex gap-3 align-items-center flex-wrap shadow-sm">
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Search by filename..." 
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    style={{ maxWidth: '300px' }}
-                />
-                <select className="form-select w-auto" value={mimeFilter} onChange={(e) => setMimeFilter(e.target.value)}>
-                    <option value="">All Types</option>
-                    <option value="image/jpeg">JPEG</option>
-                    <option value="image/png">PNG</option>
-                    <option value="image/webp">WEBP</option>
-                    <option value="image/gif">GIF</option>
-                    <option value="image/svg+xml">SVG</option>
-                </select>
-                <select className="form-select w-auto ms-auto" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-                    <option value="desc">Newest First</option>
-                    <option value="asc">Oldest First</option>
-                </select>
-            </div>
+            <div className="admin-card p-0 d-flex flex-column flex-grow-1 overflow-hidden" style={{ minHeight: 0 }}>
+                {/* Toolbar */}
+                <div className="p-3 border-bottom border-light d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 bg-white" style={{ position: 'sticky', top: 0, zIndex: 20 }}>
+                    <div className="d-flex flex-wrap gap-2 align-items-center flex-grow-1">
+                        <div className="position-relative" style={{ minWidth: '280px' }}>
+                            <i className="pi pi-search position-absolute text-muted" style={{ left: '12px', top: '50%', transform: 'translateY(-50%)' }}></i>
+                            <input 
+                                type="text" 
+                                className="form-control form-control-sm bg-light border-0 ps-5" 
+                                placeholder="Search by filename..." 
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                style={{ borderRadius: '6px', fontSize: '13px' }}
+                            />
+                        </div>
+                        <select className="form-select form-select-sm bg-light border-0 w-auto" value={mimeFilter} onChange={(e) => setMimeFilter(e.target.value)} style={{ borderRadius: '6px', fontSize: '13px' }}>
+                            <option value="">Type: All</option>
+                            <option value="image/jpeg">JPEG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WEBP</option>
+                            <option value="image/gif">GIF</option>
+                            <option value="image/svg+xml">SVG</option>
+                        </select>
+                    </div>
+                    <div className="d-flex align-items-center gap-2">
+                        <select className="form-select form-select-sm bg-light border-0 w-auto" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)} style={{ borderRadius: '6px', fontSize: '13px' }}>
+                            <option value="desc">Sort: Newest First</option>
+                            <option value="asc">Sort: Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+
+                {/* Bulk Actions Slide Down */}
+                {selectedIds.length > 0 && (
+                    <div className="bg-primary bg-opacity-10 border-bottom border-primary px-3 py-2 d-flex flex-row align-items-center justify-content-between" style={{ animation: 'slideDown 0.2s ease-out' }}>
+                        <span className="fw-bold text-primary" style={{ fontSize: '13px' }}>{selectedIds.length} items selected</span>
+                        <div className="d-flex gap-2">
+                            <button className="btn btn-sm btn-white border shadow-sm fw-medium" onClick={() => setSelectedIds([])} style={{ fontSize: '12px' }}>Deselect All</button>
+                            <button className="btn btn-sm btn-danger shadow-sm fw-medium" onClick={handleBulkDelete} style={{ fontSize: '12px' }}>Delete Selected</button>
+                        </div>
+                    </div>
+                )}
+                
+                <div className="flex-grow-1 overflow-auto position-relative p-4">
 
             {isLoading ? (
                 <div className="text-center p-5">
                     <div className="spinner-border text-primary" role="status" />
-                    <p className="text-muted mt-2">Loading library...</p>
+                    <p className="admin-small-text text-muted mt-2">Loading library...</p>
                 </div>
             ) : (
                 <MediaGrid 
                     items={mediaItems} 
                     onDelete={handleDelete}
                     onSelect={setSelectedItem}
+                    selectedIds={selectedIds}
+                    setSelectedIds={setSelectedIds}
                 />
-            )}
+                )}
+            </div>
+        </div>
 
-            {selectedItem && (
+        {selectedItem && (
                 <MediaModal 
                     item={selectedItem} 
                     onClose={() => setSelectedItem(null)} 
@@ -124,6 +166,12 @@ export default function MediaLibrary() {
                     onUpdate={handleUpdateMetadata}
                 />
             )}
+            <style jsx>{`
+                @keyframes slideDown {
+                    from { transform: translateY(-10px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+            `}</style>
         </div>
     )
 }

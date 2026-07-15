@@ -196,12 +196,8 @@ export default function ArticleEditor({ articleId }) {
                 setStatus(targetStatus)
                 setHasUnsavedChanges(false)
                 
-                // Keep fullArticle in sync for child components
-                if (savedArticle) {
-                    setFullArticle(savedArticle)
-                }
+                if (savedArticle) setFullArticle(savedArticle)
 
-                // If not silent save, log revision
                 if (!isSilent) {
                     await saveVersion(
                         savedArticle?.id || articleId, 
@@ -227,7 +223,7 @@ export default function ArticleEditor({ articleId }) {
     }
 
     const contentWords = htmlContent ? Math.max(0, htmlContent.replace(/<[^>]*>?/gm, '').split(/\s+/).filter(w => w.length > 0).length) : 0
-    const { score: seoScore, rules: seoRules, color: seoColor } = useSeoEngine({ 
+    const { score: seoScore } = useSeoEngine({ 
         title, 
         seoTitle, 
         seoDesc, 
@@ -247,37 +243,46 @@ export default function ArticleEditor({ articleId }) {
     }
 
     return (
-        <div className="container-fluid p-4">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <div>
-                    <button className="btn btn-sm btn-link text-muted px-0 mb-2 text-decoration-none" onClick={() => goToAdminRoute('/articles')}>
-                        <i className="fa-solid fa-arrow-left me-1"></i> Back to Articles
+        <div className="d-flex flex-column h-100 bg-light" style={{ marginLeft: '-var(--admin-sidebar-width)', paddingLeft: 'var(--admin-sidebar-width)', minHeight: '100vh' }}>
+            {/* Top Bar Workspace Style */}
+            <div className="d-flex justify-content-between align-items-center bg-white px-4 py-3 border-bottom border-light sticky-top" style={{ zIndex: 100 }}>
+                <div className="d-flex align-items-center gap-3">
+                    <button className="admin-btn-icon text-muted bg-light" onClick={() => goToAdminRoute('/articles')}>
+                        <i className="pi pi-arrow-left"></i>
                     </button>
-                    <div className="d-flex align-items-center gap-3">
-                        <h3 className="fw-bold m-0">{isNew ? 'New Article' : 'Edit Article'}</h3>
-                        {!isNew && (
-                            <span className="badge bg-light text-muted border">
-                                {isAutosaving ? 'Saving...' : hasUnsavedChanges ? 'Unsaved changes' : lastSaved ? `Saved ${lastSaved.toLocaleTimeString()}` : 'Saved'}
-                            </span>
-                        )}
+                    <div className="fw-medium text-dark admin-small-text d-none d-md-block">
+                        <span className="text-muted">Articles</span> / {isNew ? 'New Article' : 'Edit Article'}
                     </div>
+                    {!isNew && (
+                        <div className="d-flex align-items-center gap-2 admin-small-text ms-3 border-start ps-3 border-light">
+                            {isAutosaving ? (
+                                <><span className="spinner-border spinner-border-sm text-primary" role="status"></span> Saving...</>
+                            ) : hasUnsavedChanges ? (
+                                <><i className="pi pi-circle-fill text-warning" style={{fontSize:'8px'}}></i> Unsaved changes</>
+                            ) : lastSaved ? (
+                                <><i className="pi pi-check text-success"></i> Saved {lastSaved.toLocaleTimeString()}</>
+                            ) : (
+                                <><i className="pi pi-check text-success"></i> Saved</>
+                            )}
+                        </div>
+                    )}
                 </div>
-                <div className="d-flex gap-2">
+                <div className="d-flex gap-2 align-items-center">
                     {!isNew && (
                         <>
-                            <button className="btn btn-outline-secondary shadow-sm bg-white" onClick={() => setShowLinkAssistant(true)}>
-                                <i className="fa-solid fa-link me-2"></i>Link Assistant
+                            <button className="admin-btn admin-btn-ghost text-muted hover-bg" onClick={() => setShowLinkAssistant(true)}>
+                                <i className="pi pi-link me-2"></i>Link Assistant
                             </button>
-                            <button className="btn btn-outline-primary shadow-sm bg-white" onClick={() => setShowAnalytics(true)}>
-                                <i className="fa-solid fa-chart-line me-2"></i>Insights
+                            <button className="admin-btn admin-btn-ghost text-muted hover-bg" onClick={() => setShowAnalytics(true)}>
+                                <i className="pi pi-chart-line me-2"></i>Insights
                             </button>
                         </>
                     )}
-                    <button className="btn btn-light shadow-sm" onClick={() => handleSave('draft')} disabled={savingArticle}>
+                    <button className="admin-btn admin-btn-outline shadow-sm bg-white" onClick={() => handleSave('draft')} disabled={savingArticle}>
                         {savingArticle && !isAutosaving ? 'Saving...' : 'Save Draft'}
                     </button>
                     <button 
-                        className="btn btn-primary shadow-sm" 
+                        className="admin-btn admin-btn-primary shadow-sm" 
                         onClick={handlePublishClick} 
                         disabled={savingArticle}
                     >
@@ -288,76 +293,87 @@ export default function ArticleEditor({ articleId }) {
 
             {!isNew && <ArticleLockBanner articleId={articleId} />}
 
-            <div className="row g-4 mt-1">
-                {/* MAIN COLUMN */}
-                <div className="col-lg-8">
-                    <div className="card shadow-sm border-0 mb-4">
-                        <div className="card-body">
+            <div className="d-flex flex-grow-1 overflow-hidden">
+                {/* MAIN COLUMN (Writing Workspace - Notion Style) */}
+                <div className="flex-grow-1 overflow-auto p-0 p-md-4 p-lg-5 d-flex justify-content-center" style={{ backgroundColor: 'var(--admin-bg-soft)' }}>
+                    <div className="bg-white shadow-sm w-100" style={{ maxWidth: '1000px', borderRadius: 'var(--admin-radius-card)', minHeight: '800px', overflow: 'hidden', border: '1px solid var(--admin-border-subtle)' }}>
+                        
+                        {/* Cover Image Header */}
+                        {coverImageUrl ? (
+                            <div className="position-relative w-100" style={{ height: '300px', backgroundColor: 'var(--admin-bg-sidebar)' }}>
+                                <img src={coverImageUrl} alt="Cover" className="w-100 h-100 object-fit-cover" />
+                                <div className="position-absolute top-0 end-0 p-3 d-flex gap-2 opacity-0 hover-opacity-100 transition-all" style={{ opacity: 0.8 }}>
+                                    <label htmlFor="cover-upload" className="btn btn-sm btn-light border shadow-sm fw-medium d-flex align-items-center gap-2" style={{cursor: 'pointer'}}>
+                                        <i className="pi pi-image"></i> Change Cover
+                                    </label>
+                                    <input type="file" id="cover-upload" className="d-none" accept="image/jpeg, image/png, image/webp" onChange={handleCoverUpload} disabled={isUploading} />
+                                    
+                                    <button className="btn btn-sm btn-danger shadow-sm d-flex align-items-center gap-2" onClick={() => {setCoverImageId(null); setCoverImageUrl(null);}}>
+                                        <i className="pi pi-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="w-100 px-5 pt-5 pb-0">
+                                <label htmlFor="cover-upload" className="admin-btn admin-btn-ghost text-muted d-inline-flex align-items-center gap-2 transition-hover p-2 rounded" style={{cursor: 'pointer', margin: '-8px'}}>
+                                    <i className="pi pi-image"></i> {isUploading ? 'Uploading...' : 'Add Cover'}
+                                </label>
+                                <input type="file" id="cover-upload" className="d-none" accept="image/jpeg, image/png, image/webp" onChange={handleCoverUpload} disabled={isUploading} />
+                            </div>
+                        )}
+
+                        {/* Editor Canvas */}
+                        <div className="px-4 px-md-5 pt-5 pb-5">
                             <input 
                                 type="text" 
-                                className="form-control form-control-lg border-0 fw-bold fs-2 mb-2 px-0 shadow-none" 
+                                className="form-control border-0 fw-bold px-0 shadow-none mb-3 font-heading" 
+                                style={{ fontSize: 'var(--admin-fs-page-title)', letterSpacing: '-1.5px', lineHeight: '1.1', color: 'var(--admin-text-main)', background: 'transparent' }}
                                 placeholder="Article Title" 
                                 value={title}
                                 onChange={handleTitleChange}
                             />
-                            <div className="d-flex align-items-center text-muted small">
-                                <span className="me-2">Permalink:</span>
-                                <code>/blog/</code>
-                                <input 
-                                    type="text" 
-                                    className="form-control form-control-sm border-0 bg-light d-inline-block p-1 ms-1" 
-                                    style={{width: '200px', fontSize: '12px'}}
-                                    value={slug}
-                                    onChange={handleSlugChange}
-                                    placeholder="article-slug"
-                                />
-                                {isSlugLocked && (
-                                    <button className="btn btn-sm btn-link text-muted py-0" onClick={() => {
-                                        setIsSlugLocked(false)
-                                        setSlug(generateSlug(title))
-                                    }}>
-                                        <i className="fa-solid fa-unlock-keyhole" title="Unlock slug generation"></i>
-                                    </button>
-                                )}
-                            </div>
-
-                            <div className="d-flex align-items-center text-muted small mb-4 gap-3">
-                                <span><i className="fa-solid fa-calculator me-1"></i> {htmlContent ? Math.max(0, htmlContent.replace(/<[^>]*>?/gm, '').split(/\s+/).filter(w => w.length > 0).length) : 0} words</span>
-                                <span><i className="fa-regular fa-clock me-1"></i> {htmlContent ? Math.max(1, Math.ceil(htmlContent.replace(/<[^>]*>?/gm, '').split(/\s+/).filter(w => w.length > 0).length / 250)) : 1} min read</span>
+                            
+                            {/* Meta Bar */}
+                            <div className="d-flex align-items-center flex-wrap gap-3 text-muted admin-small-text mb-5 pb-4 border-bottom border-light">
+                                <div className="d-flex align-items-center bg-light rounded px-2 py-1">
+                                    <span className="me-1 fw-medium">/</span>
+                                    <input 
+                                        type="text" 
+                                        className="form-control form-control-sm border-0 bg-transparent p-0 text-muted admin-small-text fw-medium" 
+                                        style={{width: 'auto', minWidth: '150px', boxShadow: 'none'}}
+                                        value={slug}
+                                        onChange={handleSlugChange}
+                                        placeholder="article-slug"
+                                    />
+                                    {isSlugLocked && (
+                                        <button className="admin-btn-icon text-muted py-0 ms-1 hover-text-primary" onClick={() => {
+                                            setIsSlugLocked(false)
+                                            setSlug(generateSlug(title))
+                                        }}>
+                                            <i className="pi pi-unlock" title="Unlock slug generation"></i>
+                                        </button>
+                                    )}
+                                </div>
+                                <div className="ms-md-auto d-flex gap-4">
+                                    <span className="d-flex align-items-center gap-1"><i className="pi pi-file-edit text-muted opacity-75"></i> {contentWords} words</span>
+                                    <span className="d-flex align-items-center gap-1"><i className="pi pi-clock text-muted opacity-75"></i> {Math.max(1, Math.ceil(contentWords / 250))} min read</span>
+                                </div>
                             </div>
 
                             {!isInitialLoad.current && (
-                                <BlockEditor 
-                                    initialContent={content} 
-                                    onChange={handleContentChange} 
-                                    onUploadFile={handleBlockNoteUpload}
-                                />
+                                <div className="article-editor-content-wrapper" style={{ minHeight: '500px' }}>
+                                    <BlockEditor 
+                                        initialContent={content} 
+                                        onChange={handleContentChange} 
+                                        onUploadFile={handleBlockNoteUpload}
+                                    />
+                                </div>
                             )}
                         </div>
                     </div>
 
-                    <div className="card shadow-sm border-0">
-                        <div className="card-header bg-white fw-bold py-3">SEO Metadata</div>
-                        <div className="card-body">
-                            <div className="mb-3">
-                                <div className="d-flex justify-content-between">
-                                    <label className="form-label small fw-medium">SEO Title</label>
-                                    <small className={seoTitle.length > 60 ? 'text-danger' : 'text-muted'}>{seoTitle.length}/60</small>
-                                </div>
-                                <input type="text" className="form-control" value={seoTitle} onChange={e => setSeoTitle(e.target.value)} placeholder="Leave blank to use article title" />
-                            </div>
-                            <div>
-                                <div className="d-flex justify-content-between">
-                                    <label className="form-label small fw-medium">Meta Description</label>
-                                    <small className={seoDesc.length > 160 ? 'text-danger' : 'text-muted'}>{seoDesc.length}/160</small>
-                                </div>
-                                <textarea className="form-control" rows="3" value={seoDesc} onChange={e => setSeoDesc(e.target.value)} placeholder="Brief summary for search engines..."></textarea>
-                            </div>
-                        </div>
-                    </div>
-
                     {!isNew && (
-                        <>
+                        <div className="admin-gap-card d-flex flex-column mt-4 w-100" style={{ maxWidth: '900px' }}>
                             <RevisionHistory 
                                 articleId={articleId} 
                                 onRestore={(ver) => {
@@ -370,105 +386,78 @@ export default function ArticleEditor({ articleId }) {
                                 }} 
                             />
                             <WorkflowTimeline articleId={articleId} currentStatus={status} />
-                        </>
+                        </div>
                     )}
                 </div>
 
-                {/* SIDEBAR */}
-                <div className="col-lg-4">
-                    <PublishingReadiness article={{
-                        title, slug, status, is_featured: isFeatured, is_pillar: isPillar, content, html_content: htmlContent,
-                        category_id: categoryId, cover_image_id: coverImageId, seo_title: seoTitle, seo_description: seoDesc,
-                        tags: selectedTags, word_count: contentWords, ...fullArticle
-                    }} />
+                {/* SIDEBAR (Inspector) */}
+                <div className="bg-white overflow-auto border-start border-subtle shadow-sm z-1" style={{ width: '380px', minWidth: '380px', borderColor: 'var(--admin-border-subtle) !important' }}>
+                    <div className="p-4 d-flex flex-column gap-5">
+                        
+                        <PublishingReadiness article={{
+                            title, slug, status, is_featured: isFeatured, is_pillar: isPillar, content, html_content: htmlContent,
+                            category_id: categoryId, cover_image_id: coverImageId, seo_title: seoTitle, seo_description: seoDesc,
+                            tags: selectedTags, word_count: contentWords, ...fullArticle
+                        }} />
 
-                    {!isNew && (
-                        <PublishingPanel 
-                            article={fullArticle} 
-                            onStatusChange={(newStatus) => {
-                                setStatus(newStatus)
-                                setFullArticle({...fullArticle, status: newStatus})
-                            }} 
-                        />
-                    )}
-
-                    <div className="card shadow-sm border-0 mb-4">
-                        <div className="card-header bg-white fw-bold py-3">Taxonomy</div>
-                        <div className="card-body">
-                            <div className="mb-4">
-                                <label className="form-label small fw-medium">Category</label>
-                                <select className="form-select mb-3" value={categoryId} onChange={e => setCategoryId(e.target.value)}>
+                        <div className="d-flex flex-column gap-3">
+                            <h6 className="admin-small-text fw-bold text-uppercase tracking-wider text-muted m-0">Taxonomy</h6>
+                            
+                            <div>
+                                <label className="form-label admin-meta-text fw-medium text-dark mb-2">Category</label>
+                                <select className="form-select form-select-sm border border-light shadow-none" value={categoryId} onChange={e => setCategoryId(e.target.value)} style={{ borderRadius: 'var(--admin-radius-input)', backgroundColor: 'var(--admin-bg-soft)', color: 'var(--admin-text-main)' }}>
                                     <option value="">Select a category...</option>
                                     {availableCategories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                                 </select>
-                                
-                                <div className="form-check form-switch mb-3">
-                                    <input 
-                                        className="form-check-input" 
-                                        type="checkbox" 
-                                        id="isFeaturedSwitch" 
-                                        checked={isFeatured} 
-                                        onChange={e => setIsFeatured(e.target.checked)} 
-                                    />
-                                    <label className="form-check-label small" htmlFor="isFeaturedSwitch">
-                                        ⭐ Featured Article
-                                    </label>
+                            </div>
+                            
+                            <div className="d-flex flex-column gap-2 p-3 rounded" style={{ backgroundColor: 'var(--admin-bg-soft)', border: '1px solid var(--admin-border-light)' }}>
+                                <div className="form-check form-switch d-flex justify-content-between align-items-center m-0 p-0">
+                                    <label className="form-check-label admin-small-text m-0 text-dark fw-medium" htmlFor="isFeaturedSwitch" style={{ cursor: 'pointer' }}>Featured Article</label>
+                                    <input className="form-check-input m-0" type="checkbox" id="isFeaturedSwitch" checked={isFeatured} onChange={e => setIsFeatured(e.target.checked)} style={{ cursor: 'pointer' }} />
                                 </div>
-                                <div className="form-check form-switch mb-3">
-                                    <input 
-                                        className="form-check-input" 
-                                        type="checkbox" 
-                                        id="isPillarSwitch" 
-                                        checked={isPillar} 
-                                        onChange={e => setIsPillar(e.target.checked)} 
-                                    />
-                                    <label className="form-check-label small text-warning fw-bold" htmlFor="isPillarSwitch">
-                                        ⭐ Complete Guide (Pillar)
-                                    </label>
+                                <hr className="my-2 border-light opacity-50" />
+                                <div className="form-check form-switch d-flex justify-content-between align-items-center m-0 p-0">
+                                    <label className="form-check-label admin-small-text m-0 text-dark fw-medium" htmlFor="isPillarSwitch" style={{ cursor: 'pointer' }}>Complete Guide (Pillar)</label>
+                                    <input className="form-check-input m-0" type="checkbox" id="isPillarSwitch" checked={isPillar} onChange={e => setIsPillar(e.target.checked)} style={{ cursor: 'pointer' }} />
                                 </div>
                             </div>
+
                             <div>
-                                <label className="form-label small fw-medium">Tags</label>
-                                <div className="border rounded p-2 bg-light" style={{ maxHeight: '150px', overflowY: 'auto' }}>
-                                    {availableTags.length === 0 ? <small className="text-muted">No tags available.</small> : availableTags.map(tag => (
-                                        <div key={tag.id} className="form-check">
-                                            <input 
-                                                className="form-check-input" 
-                                                type="checkbox" 
-                                                id={`tag-${tag.id}`} 
-                                                checked={selectedTags.includes(tag.id)}
-                                                onChange={() => toggleTag(tag.id)}
-                                            />
-                                            <label className="form-check-label small" htmlFor={`tag-${tag.id}`}>
-                                                {tag.name}
-                                            </label>
-                                        </div>
+                                <label className="form-label admin-meta-text fw-medium text-dark mb-2">Tags</label>
+                                <div className="border border-light rounded p-3 d-flex flex-wrap gap-2" style={{ maxHeight: '200px', overflowY: 'auto', backgroundColor: 'var(--admin-bg-soft)' }}>
+                                    {availableTags.length === 0 ? <small className="text-muted admin-small-text">No tags available.</small> : availableTags.map(tag => (
+                                        <button
+                                            key={tag.id}
+                                            onClick={() => toggleTag(tag.id)}
+                                            className={`badge border-0 transition-hover ${selectedTags.includes(tag.id) ? 'bg-primary text-white shadow-sm' : 'text-dark border border-subtle'}`}
+                                            style={{ fontSize: '11px', padding: '6px 10px', borderRadius: '6px', backgroundColor: selectedTags.includes(tag.id) ? 'var(--admin-color-primary)' : 'var(--admin-bg-card)' }}
+                                        >
+                                            {tag.name}
+                                        </button>
                                     ))}
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="card shadow-sm border-0 mb-4">
-                        <div className="card-header bg-white fw-bold py-3">Cover Image</div>
-                        <div className="card-body text-center">
-                            {coverImageUrl ? (
-                                <div className="mb-3">
-                                    <img src={coverImageUrl} alt="Cover" className="img-fluid rounded shadow-sm" />
-                                    <button className="btn btn-sm btn-link text-danger mt-2 text-decoration-none" onClick={() => {setCoverImageId(null); setCoverImageUrl(null);}}>Remove Image</button>
+                        <div>
+                            <h6 className="admin-meta-text fw-bold text-uppercase tracking-wider text-muted mb-3">SEO Metadata</h6>
+                            <div className="mb-3">
+                                <div className="d-flex justify-content-between align-items-center mb-1">
+                                    <label className="form-label admin-small-text fw-medium text-dark m-0">SEO Title</label>
+                                    <small className={seoTitle.length > 60 ? 'text-danger fw-bold' : 'text-muted admin-small-text'} style={{ fontSize: '10px' }}>{seoTitle.length}/60</small>
                                 </div>
-                            ) : (
-                                <div className="p-4 border border-dashed rounded bg-light transition-all">
-                                    <i className="fa-regular fa-image fs-1 text-muted mb-2 opacity-50"></i>
-                                    <div className="mt-2">
-                                        <input type="file" id="cover-upload" className="d-none" accept="image/jpeg, image/png, image/webp" onChange={handleCoverUpload} disabled={isUploading} />
-                                        <label htmlFor="cover-upload" className="btn btn-sm btn-outline-primary" style={{cursor: 'pointer'}}>
-                                            {isUploading ? 'Uploading...' : 'Upload Image'}
-                                        </label>
-                                    </div>
+                                <input type="text" className="form-control form-control-sm bg-light border-0" value={seoTitle} onChange={e => setSeoTitle(e.target.value)} placeholder="Leave blank to use article title" style={{ borderRadius: '6px' }} />
+                            </div>
+                            <div>
+                                <div className="d-flex justify-content-between align-items-center mb-1">
+                                    <label className="form-label admin-small-text fw-medium text-dark m-0">Meta Description</label>
+                                    <small className={seoDesc.length > 160 ? 'text-danger fw-bold' : 'text-muted admin-small-text'} style={{ fontSize: '10px' }}>{seoDesc.length}/160</small>
                                 </div>
-                            )}
+                                <textarea className="form-control form-control-sm bg-light border-0" rows="4" value={seoDesc} onChange={e => setSeoDesc(e.target.value)} placeholder="Brief summary for search engines..." style={{ borderRadius: '6px' }}></textarea>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

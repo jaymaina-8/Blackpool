@@ -44,121 +44,129 @@ export default function TopicDashboard() {
         }
     }, [topics])
 
-    if (loading) return <div className="p-4 d-flex justify-content-center"><div className="spinner-border text-primary"></div></div>
+    if (loading) return <div className="p-5 d-flex justify-content-center"><div className="spinner-border text-primary"></div></div>
 
     return (
-        <div className="p-4 p-md-5">
-            <div className="d-flex justify-content-between align-items-center mb-5">
+        <div className="d-flex flex-column h-100" style={{ gap: 'var(--admin-gap-md)' }}>
+            <div className="d-flex justify-content-between align-items-center mb-2" style={{ gap: 'var(--admin-gap-component)' }}>
                 <div>
-                    <h2 className="fw-bold mb-1">Knowledge Hub Dashboard</h2>
-                    <p className="text-muted m-0">Manage topic clusters, reading paths, and pillar pages.</p>
+                    <h1 className="admin-page-title mb-2">Knowledge Hub</h1>
+                    <p className="admin-body-text mb-0">Manage topic clusters, reading paths, and pillar pages.</p>
                 </div>
-                <button className="btn btn-primary px-4 fw-medium shadow-sm"><i className="fa-solid fa-plus me-2"></i>New Topic</button>
+                <button className="admin-btn admin-btn-primary shadow-sm">
+                    <i className="pi pi-plus me-1"></i> New Topic
+                </button>
             </div>
 
             {/* Top Stats */}
-            <div className="row g-4 mb-5">
+            <div className="row g-4 mb-4 admin-mt-section">
                 {[
-                    { label: 'Total Topics', value: totalTopics, icon: 'fa-layer-group', color: 'primary' },
-                    { label: 'Pillar Pages', value: totalPillars, icon: 'fa-star', color: 'warning' },
-                    { label: 'Strong Clusters', value: strongTopics, icon: 'fa-chart-pie', color: 'success' },
-                    { label: 'Empty Topics', value: emptyTopics, icon: 'fa-triangle-exclamation', color: 'danger' },
+                    { label: 'Total Topics', value: totalTopics, icon: 'pi-folder', color: 'primary' },
+                    { label: 'Pillar Pages', value: totalPillars, icon: 'pi-star-fill', color: 'warning' },
+                    { label: 'Strong Clusters', value: strongTopics, icon: 'pi-chart-pie', color: 'success' },
+                    { label: 'Empty Topics', value: emptyTopics, icon: 'pi-exclamation-triangle', color: 'danger' },
                 ].map((stat, idx) => (
-                    <div className="col-md-6 col-xl-3" key={idx}>
-                        <div className="card border-0 shadow-sm rounded-4 h-100 p-4 d-flex flex-row align-items-center gap-3">
-                            <div className={`bg-${stat.color}-subtle text-${stat.color} rounded-circle d-flex justify-content-center align-items-center`} style={{width: '60px', height: '60px', fontSize: '1.5rem'}}>
-                                <i className={`fa-solid ${stat.icon}`}></i>
+                    <div className="col-6 col-lg-3" key={idx}>
+                        <div className="admin-card h-100 position-relative overflow-hidden">
+                            <div className="d-flex align-items-center gap-2 mb-3">
+                                <i className={`pi ${stat.icon} text-${stat.color}`}></i>
+                                <span className="admin-meta-text fw-bold text-uppercase tracking-wider">{stat.label}</span>
                             </div>
-                            <div>
-                                <h3 className="fw-bold m-0">{stat.value}</h3>
-                                <div className="text-muted small fw-medium">{stat.label}</div>
-                            </div>
+                            <h2 className="admin-stat-text m-0">{stat.value}</h2>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div className="row g-5">
-                {/* Topic Completeness */}
+            <div className="row g-4 admin-mt-section">
+                {/* Topic Cards */}
                 <div className="col-lg-8">
-                    <div className="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
-                        <div className="card-header bg-white border-bottom p-4">
-                            <h5 className="fw-bold m-0">Topic Completeness</h5>
-                            <p className="small text-muted m-0">Target is 10 published articles per topic.</p>
+                    <div className="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h5 className="admin-section-title m-0">Topic Completeness</h5>
+                            <p className="admin-meta-text text-muted m-0 mt-1">Target is 10 published articles per topic.</p>
                         </div>
-                        <div className="card-body p-0">
-                            <div className="table-responsive">
-                                <table className="table table-hover align-middle m-0">
-                                    <thead className="table-light">
-                                        <tr>
-                                            <th className="ps-4 text-uppercase text-muted small fw-semibold">Topic</th>
-                                            <th className="text-uppercase text-muted small fw-semibold">Status</th>
-                                            <th className="text-uppercase text-muted small fw-semibold">Pillars</th>
-                                            <th className="text-uppercase text-muted small fw-semibold w-25">Progress</th>
-                                            <th className="pe-4 text-end text-uppercase text-muted small fw-semibold">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="border-top-0">
-                                        {sortedTopics.map(topic => (
-                                            <tr key={topic.id}>
-                                                <td className="ps-4 py-3">
-                                                    <div className="fw-bold">{topic.name}</div>
-                                                    <div className="text-muted small">{topic.published_articles} published articles</div>
-                                                </td>
-                                                <td>
-                                                    <span className={`badge bg-${topic.status === 'Strong' ? 'success' : topic.status === 'Developing' ? 'primary' : 'secondary'}-subtle text-${topic.status === 'Strong' ? 'success' : topic.status === 'Developing' ? 'primary' : 'secondary'} rounded-pill`}>
-                                                        {topic.status}
-                                                    </span>
-                                                </td>
-                                                <td>{topic.pillars} <i className="fa-solid fa-star text-warning small ms-1"></i></td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="progress flex-grow-1" style={{height: '6px'}}>
-                                                            <div className={`progress-bar bg-${topic.completeness === 100 ? 'success' : 'primary'}`} style={{width: `${topic.completeness}%`}}></div>
-                                                        </div>
-                                                        <span className="small text-muted fw-medium">{topic.completeness}%</span>
-                                                    </div>
-                                                </td>
-                                                <td className="pe-4 text-end">
-                                                    <button className="btn btn-sm btn-light text-primary fw-medium">Manage</button>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                        <div className="d-flex gap-2">
+                            <button className="admin-btn admin-btn-ghost text-muted"><i className="pi pi-filter me-2"></i>Filter</button>
+                            <button className="admin-btn admin-btn-ghost text-muted"><i className="pi pi-sort-amount-down me-2"></i>Sort</button>
+                        </div>
+                    </div>
+
+                    <div className="row g-4">
+                        {sortedTopics.map(topic => (
+                            <div className="col-md-6" key={topic.id}>
+                                <div className="admin-card transition-hover d-flex flex-column h-100">
+                                    <div className="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h6 className="fw-bold mb-1 text-dark">{topic.name}</h6>
+                                            <div className="admin-meta-text text-muted">{topic.published_articles} published articles</div>
+                                        </div>
+                                        <span className={`badge bg-${topic.status === 'Strong' ? 'success' : topic.status === 'Developing' ? 'primary' : 'secondary'} text-white rounded-pill px-2 py-1`} style={{fontSize: '10px'}}>
+                                            {topic.status}
+                                        </span>
+                                    </div>
+                                    
+                                    <div className="d-flex align-items-center gap-3 mb-4 admin-small-text text-muted">
+                                        <span className="d-flex align-items-center gap-1"><i className="pi pi-star text-warning"></i> {topic.pillars} Pillars</span>
+                                        <span className="d-flex align-items-center gap-1"><i className="pi pi-file"></i> {topic.total_articles} Total</span>
+                                    </div>
+                                    
+                                    <div className="mt-auto">
+                                        <div className="d-flex justify-content-between align-items-center mb-2">
+                                            <span className="admin-meta-text fw-medium">Completeness</span>
+                                            <span className="admin-meta-text fw-bold text-dark">{topic.completeness}%</span>
+                                        </div>
+                                        <div className="progress bg-light border" style={{height: '6px', overflow: 'hidden'}}>
+                                            <div className={`progress-bar bg-${topic.completeness === 100 ? 'success' : 'primary'}`} style={{width: `${topic.completeness}%`}}></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
                 {/* Knowledge Graph Snapshot */}
                 <div className="col-lg-4">
-                    <div className="card border-0 shadow-sm rounded-4 mb-4">
-                        <div className="card-header bg-white border-bottom p-4">
-                            <h5 className="fw-bold m-0">Knowledge Graph</h5>
-                            <p className="small text-muted m-0">Tree representation</p>
+                    <div className="admin-card sticky-top" style={{ top: '90px' }}>
+                        <div className="border-bottom border-light pb-3 mb-4">
+                            <h5 className="admin-card-title m-0">Knowledge Graph</h5>
+                            <p className="admin-meta-text text-muted m-0 mt-1">Tree representation</p>
                         </div>
-                        <div className="card-body p-4 bg-light rounded-bottom-4">
+                        <div className="bg-light p-3 rounded border border-light" style={{ maxHeight: '600px', overflowY: 'auto', backgroundColor: 'var(--admin-bg-soft)' }}>
                             {topics.slice(0, 3).map(topic => (
                                 <div key={topic.id} className="mb-4">
-                                    <div className="fw-bold mb-2 text-primary"><i className="fa-solid fa-folder-tree me-2"></i>{topic.name}</div>
-                                    <div className="ps-3 border-start border-2 ms-2">
+                                    <div className="fw-bold mb-2 text-primary admin-small-text">
+                                        <i className="pi pi-folder-open me-2"></i>{topic.name}
+                                    </div>
+                                    <div className="ps-3 border-start border-2 border-primary ms-2 d-flex flex-column gap-2">
                                         {articles.filter(a => a.category_id === topic.id).slice(0,4).map(article => (
-                                            <div key={article.id} className="small text-muted mb-1 text-truncate" style={{maxWidth: '250px'}}>
-                                                ├── {article.is_pillar && <i className="fa-solid fa-star text-warning small me-1"></i>}{article.title}
+                                            <div key={article.id} className="admin-small-text text-muted text-truncate" style={{maxWidth: '100%'}}>
+                                                <span className="text-light-subtle me-1">├──</span>
+                                                {article.is_pillar && <i className="pi pi-star-fill text-warning small me-1"></i>}
+                                                {article.title}
                                             </div>
                                         ))}
                                         {articles.filter(a => a.category_id === topic.id).length > 4 && (
-                                            <div className="small text-muted mb-1">
-                                                └── ... and {articles.filter(a => a.category_id === topic.id).length - 4} more
+                                            <div className="admin-small-text text-muted">
+                                                <span className="text-light-subtle me-1">└──</span>
+                                                ... and {articles.filter(a => a.category_id === topic.id).length - 4} more
                                             </div>
                                         )}
                                         {articles.filter(a => a.category_id === topic.id).length === 0 && (
-                                            <div className="small text-danger opacity-75 fst-italic">└── No articles</div>
+                                            <div className="admin-small-text text-danger opacity-75 fst-italic">
+                                                <span className="text-light-subtle me-1">└──</span>
+                                                No articles
+                                            </div>
                                         )}
                                     </div>
                                 </div>
                             ))}
+                            {topics.length > 3 && (
+                                <div className="text-center mt-3 pt-3 border-top border-light">
+                                    <button className="admin-btn admin-btn-ghost text-primary w-100">View Full Graph</button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { supabase } from '/src/utils/supabase.js'
+import CampaignsManager from './CampaignsManager.jsx'
+import CTAsManager from './CTAsManager.jsx'
+import LeadMagnetsManager from './LeadMagnetsManager.jsx'
 
 export default function MarketingDashboard() {
+    const [activeTab, setActiveTab] = useState('overview')
     const [stats, setStats] = useState({
         today: { clicks: 0, signups: 0, downloads: 0, impressions: 0 },
         week: { topCta: '-', worstCta: '-', topCampaign: '-', topArticle: '-', topMagnet: '-', conversionRate: '0%', ctr: '0%' }
@@ -23,7 +27,7 @@ export default function MarketingDashboard() {
                     .select('*')
                     .gte('created_at', today.toISOString())
                 
-                const todayStats = { clicks: 0, signups: 0, downloads: 0, consultations: 0 }
+                const todayStats = { clicks: 0, signups: 0, downloads: 0, consultations: 0, impressions: 0 }
                 if (todayEvents) {
                     todayEvents.forEach(e => {
                         if (e.event_type === 'cta_clicked' || e.event_type === 'homepage_article_clicked' || e.event_type === 'banner_clicked') todayStats.clicks++
@@ -58,7 +62,7 @@ export default function MarketingDashboard() {
                         }
                         if (e.event_type === 'cta_viewed') {
                             const title = e.properties?.cta_title || e.properties?.cta_id || 'Unknown CTA'
-                            if (!ctas[title]) ctas[title] = 0 // Just to track it exists even if 0 clicks
+                            if (!ctas[title]) ctas[title] = 0
                         }
                         if (e.event_type === 'banner_clicked') {
                             const title = e.properties?.campaign_name || 'Unknown Campaign'
@@ -110,103 +114,177 @@ export default function MarketingDashboard() {
         fetchStats()
     }, [])
 
-    if (loading) return <div className="p-4"><span className="spinner-border text-primary"></span></div>
+    const tabs = [
+        { id: 'overview', label: 'Overview', icon: 'pi-chart-line' },
+        { id: 'campaigns', label: 'Campaigns', icon: 'pi-flag' },
+        { id: 'magnets', label: 'Lead Magnets', icon: 'pi-magnet' },
+        { id: 'ctas', label: 'CTAs', icon: 'pi-bullseye' },
+        { id: 'analytics', label: 'Analytics', icon: 'pi-chart-bar' },
+    ]
 
-    return (
-        <div className="p-4 p-md-5">
-            <h2 className="fw-bold mb-4">Marketing Dashboard</h2>
-            
-            <h5 className="fw-bold text-muted mb-3">Today's Performance</h5>
-            <div className="row g-4 mb-5">
-                <div className="col-md-3">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 text-center">
-                        <i className="fa-solid fa-hand-pointer fs-1 text-primary mb-3"></i>
-                        <h2 className="fw-bold mb-1">{stats.today.clicks}</h2>
-                        <span className="text-muted small fw-medium text-uppercase tracking-wider">Clicks</span>
+    const renderOverview = () => {
+        if (loading) return <div className="p-5 d-flex justify-content-center"><div className="spinner-border text-primary"></div></div>
+
+        return (
+            <div className="animation-fade-in d-flex flex-column admin-gap-section">
+                
+                {/* Executive KPIs */}
+                <div>
+                    <h5 className="admin-section-title mb-4">Today's Performance</h5>
+                    <div className="row g-4">
+                        <div className="col-6 col-lg-3">
+                            <div className="admin-card h-100 position-relative overflow-hidden">
+                                <div className="d-flex align-items-center gap-2 mb-3">
+                                    <i className="pi pi-link text-primary"></i>
+                                    <span className="admin-meta-text fw-bold text-uppercase tracking-wider">Clicks</span>
+                                </div>
+                                <h2 className="admin-stat-text m-0">{stats.today.clicks}</h2>
+                            </div>
+                        </div>
+                        <div className="col-6 col-lg-3">
+                            <div className="admin-card h-100 position-relative overflow-hidden">
+                                <div className="d-flex align-items-center gap-2 mb-3">
+                                    <i className="pi pi-envelope text-success"></i>
+                                    <span className="admin-meta-text fw-bold text-uppercase tracking-wider">Signups</span>
+                                </div>
+                                <h2 className="admin-stat-text m-0">{stats.today.signups}</h2>
+                            </div>
+                        </div>
+                        <div className="col-6 col-lg-3">
+                            <div className="admin-card h-100 position-relative overflow-hidden">
+                                <div className="d-flex align-items-center gap-2 mb-3">
+                                    <i className="pi pi-download text-info"></i>
+                                    <span className="admin-meta-text fw-bold text-uppercase tracking-wider">Downloads</span>
+                                </div>
+                                <h2 className="admin-stat-text m-0">{stats.today.downloads}</h2>
+                            </div>
+                        </div>
+                        <div className="col-6 col-lg-3">
+                            <div className="admin-card h-100 position-relative overflow-hidden">
+                                <div className="d-flex align-items-center gap-2 mb-3">
+                                    <i className="pi pi-eye text-warning"></i>
+                                    <span className="admin-meta-text fw-bold text-uppercase tracking-wider">Impressions</span>
+                                </div>
+                                <h2 className="admin-stat-text m-0">{stats.today.impressions}</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-3">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 text-center">
-                        <i className="fa-solid fa-envelope fs-1 text-success mb-3"></i>
-                        <h2 className="fw-bold mb-1">{stats.today.signups}</h2>
-                        <span className="text-muted small fw-medium text-uppercase tracking-wider">Signups</span>
+
+                {/* Conversion Funnel & Rates */}
+                <div className="row g-4">
+                    <div className="col-lg-8">
+                        <div className="admin-card h-100">
+                            <div className="d-flex justify-content-between align-items-center mb-4">
+                                <h5 className="admin-card-title m-0">Conversion Funnel</h5>
+                                <button className="admin-btn admin-btn-ghost admin-small-text px-2 py-1">Last 7 Days <i className="pi pi-angle-down"></i></button>
+                            </div>
+                            <div className="bg-light rounded border d-flex align-items-center justify-content-center" style={{ minHeight: '300px' }}>
+                                <div className="text-center opacity-75">
+                                    <i className="pi pi-filter text-muted mb-3" style={{ fontSize: '2.5rem' }}></i>
+                                    <div className="admin-small-text fw-medium">Funnel Visualization Active</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 d-flex flex-column admin-gap-card">
+                        <div className="admin-card text-center py-5 h-100 d-flex flex-column justify-content-center border-0 shadow-sm" style={{ backgroundColor: 'var(--admin-color-primary)', color: 'var(--admin-bg-card)' }}>
+                            <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-white opacity-75">Overall Conversion Rate</span>
+                            <h1 className="fw-bold m-0 display-4 text-white">{stats.week.conversionRate}</h1>
+                        </div>
+                        <div className="admin-card text-center py-4 border-0" style={{ backgroundColor: 'var(--admin-bg-sidebar)' }}>
+                            <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-dark">Click-Through Rate (CTR)</span>
+                            <h3 className="fw-bold text-dark m-0">{stats.week.ctr}</h3>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-3">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 text-center">
-                        <i className="fa-solid fa-download fs-1 text-info mb-3"></i>
-                        <h2 className="fw-bold mb-1">{stats.today.downloads}</h2>
-                        <span className="text-muted small fw-medium text-uppercase tracking-wider">Downloads</span>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 text-center">
-                        <i className="fa-solid fa-eye fs-1 text-warning mb-3"></i>
-                        <h2 className="fw-bold mb-1">{stats.today.impressions}</h2>
-                        <span className="text-muted small fw-medium text-uppercase tracking-wider">Impressions</span>
+
+                {/* Top Performers */}
+                <div>
+                    <h5 className="admin-section-title mb-4">Top Performers</h5>
+                    <div className="row g-4">
+                        <div className="col-md-6 col-lg-3">
+                            <div className="admin-card h-100">
+                                <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-muted">Top CTA</span>
+                                <h6 className="fw-bold m-0 text-dark text-truncate" title={stats.week.topCta}>{stats.week.topCta}</h6>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div className="admin-card h-100">
+                                <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-muted">Worst CTA</span>
+                                <h6 className="fw-medium m-0 text-danger text-truncate" title={stats.week.worstCta}>{stats.week.worstCta}</h6>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div className="admin-card h-100">
+                                <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-muted">Top Campaign</span>
+                                <h6 className="fw-bold m-0 text-dark text-truncate" title={stats.week.topCampaign}>{stats.week.topCampaign}</h6>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div className="admin-card h-100">
+                                <span className="admin-meta-text text-uppercase tracking-wider mb-2 text-muted">Top Lead Magnet</span>
+                                <h6 className="fw-bold m-0 text-dark text-truncate" title={stats.week.topMagnet}>{stats.week.topMagnet}</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        )
+    }
 
-            <h5 className="fw-bold text-muted mb-3">This Week's Top Performers</h5>
-            <div className="row g-4">
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted small fw-medium text-uppercase tracking-wider">Top CTA</span>
-                            <i className="fa-solid fa-bullseye text-primary"></i>
-                        </div>
-                        <h5 className="fw-bold m-0">{stats.week.topCta}</h5>
+    const renderContent = () => {
+        switch (activeTab) {
+            case 'overview':
+                return renderOverview()
+            case 'campaigns':
+                return <div className="animation-fade-in"><CampaignsManager /></div>
+            case 'magnets':
+                return <div className="animation-fade-in"><LeadMagnetsManager /></div>
+            case 'ctas':
+                return <div className="animation-fade-in"><CTAsManager /></div>
+            case 'analytics':
+                return (
+                    <div className="admin-card text-center p-5 animation-fade-in">
+                        <i className="pi pi-chart-line text-muted mb-3" style={{ fontSize: '3rem', opacity: 0.5 }}></i>
+                        <h4 className="fw-bold">Detailed Analytics</h4>
+                        <p className="text-muted max-w-md mx-auto">
+                            Advanced reporting and funnel visualization will be available in a future update.
+                        </p>
                     </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted small fw-medium text-uppercase tracking-wider">Worst CTA</span>
-                            <i className="fa-solid fa-arrow-trend-down text-danger"></i>
-                        </div>
-                        <h5 className="fw-bold m-0 text-muted">{stats.week.worstCta}</h5>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted small fw-medium text-uppercase tracking-wider">Top Campaign</span>
-                            <i className="fa-solid fa-flag text-danger"></i>
-                        </div>
-                        <h5 className="fw-bold m-0">{stats.week.topCampaign}</h5>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted small fw-medium text-uppercase tracking-wider">Top Article Clicked</span>
-                            <i className="fa-solid fa-newspaper text-success"></i>
-                        </div>
-                        <h5 className="fw-bold m-0">{stats.week.topArticle}</h5>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted small fw-medium text-uppercase tracking-wider">Top Lead Magnet</span>
-                            <i className="fa-solid fa-magnet text-info"></i>
-                        </div>
-                        <h5 className="fw-bold m-0">{stats.week.topMagnet}</h5>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 bg-light text-center h-100 d-flex flex-column justify-content-center">
-                        <span className="text-muted small fw-bold text-uppercase tracking-wider mb-2 d-block">Click-Through Rate (CTR)</span>
-                        <h1 className="fw-bold text-dark m-0 display-5">{stats.week.ctr}</h1>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="card border-0 shadow-sm rounded-4 p-4 bg-primary bg-opacity-10 text-center h-100 d-flex flex-column justify-content-center">
-                        <span className="text-primary small fw-bold text-uppercase tracking-wider mb-2 d-block">Overall Conversion Rate</span>
-                        <h1 className="fw-bold text-primary m-0 display-4">{stats.week.conversionRate}</h1>
-                    </div>
-                </div>
+                )
+            default:
+                return renderOverview()
+        }
+    }
+
+    return (
+        <div className="d-flex flex-column h-100" style={{ gap: 'var(--admin-gap-md)' }}>
+            <div className="mb-2">
+                <h1 className="admin-page-title mb-2">Marketing</h1>
+                <p className="admin-body-text mb-0">Manage campaigns, track conversions, and optimize funnels.</p>
+            </div>
+
+            {/* Tabs */}
+            <div className="border-bottom border-light mb-4">
+                <ul className="nav nav-tabs admin-tabs border-0 gap-1">
+                    {tabs.map(tab => (
+                        <li className="nav-item" key={tab.id}>
+                            <button 
+                                className={`nav-link border-0 bg-transparent py-3 px-4 fw-medium text-muted d-flex align-items-center gap-2 ${activeTab === tab.id ? 'active text-primary border-bottom border-2 border-primary' : ''}`}
+                                onClick={() => setActiveTab(tab.id)}
+                                style={{ borderRadius: 0, marginBottom: '-1px' }}
+                            >
+                                <i className={`pi ${tab.icon}`}></i> {tab.label}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {/* Content */}
+            <div className="mt-2">
+                {renderContent()}
             </div>
         </div>
     )
