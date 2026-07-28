@@ -1,5 +1,5 @@
 import "/src/styles/app.scss"
-import {StrictMode, useEffect, useState, Suspense, lazy} from 'react'
+import {StrictMode, useEffect, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 import {useApi} from "/src/hooks/api.js"
 import {useConstants} from "/src/hooks/constants.js"
@@ -15,10 +15,6 @@ import InputProvider from "/src/providers/InputProvider.jsx"
 import NavigationProvider from "/src/providers/NavigationProvider.jsx"
 import Portfolio from "/src/components/Portfolio.jsx"
 import SeoManager from "/src/seo/SeoManager.jsx"
-import WebVitalsTracker from "/src/components/analytics/WebVitalsTracker.jsx"
-
-const AdminApp = lazy(() => import("/src/components/admin/AdminApp.jsx"))
-const BlogApp = lazy(() => import("/src/components/blog/BlogApp.jsx"))
 
 /** Initialization Script... **/
 let container = null
@@ -37,32 +33,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
  * @constructor
  */
 const App = () => {
-    const path = window.location.pathname;
-
-    if (path.startsWith("/admin")) {
-        return (
-            <Suspense fallback={
-                <div className="vh-100 d-flex justify-content-center align-items-center bg-light">
-                    <div className="spinner-border text-primary" role="status">
-                        <span className="visually-hidden">Loading CMS Engine...</span>
-                    </div>
-                </div>
-            }>
-                <AdminApp />
-            </Suspense>
-        )
-    }
-
-    if (path.startsWith("/blog") || path.startsWith("/knowledge")) {
-        return (
-            <Suspense fallback={<div className="vh-100 d-flex justify-content-center align-items-center bg-light"><div className="spinner-border text-primary"/></div>}>
-                <AppEssentialsWrapper>
-                    <BlogApp />
-                </AppEssentialsWrapper>
-            </Suspense>
-        )
-    }
-
     return (
         <AppEssentialsWrapper>
             <AppCapabilitiesWrapper>
@@ -94,8 +64,7 @@ const AppEssentialsWrapper = ({children}) => {
             path.includes("/portfolio/") ||
             path.includes("website-design-nairobi") ||
             path.includes("small-business-websites-nairobi") ||
-            path.includes("restaurant-website-design-nairobi") ||
-            path.startsWith("/admin")
+            path.includes("restaurant-website-design-nairobi")
 
         if (!isStandaloneHtmlRoute && path !== base)
             window.history.pushState({}, "", base)
@@ -194,7 +163,6 @@ const AppCapabilitiesWrapper = ({ children }) => {
                                 <NavigationProvider sections={appSections}
                                                     categories={appCategories}>
                                     <SeoManager/>
-                                    <WebVitalsTracker />
                                     {children}
                                 </NavigationProvider>
                             </LocationProvider>
