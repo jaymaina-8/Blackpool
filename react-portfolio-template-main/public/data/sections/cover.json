@@ -229,6 +229,21 @@
             },
             "items": [
                 {
+                    "id": 0,
+                    "label": "Devireen Enterprise",
+                    "link": {
+                        "href": "/portfolio/devireen-enterprise/",
+                        "tooltipString": "read_case_study"
+                    },
+                    "img": "/images/content/devireen.png",
+                    "locales": {
+                        "en": {
+                            "title": "Business {{Website}}",
+                            "text": "A professional website built for Devireen Enterprise to showcase their services and establish a strong online presence."
+                        }
+                    }
+                },
+                {
                     "id": 1,
                     "label": "Urban Grill",
                     "link": {

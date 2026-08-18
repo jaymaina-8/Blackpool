@@ -32,6 +32,48 @@
       },
       "items": [
         {
+          "id": 6,
+          "categoryId": "category_web",
+          "img": "/images/content/devireen.png",
+          "faIcon": "fa-solid fa-building",
+          "faIconColors": {
+            "bg": "#0f172a",
+            "fill": "#22c55e"
+          },
+          "preview": {
+            "links": [
+              {
+                "href": "https://www.devireenenterprise.com/",
+                "tooltip": "Visit Website",
+                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+              },
+              {
+                "href": "/portfolio/devireen-enterprise/",
+                "tooltip": "Read Case Study",
+                "faIcon": "fa-solid fa-book-open"
+              }
+            ],
+            "screenshots": [
+              "/images/content/devireen-1.png",
+              "/images/content/devireen-2.png",
+              "/images/content/devireen-3.png"
+            ],
+            "screenshotsAspectRatio": "16:9"
+          },
+          "locales": {
+            "en": {
+              "title": "Devireen {{Enterprise}}",
+              "text": "A modern business website designed to showcase services and establish a strong online presence.",
+              "tags": [
+                "Website",
+                "Business",
+                "Enterprise"
+              ]
+            }
+          }
+        },
+
+        {
           "id": 7,
           "categoryId": "category_web",
           "img": "/images/content/ricardorv30-cup-4585479.jpg",
